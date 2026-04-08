@@ -80,13 +80,13 @@ export function FAQ() {
     <section
       ref={sectionRef}
       id="resources"
-      className="relative w-full py-24 md:py-32 bg-forest-dark overflow-hidden"
+      className="relative w-full py-24 md:py-32 bg-[#2b1b17] overflow-hidden"
     >
       {/* Ambient glow */}
       <div
         className="absolute top-0 left-1/4 w-[500px] h-[500px] pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(134,239,172,0.05) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(11,92,92,0.14) 0%, transparent 65%)',
           filter: 'blur(60px)',
         }}
       />
@@ -98,7 +98,7 @@ export function FAQ() {
       >
         <span
           className="text-[16vw] font-sans font-extrabold tracking-tighter leading-none"
-          style={{ color: 'rgba(255,255,255,0.022)' }}
+          style={{ color: 'rgba(212,178,106,0.12)' }}
         >
           FAQ
         </span>
@@ -108,12 +108,12 @@ export function FAQ() {
         {/* Section Header */}
         <div ref={headerRef} className="text-center mb-16 md:mb-20 opacity-0">
           {faqConfig.subtitle && (
-            <p className="text-white/50 text-sm font-body uppercase tracking-widest mb-4">
+            <p className="text-[#d4b26a]/75 text-sm font-body uppercase tracking-widest mb-4">
               {faqConfig.subtitle}
             </p>
           )}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-white tracking-tight">
-            {faqConfig.titleRegular} <span className="font-serif italic font-normal text-white/80">{faqConfig.titleItalic}</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#f4ead8] tracking-tight">
+            {faqConfig.titleRegular} <span className="font-serif italic font-normal text-[#d4b26a]">{faqConfig.titleItalic}</span>
           </h2>
         </div>
 
@@ -125,15 +125,15 @@ export function FAQ() {
                 key={faq.id}
                 value={faq.id}
                 data-faq-item
-                className="opacity-0 border-0 bg-forest-mid/50 rounded-lg overflow-hidden"
+                className="opacity-0 border border-[#d4b26a]/20 bg-[#3a231a]/80 rounded-lg overflow-hidden"
               >
-                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-forest-mid/80 transition-colors duration-300 group">
-                  <span className="text-left font-sans font-medium text-white text-base md:text-lg pr-4 group-hover:text-white/90">
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-[#4a2e23] transition-colors duration-300 group">
+                  <span className="text-left font-sans font-medium text-[#f4ead8] text-base md:text-lg pr-4 group-hover:text-[#d4b26a]">
                     {faq.question}
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="text-white/60 font-body text-sm md:text-base leading-relaxed">
+                  <p className="text-[#f4ead8]/75 font-body text-sm md:text-base leading-relaxed">
                     {faq.answer}
                   </p>
                 </AccordionContent>
@@ -146,14 +146,14 @@ export function FAQ() {
         {(faqConfig.ctaText || faqConfig.ctaButtonText) && (
           <div ref={ctaRef} className="mt-16 text-center opacity-0">
             {faqConfig.ctaText && (
-              <p className="text-white/50 font-body text-sm mb-4">
+              <p className="text-[#d4b26a]/75 font-body text-sm mb-4">
                 {faqConfig.ctaText}
               </p>
             )}
             {faqConfig.ctaButtonText && (
               <a
                 href={faqConfig.ctaHref || '#contact'}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-forest-dark font-sans font-semibold text-sm rounded-full hover:bg-offwhite transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#d4b26a] text-[#2b1b17] font-sans font-semibold text-sm rounded-full hover:bg-[#c6a055] transition-colors duration-300"
               >
                 {faqConfig.ctaButtonText}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

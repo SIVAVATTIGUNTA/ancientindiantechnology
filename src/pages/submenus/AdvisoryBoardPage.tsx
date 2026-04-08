@@ -1,0 +1,30 @@
+import { InfoPageLayout } from './InfoPageLayout';
+
+export function AdvisoryBoardPage() {
+  return (
+    <InfoPageLayout
+      category="Project"
+      title="Advisory Board"
+      intro="The advisory board guides quality, scope, and scholarly integrity across the Ancient Indian Technology knowledge archive."
+      heroImage="/lothal-dockyard.jpg"
+      sections={[
+        {
+          title: 'Academic Direction',
+          body: 'Advisors help prioritize topics with strong historical relevance and recommend robust pathways for evidence-led interpretation.',
+        },
+        {
+          title: 'Quality Review',
+          body: 'Review input supports consistency across pages, especially for terminology, chronology, and treatment of debated claims.',
+        },
+        {
+          title: 'Interdisciplinary Lens',
+          body: 'The board encourages cross-domain analysis across metallurgy, medicine, astronomy, and urban engineering traditions.',
+        },
+        {
+          title: 'Future Roadmap',
+          body: 'Advisory recommendations shape long-term improvements including citation depth, visual resources, and educational utility.',
+        },
+      ]}
+    />
+  );
+}

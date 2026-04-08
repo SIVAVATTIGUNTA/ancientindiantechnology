@@ -4,44 +4,44 @@
 
 @layer base {
   :root {
-    /* AirLens Color System - Deep Forest Charcoal Theme */
-    --background: 150 12% 7%; /* #0d1310 */
-    --foreground: 0 0% 96%; /* #f4f4f4 */
-    --card: 150 12% 10%;
-    --card-foreground: 0 0% 96%;
-    --popover: 150 12% 7%;
-    --popover-foreground: 0 0% 96%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 150 12% 7%;
-    --secondary: 150 8% 15%;
-    --secondary-foreground: 0 0% 96%;
-    --muted: 150 8% 18%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 0 0% 100%;
-    --accent-foreground: 150 12% 7%;
+    /* Ancient Indian Technology Color System - logo-inspired palette */
+    --background: 19 30% 13%; /* #2b1b17 */
+    --foreground: 39 57% 90%; /* #f4ead8 */
+    --card: 18 36% 16%; /* #3a231a */
+    --card-foreground: 39 57% 90%;
+    --popover: 18 36% 16%;
+    --popover-foreground: 39 57% 90%;
+    --primary: 41 54% 62%; /* #d4b26a */
+    --primary-foreground: 19 30% 13%;
+    --secondary: 183 79% 20%; /* #0b5c5c */
+    --secondary-foreground: 39 57% 90%;
+    --muted: 17 44% 39%; /* #8d4f36 */
+    --muted-foreground: 39 40% 78%;
+    --accent: 41 54% 62%;
+    --accent-foreground: 19 30% 13%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 100% / 0.1;
-    --input: 150 8% 15%;
-    --ring: 0 0% 100%;
+    --input: 18 36% 20%;
+    --ring: 41 54% 62%;
     --radius: 0.5rem;
     
     /* Custom properties */
-    --forest-dark: #0d1310;
-    --forest-mid: #1a2420;
-    --off-white: #f4f4f4;
+    --forest-dark: #2b1b17;
+    --forest-mid: #3a231a;
+    --off-white: #f4ead8;
     --pure-white: #ffffff;
-    --soft-black: #1a1a1a;
+    --soft-black: #2b1b17;
   }
 
   .light-section {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 10%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    --border: 0 0% 0% / 0.08;
+    --background: 39 57% 90%;
+    --foreground: 19 30% 13%;
+    --card: 39 52% 95%;
+    --card-foreground: 19 30% 13%;
+    --muted: 39 42% 88%;
+    --muted-foreground: 19 18% 35%;
+    --border: 19 30% 13% / 0.1;
   }
 }
 

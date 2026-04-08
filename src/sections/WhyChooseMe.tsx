@@ -229,39 +229,39 @@ export function WhyChooseMe() {
     <section
       ref={sectionRef}
       id="astronomy"
-      className="relative w-full py-24 md:py-32 bg-white"
+      className="relative w-full py-24 md:py-32 bg-[#f4ead8]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div ref={headerRef} className="text-center mb-16 md:mb-20 opacity-0">
           {whyChooseMeConfig.subtitle && (
-            <p className="text-softblack/50 text-sm font-body uppercase tracking-widest mb-4">
+            <p className="text-[#8d4f36]/85 text-sm font-body uppercase tracking-widest mb-4">
               {whyChooseMeConfig.subtitle}
             </p>
           )}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-softblack tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#2b1b17] tracking-tight">
             {whyChooseMeConfig.titleRegular} <span className="font-serif italic font-normal">{whyChooseMeConfig.titleItalic}</span>
           </h2>
         </div>
 
         {/* Three Cards Row */}
-        <div ref={cardsRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-5 md:gap-8 md:auto-rows-fr items-stretch">
           {/* Feature Cards with Images */}
           {whyChooseMeConfig.featureCards.map((card, index) => (
             <div key={index} className="feature-card-image opacity-0 group h-full">
-              <div className="relative h-full min-h-[380px] rounded-lg overflow-hidden bg-forest-dark">
+              <div className="relative h-full min-h-[300px] md:min-h-[380px] rounded-lg overflow-hidden bg-[#2b1b17]">
                 <img
                   src={card.image}
                   alt={card.imageAlt}
-                  className="w-full h-full object-cover will-change-transform"
+                  className="w-full h-full object-cover object-center will-change-transform"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-white/90 font-sans font-semibold text-lg mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2b1b17]/85 via-transparent to-transparent" />
+                <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 right-4 md:right-6">
+                  <p className="text-[#f4ead8]/95 font-sans font-semibold text-base md:text-lg mb-1.5 md:mb-2 leading-tight">
                     {card.title}
                   </p>
-                  <p className="text-white/60 font-body text-sm">
+                  <p className="text-[#f4ead8]/80 font-body text-xs md:text-sm leading-relaxed">
                     {card.description}
                   </p>
                 </div>
@@ -273,25 +273,25 @@ export function WhyChooseMe() {
           {whyChooseMeConfig.stats.length > 0 && (
             <div
               ref={statsRef}
-              className="feature-card-stats opacity-0 bg-offwhite rounded-lg p-8 md:p-10 flex flex-col justify-between min-h-[380px]"
+              className="feature-card-stats opacity-0 bg-[#f8f0e3] rounded-lg p-8 md:p-10 flex flex-col justify-between h-full min-h-[300px] md:min-h-[380px] border border-[#8d4f36]/15"
             >
               <div>
                 {whyChooseMeConfig.statsLabel && (
-                  <p className="text-softblack/50 text-sm font-body uppercase tracking-widest mb-8">
+                  <p className="text-[#8d4f36]/80 text-sm font-body uppercase tracking-widest mb-8">
                     {whyChooseMeConfig.statsLabel}
                   </p>
                 )}
                 <div className="space-y-8">
                   {whyChooseMeConfig.stats.map((stat, index) => (
-                    <div key={index} className="border-b border-softblack/10 pb-6 last:border-0">
-                      <p className="text-4xl md:text-5xl font-sans font-bold text-softblack tracking-tight">
+                    <div key={index} className="border-b border-[#8d4f36]/20 pb-6 last:border-0">
+                      <p className="text-4xl md:text-5xl font-sans font-bold text-[#2b1b17] tracking-tight">
                         <Counter
                           end={stat.value}
                           suffix={stat.suffix}
                           shouldAnimate={shouldAnimateStats}
                         />
                       </p>
-                      <p className="text-softblack/60 font-body text-sm mt-1">
+                      <p className="text-[#3a231a]/75 font-body text-sm mt-1">
                         {stat.label}
                       </p>
                     </div>
@@ -304,25 +304,25 @@ export function WhyChooseMe() {
 
         {/* Wide Landscape Image */}
         {whyChooseMeConfig.wideImage && (
-          <div ref={wideRef} className="mt-16 md:mt-24 relative rounded-lg overflow-hidden group opacity-0">
-            <div className="aspect-[21/9] md:aspect-[3/1] overflow-hidden">
+          <div ref={wideRef} className="mt-14 md:mt-24 relative rounded-lg overflow-hidden group opacity-0">
+            <div className="aspect-[16/10] sm:aspect-[21/9] md:aspect-[3/1] overflow-hidden">
               <img
                 src={whyChooseMeConfig.wideImage}
                 alt={whyChooseMeConfig.wideImageAlt}
-                className="w-full h-full object-cover will-change-transform"
+                className="w-full h-full object-cover object-center md:object-[50%_32%] will-change-transform"
                 loading="lazy"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-forest-dark/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2b1b17]/70 via-transparent to-transparent" />
             {(whyChooseMeConfig.wideTitle || whyChooseMeConfig.wideDescription) && (
-              <div className="wide-text-overlay absolute bottom-8 left-8 md:bottom-12 md:left-12 max-w-md opacity-0">
+              <div className="wide-text-overlay absolute bottom-4 left-4 right-4 sm:right-auto sm:bottom-6 sm:left-6 md:bottom-10 md:left-10 max-w-md bg-[#2b1b17]/35 sm:bg-transparent p-3 sm:p-0 opacity-0">
                 {whyChooseMeConfig.wideTitle && (
-                  <p className="text-white/90 font-sans font-bold text-2xl md:text-3xl mb-3">
+                  <p className="text-[#f4ead8]/95 font-sans font-bold text-xl sm:text-2xl md:text-3xl mb-2 md:mb-3 leading-tight">
                     {whyChooseMeConfig.wideTitle}
                   </p>
                 )}
                 {whyChooseMeConfig.wideDescription && (
-                  <p className="text-white/70 font-body text-sm md:text-base">
+                  <p className="text-[#f4ead8]/85 font-body text-xs sm:text-sm md:text-base leading-relaxed">
                     {whyChooseMeConfig.wideDescription}
                   </p>
                 )}

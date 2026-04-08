@@ -64,18 +64,18 @@ export function Testimonials() {
     <section
       ref={sectionRef}
       id="medicine"
-      className="relative w-full py-24 md:py-32 bg-white overflow-hidden"
+      className="relative w-full py-24 md:py-32 bg-[#f4ead8] overflow-hidden"
     >
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-20">
         <div ref={headerRef} className="text-center opacity-0">
           {testimonialsConfig.subtitle && (
-            <p className="text-softblack/50 text-sm font-body uppercase tracking-widest mb-4">
+            <p className="text-[#8d4f36]/85 text-sm font-body uppercase tracking-widest mb-4">
               {testimonialsConfig.subtitle}
             </p>
           )}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-softblack tracking-tight">
-            {testimonialsConfig.titleRegular} <span className="font-serif italic font-normal text-softblack/70">{testimonialsConfig.titleItalic}</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#2b1b17] tracking-tight">
+            {testimonialsConfig.titleRegular} <span className="font-serif italic font-normal text-[#8d4f36]">{testimonialsConfig.titleItalic}</span>
           </h2>
         </div>
       </div>
@@ -115,12 +115,12 @@ export function Testimonials() {
         >
           {testimonialsConfig.testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <div className="group bg-offwhite rounded-lg p-8 md:p-10 h-full min-h-[280px] flex flex-col transition-all duration-500 hover:bg-forest-dark hover:text-white">
+              <div className="group bg-[#f8f0e3] border border-[#8d4f36]/15 rounded-lg p-8 md:p-10 h-full min-h-[280px] flex flex-col transition-all duration-500 hover:bg-[#2b1b17] hover:text-[#f4ead8]">
                 {/* Quote icon */}
-                <Quote className="w-10 h-10 text-softblack/10 group-hover:text-white/20 mb-6 flex-shrink-0 transition-colors duration-500" strokeWidth={1} />
+                <Quote className="w-10 h-10 text-[#8d4f36]/30 group-hover:text-[#d4b26a]/70 mb-6 flex-shrink-0 transition-colors duration-500" strokeWidth={1} />
 
                 {/* Quote text */}
-                <p className="text-softblack/80 group-hover:text-white/90 font-body text-base md:text-lg leading-relaxed mb-8 flex-1 transition-colors duration-500">
+                <p className="text-[#3a231a]/85 group-hover:text-[#f4ead8]/90 font-body text-base md:text-lg leading-relaxed mb-8 flex-1 transition-colors duration-500">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
 
@@ -130,15 +130,15 @@ export function Testimonials() {
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                       loading="lazy"
                     />
                   </div>
                   <div>
-                    <p className="font-sans font-semibold text-softblack group-hover:text-white transition-colors duration-500">
+                    <p className="font-sans font-semibold text-[#2b1b17] group-hover:text-[#f4ead8] transition-colors duration-500">
                       {testimonial.name}
                     </p>
-                    <p className="text-sm text-softblack/50 group-hover:text-white/60 font-body transition-colors duration-500">
+                    <p className="text-sm text-[#8d4f36]/80 group-hover:text-[#f4ead8]/70 font-body transition-colors duration-500">
                       {testimonial.role}
                     </p>
                   </div>
@@ -149,20 +149,20 @@ export function Testimonials() {
         </Swiper>
 
         {/* Gradient overlays for fade effect */}
-        <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#f4ead8] to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#f4ead8] to-transparent z-10 pointer-events-none" />
       </div>
 
       {/* Bottom divider */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16">
-        <div className="h-px bg-gradient-to-r from-transparent via-softblack/10 to-transparent" />
+        <div className="h-px bg-gradient-to-r from-transparent via-[#8d4f36]/35 to-transparent" />
       </div>
 
       {/* Ambient background blob */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse, rgba(13,19,16,0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(11,92,92,0.12) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }}
       />

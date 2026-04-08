@@ -1,0 +1,30 @@
+import { InfoPageLayout } from './InfoPageLayout';
+
+export function ContributorsAuthorsPage() {
+  return (
+    <InfoPageLayout
+      category="Project"
+      title="Contributors & Authors"
+      intro="This initiative is built through collaborative effort from researchers, educators, writers, and media curators."
+      heroImage="/astronomy-jantar.jpg"
+      sections={[
+        {
+          title: 'Research Contributors',
+          body: 'Researchers help verify chronology, terminology, and references by connecting narrative sections with published scholarship and archival material.',
+        },
+        {
+          title: 'Content Authors',
+          body: 'Writers transform complex subject matter into structured pages while maintaining technical accuracy and historical nuance.',
+        },
+        {
+          title: 'Visual and Media Curators',
+          body: 'Curators align images and video resources with each topic to support evidence-based storytelling and accessible learning.',
+        },
+        {
+          title: 'How to Join',
+          body: 'Potential contributors can propose topic notes, source lists, corrections, and media suggestions through the Contact / Contribute page.',
+        },
+      ]}
+    />
+  );
+}

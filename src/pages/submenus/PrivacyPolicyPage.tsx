@@ -1,0 +1,30 @@
+import { InfoPageLayout } from './InfoPageLayout';
+
+export function PrivacyPolicyPage() {
+  return (
+    <InfoPageLayout
+      category="Legal"
+      title="Privacy Policy"
+      intro="This page explains how user interaction data is handled while accessing the Ancient Indian Technology website."
+      heroImage="/urban-planning.jpg"
+      sections={[
+        {
+          title: 'Data We Collect',
+          body: 'Basic analytics and form-submission details may be collected to improve content quality and maintain platform security.',
+        },
+        {
+          title: 'How Data Is Used',
+          body: 'Collected information is used for performance monitoring, editorial planning, and user-support workflows only.',
+        },
+        {
+          title: 'Third-Party Embeds',
+          body: 'Video embeds and external links may set their own cookies or tracking behaviors under their provider policies.',
+        },
+        {
+          title: 'Contact for Privacy Queries',
+          body: 'For deletion requests, corrections, or data concerns, please use the Contact / Contribute page.',
+        },
+      ]}
+    />
+  );
+}

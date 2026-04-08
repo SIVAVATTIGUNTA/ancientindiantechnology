@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Ancient Indian Technology logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d4b26a"/>
+      <stop offset="100%" stop-color="#8d4f36"/>
+    </linearGradient>
+  </defs>
+  <circle cx="110" cy="110" r="104" fill="#2b1b17"/>
+  <circle cx="110" cy="110" r="92" fill="none" stroke="url(#g)" stroke-width="8"/>
+  <circle cx="110" cy="85" r="26" fill="#0b5c5c" opacity="0.9"/>
+  <path d="M70 142c16-14 64-14 80 0" fill="none" stroke="#d4b26a" stroke-width="6" stroke-linecap="round"/>
+  <text x="110" y="162" text-anchor="middle" fill="#f4ead8" font-size="36" font-weight="700" font-family="serif">AIT</text>
+</svg>

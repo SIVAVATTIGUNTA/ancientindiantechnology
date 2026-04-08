@@ -1,5 +1,4 @@
-// Site Configuration for Ancient India Technology
-// प्राचीन भारत की तकनीक
+
 
 export interface SiteConfig {
   language: string;
@@ -159,15 +158,15 @@ export interface IntroGridConfig {
 export const introGridConfig: IntroGridConfig = {
   titleLine1: "Ancient Indian",
   titleLine2: "Technological Marvels",
-  description: "For thousands of years, the Indian subcontinent was a cradle of scientific innovation. From the rust-free Iron Pillar of Delhi to the precise astronomical instruments of Jantar Mantar, from advanced surgical techniques to sophisticated urban planning - and remarkably, evidence of aerospace technology, electrical batteries, and acoustic engineering that continues to amaze modern scientists.",
+  description: "Ancient India developed deeply integrated knowledge systems where science, craft, and design evolved together. This section highlights landmark achievements across metallurgy, astronomy, medicine, and urban engineering - presenting each topic with historical context, visual evidence, and pathways for deeper study.",
   portfolioImages: [
-    { src: "/vimana.jpg", alt: "Ancient Vimana flying vehicle" },
+    { src: "/wootz-blade.jpg", alt: "Wootz steel and metallurgical heritage" },
     { src: "/iron-pillar.jpg", alt: "The rust-free Iron Pillar of Delhi" },
     { src: "/astronomy-jantar.jpg", alt: "Jantar Mantar astronomical observatory" },
-    { src: "/musical-pillars.jpg", alt: "Musical pillars of Hampi" },
-    { src: "/ancient-battery.jpg", alt: "Ancient Indian battery technology" },
+    { src: "/sushruta-surgery.jpg", alt: "Ancient Indian medical and surgical knowledge" },
+    { src: "/lothal-dockyard.jpg", alt: "Lothal dockyard and maritime engineering" },
   ],
-  accentText: "Selected Topics - 5000+ Years of Innovation",
+  accentText: "Selected Themes - Science, Engineering, and Heritage",
 };
 
 // Featured Projects Section
@@ -178,6 +177,7 @@ export interface Project {
   year: string;
   image: string;
   description: string;
+  href: string;
 }
 
 export interface FeaturedProjectsConfig {
@@ -195,7 +195,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
   titleRegular: "Explore Ancient",
   titleItalic: "Indian Sciences",
   viewAllText: "View All Topics",
-  viewAllHref: "#resources",
+  viewAllHref: "/topic/resources",
   viewProjectText: "Learn More",
   projects: [
     {
@@ -204,7 +204,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Metallurgy",
       year: "300 BCE",
       image: "/wootz-blade.jpg",
-      description: "Indian wootz steel was renowned worldwide for its exceptional quality. The unique crucible process created steel with distinctive water patterns, later known as Damascus steel.",
+      description: "High-carbon crucible steel from the Indian subcontinent set global standards for edge retention and pattern quality, later linked with famed Damascus blades.",
+      href: "/topic/wootz-steel-and-damascus-blades",
     },
     {
       id: 2,
@@ -212,7 +213,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Metallurgy",
       year: "400 CE",
       image: "/iron-pillar.jpg",
-      description: "Standing for over 1600 years without rusting, this 7-meter pillar demonstrates ancient India's mastery of metallurgy and corrosion-resistant techniques.",
+      description: "A monumental forged iron artifact with extraordinary corrosion resistance, demonstrating material control and process discipline centuries ahead of modern industrial metallurgy.",
+      href: "/topic/delhi-iron-pillar",
     },
     {
       id: 3,
@@ -220,7 +222,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Astronomy",
       year: "1724-1734",
       image: "/astronomy-jantar.jpg",
-      description: "Massive stone instruments built by Maharaja Jai Singh II for precise astronomical measurements, including the world's largest stone sundial.",
+      description: "Precision masonry instruments for measuring celestial positions, solar time, and seasonal movement with striking architectural scale and scientific intent.",
+      href: "/topic/jantar-mantar-observatories",
     },
     {
       id: 4,
@@ -228,7 +231,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Astronomy",
       year: "476-550 CE",
       image: "/aryabhata.jpg",
-      description: "The mathematical genius who gave us the concept of zero, calculated pi accurately, and explained eclipses and Earth's rotation centuries before Europe.",
+      description: "Aryabhata's mathematical astronomy advanced positional thinking, eclipse models, and numerical computation that influenced later scientific traditions.",
+      href: "/topic/aryabhata-and-the-concept-of-zero",
     },
     {
       id: 5,
@@ -236,7 +240,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Urban Planning",
       year: "2600-1900 BCE",
       image: "/urban-planning.jpg",
-      description: "The world's first known urban sanitation system with covered drains, public baths, and sophisticated water management in cities like Mohenjo-daro.",
+      description: "Urban drainage grids, bathing structures, and water logic in Indus settlements reveal engineered civic planning at remarkable scale.",
+      href: "/topic/indus-valley-sanitation",
     },
     {
       id: 6,
@@ -244,7 +249,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Urban Planning",
       year: "Various",
       image: "/stepwell.jpg",
-      description: "Architectural masterpieces that provided water and served as social centers. Rani ki Vav is a UNESCO World Heritage site with stunning carvings.",
+      description: "Stepwells combined hydrological design, climate adaptation, and architectural beauty, functioning as both infrastructure and social-cultural spaces.",
+      href: "/topic/stepwells-vav-baoli",
     },
     {
       id: 7,
@@ -252,7 +258,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Medicine",
       year: "600 BCE",
       image: "/sushruta-surgery.jpg",
-      description: "The father of surgery performed complex operations including cataract surgery, plastic surgery, and described over 300 surgical procedures.",
+      description: "Detailed procedural knowledge, instruments, and clinical observation in the Sushruta tradition show one of history's most systematic surgical corpora.",
+      href: "/topic/sushruta-samhita",
     },
     {
       id: 8,
@@ -260,7 +267,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Medicine",
       year: "1500 BCE - Present",
       image: "/medicine-ayurveda.jpg",
-      description: "The science of life that emphasizes balance and holistic health. Charaka Samhita remains one of the foundational texts of traditional medicine.",
+      description: "Ayurveda integrates preventive care, diagnosis, nutrition, and therapeutics into a coherent life-science framework with long textual continuity.",
+      href: "/topic/ayurvedic-principles",
     },
     {
       id: 9,
@@ -268,7 +276,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Advanced Tech",
       year: "Vedic Period",
       image: "/vimana.jpg",
-      description: "Ancient aerospace vehicles described in Vedic texts, capable of atmospheric, space, and underwater flight. Modern research includes 3D modeling and CFD analysis endorsed by ISRO and DRDO scientists.",
+      description: "Narratives around vimana concepts are explored through textual interpretation, comparative mythology, and modern digital reconstruction approaches.",
+      href: "/topic/3d-reconstructions",
     },
     {
       id: 10,
@@ -276,7 +285,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Advanced Tech",
       year: "Agastya Samhita",
       image: "/ancient-battery.jpg",
-      description: "The Agastya Samhita describes electrical cells using earthen pots, copper plates, and zinc amalgam producing 1.138 volts - capable of splitting water when connected in series.",
+      description: "Electrochemical interpretations in traditional texts are presented with caution, comparing philology, material evidence, and modern scientific testing limits.",
+      href: "/topic/lecture-series",
     },
     {
       id: 11,
@@ -284,7 +294,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Advanced Tech",
       year: "15th Century",
       image: "/musical-pillars.jpg",
-      description: "The Vitthala Temple's granite pillars produce specific musical instrument sounds when struck. Scientific studies confirm peak frequencies correlate with column dimensions and ultrasonic velocities.",
+      description: "Temple acoustics and resonant stone pillars reveal interplay between material geometry, sonic response, and ritual-performance architecture.",
+      href: "/topic/featured-documentaries",
     },
     {
       id: 12,
@@ -292,7 +303,8 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       category: "Advanced Tech",
       year: "Ancient Period",
       image: "/levitation.jpg",
-      description: "The Somnath Temple legend describes an iron linga levitating between a loadstone ceiling and bismuth layer - demonstrating understanding of diamagnetic levitation principles.",
+      description: "Claims around levitation are treated as exploratory narratives, with focus on what is textually attested versus physically reproducible today.",
+      href: "/topic/research-papers",
     },
   ],
 };
@@ -313,40 +325,40 @@ export interface ServicesConfig {
 }
 
 export const servicesConfig: ServicesConfig = {
-  subtitle: "What We Offer",
+  subtitle: "Knowledge Domains",
   titleLine1: "Explore Ancient",
   titleLine2Italic: "Indian Knowledge",
-  description: "Our platform provides comprehensive resources on the scientific and technological achievements of ancient India, from detailed articles to documentary videos.",
+  description: "A structured gateway into India's scientific heritage, combining textual evidence, archaeological context, visual media, and research-driven interpretation.",
   services: [
     {
       iconName: "Sparkles",
       title: "Metallurgy (धातु विज्ञान)",
-      description: "Discover Wootz steel, the rust-free Iron Pillar, zinc distillation, and bronze casting techniques that amazed the ancient world.",
+      description: "Study Wootz steel, the Delhi Iron Pillar, zinc distillation, and lost-wax casting as case studies in advanced pre-modern materials engineering.",
     },
     {
       iconName: "Diamond",
       title: "Astronomy (खगोल शास्त्र)",
-      description: "Explore Jantar Mantar, Aryabhata's contributions, sidereal calculations, and ancient observatories that mapped the heavens.",
+      description: "Trace Aryabhata, Siddhantic models, eclipse mathematics, and monumental observatories that translated celestial theory into precise instruments.",
     },
     {
       iconName: "Users",
       title: "Urban Planning (नगर नियोजन)",
-      description: "Learn about Indus Valley Civilization, stepwells, drainage systems, and Vaastu Shastra principles of architecture.",
+      description: "Examine drainage networks, stepwells, dockyard engineering, and spatial planning traditions that shaped resilient city design.",
     },
     {
       iconName: "Camera",
       title: "Medicine (आयुर्वेद)",
-      description: "Study Sushruta's surgical techniques, Charaka's medical wisdom, Ayurvedic principles, and traditional healing practices.",
+      description: "Explore Sushruta, Charaka, diagnostic frameworks, and therapeutic systems that formed one of history's longest medical knowledge traditions.",
     },
     {
       iconName: "Zap",
-      title: "Advanced Technologies",
-      description: "Explore Vimana aerospace technology, ancient electrical batteries, acoustic engineering, and magnetic levitation from Vedic texts.",
+      title: "Engineering Imagination",
+      description: "Review acoustic engineering, instrument architecture, and debated high-concept technologies through a careful evidence-plus-interpretation lens.",
     },
     {
       iconName: "BookOpen",
       title: "Research & Resources",
-      description: "Access research papers, books, bibliographies, and external links to deepen your understanding of ancient Indian science.",
+      description: "Use curated papers, bibliographies, documentaries, and external archives to move from interest to credible, referenced understanding.",
     },
   ],
 };
@@ -614,7 +626,7 @@ export const footerConfig: FooterConfig = {
     { iconName: "Mail",      href: "mailto:contact@ancientindiatechnology.com",    label: "Email" },
   ],
 
-  copyright: "© 2024 Ancient India Technology. All rights reserved.",
+  copyright: "© 2026 Ancient India Technology. All rights reserved.",
   bottomLinks: [
     { label: "Privacy Policy", href: "#privacy" },
     { label: "Terms of Use",   href: "#terms" },

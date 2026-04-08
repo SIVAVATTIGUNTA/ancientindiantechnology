@@ -1,0 +1,30 @@
+import { InfoPageLayout } from './InfoPageLayout';
+
+export function TermsOfUsePage() {
+  return (
+    <InfoPageLayout
+      category="Legal"
+      title="Terms of Use"
+      intro="These terms govern the use of platform content, media references, and external links across the site."
+      heroImage="/stepwell.jpg"
+      sections={[
+        {
+          title: 'Educational Purpose',
+          body: 'The platform is primarily educational and interpretive. Content should be used responsibly with independent verification for formal citation.',
+        },
+        {
+          title: 'Content Reuse',
+          body: 'Reproduction of text or media should include proper attribution and respect third-party licensing wherever applicable.',
+        },
+        {
+          title: 'External References',
+          body: 'External links are provided for learning continuity; availability and policy changes on third-party sites are outside platform control.',
+        },
+        {
+          title: 'Updates to Terms',
+          body: 'Terms may be revised over time as features evolve. Continued use of the platform implies acceptance of current terms.',
+        },
+      ]}
+    />
+  );
+}

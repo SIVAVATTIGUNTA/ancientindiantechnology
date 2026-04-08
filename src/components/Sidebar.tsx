@@ -124,25 +124,25 @@ export function Sidebar() {
             onClick={() => { scrollToSection(section.id); onClick?.(); }}
             className={`group w-full flex items-center gap-2.5 px-2 py-2 rounded-lg text-left transition-colors duration-150 ${
               isActive
-                ? 'bg-forest-dark/8 text-softblack'
-                : 'text-softblack/55 hover:bg-softblack/5 hover:text-softblack/80'
+                ? 'bg-[#d4b26a]/20 text-[#2b1b17]'
+                : 'text-[#3a231a]/70 hover:bg-[#8d4f36]/10 hover:text-[#2b1b17]'
             }`}
           >
             <span
               className={`shrink-0 w-1.5 h-1.5 rounded-full transition-colors duration-150 ${
-                isActive ? 'bg-forest-dark' : 'bg-softblack/20 group-hover:bg-softblack/35'
+                isActive ? 'bg-[#0b5c5c]' : 'bg-[#8d4f36]/35 group-hover:bg-[#8d4f36]/55'
               }`}
             />
             <span>
               <span className="block font-sans text-[13px] font-medium leading-tight">
                 {section.label}
               </span>
-              <span className="block font-body text-[10px] text-softblack/30 mt-0.5">
+              <span className="block font-body text-[10px] text-[#8d4f36]/85 mt-0.5">
                 {section.subtitle}
               </span>
             </span>
             {isActive && (
-              <span className="ml-auto shrink-0 w-1 h-4 rounded-full bg-forest-dark/40" />
+              <span className="ml-auto shrink-0 w-1 h-4 rounded-full bg-[#0b5c5c]/60" />
             )}
           </button>
         );
@@ -158,9 +158,9 @@ export function Sidebar() {
       <div className="hidden xl:block fixed right-0 top-0 h-full z-30 pointer-events-none">
 
         {/* Reading progress rail */}
-        <div className="absolute right-0 top-0 w-[3px] h-full bg-softblack/6 pointer-events-none">
+        <div className="absolute right-0 top-0 w-[3px] h-full bg-[#8d4f36]/20 pointer-events-none">
           <div
-            className="w-full bg-forest-dark/50 transition-all duration-200"
+            className="w-full bg-[#0b5c5c]/80 transition-all duration-200"
             style={{ height: `${readingProgress}%` }}
           />
         </div>
@@ -169,19 +169,19 @@ export function Sidebar() {
         <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-auto">
           {isExpanded ? (
             /* ── Expanded panel ── */
-            <div className="w-[256px] max-h-[82vh] bg-white/97 backdrop-blur-xl border border-softblack/10 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-y-auto">
+            <div className="w-[256px] max-h-[82vh] bg-[#f4ead8]/98 backdrop-blur-xl border border-[#8d4f36]/20 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-y-auto">
 
               {/* Panel header */}
-              <div className="sticky top-0 z-10 flex items-center justify-between px-4 py-3 bg-white/97 backdrop-blur-xl border-b border-softblack/[0.07]">
+              <div className="sticky top-0 z-10 flex items-center justify-between px-4 py-3 bg-[#f4ead8]/98 backdrop-blur-xl border-b border-[#8d4f36]/20">
                 <div className="flex items-center gap-2">
-                  <BookOpen className="w-3.5 h-3.5 text-softblack/40" strokeWidth={1.5} />
-                  <span className="text-[10px] font-body uppercase tracking-[0.15em] text-softblack/40">
+                  <BookOpen className="w-3.5 h-3.5 text-[#8d4f36]/80" strokeWidth={1.5} />
+                  <span className="text-[10px] font-body uppercase tracking-[0.15em] text-[#8d4f36]/80">
                     Contents
                   </span>
                 </div>
                 <button
                   onClick={() => setIsExpanded(false)}
-                  className="p-1 text-softblack/35 hover:text-softblack transition-colors"
+                  className="p-1 text-[#8d4f36]/80 hover:text-[#2b1b17] transition-colors"
                   aria-label="Collapse sidebar"
                 >
                   <X className="w-3.5 h-3.5" />
@@ -306,7 +306,7 @@ export function Sidebar() {
         {/* FAB with progress ring */}
         <button
           onClick={() => setIsMobileOpen(true)}
-          className="fixed bottom-6 right-6 z-30 w-12 h-12 bg-forest-dark text-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex items-center justify-center transition-transform hover:scale-105 active:scale-95"
+          className="fixed bottom-6 right-6 z-30 w-12 h-12 bg-[#2b1b17] text-[#f4ead8] rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex items-center justify-center transition-transform hover:scale-105 active:scale-95"
           aria-label="Open table of contents"
         >
           <BookOpen className="w-5 h-5 relative z-10" strokeWidth={1.5} />
@@ -319,7 +319,7 @@ export function Sidebar() {
             <circle cx="24" cy="24" r="20" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="2.5" />
             <circle
               cx="24" cy="24" r="20" fill="none"
-              stroke="rgba(255,255,255,0.75)" strokeWidth="2.5"
+              stroke="rgba(212,178,106,0.95)" strokeWidth="2.5"
               strokeDasharray={circumference}
               strokeDashoffset={circumference * (1 - readingProgress / 100)}
               strokeLinecap="round"
@@ -338,7 +338,7 @@ export function Sidebar() {
             />
 
             {/* Sheet */}
-            <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl max-h-[78vh] flex flex-col shadow-[0_-8px_40px_rgba(0,0,0,0.15)]">
+            <div className="absolute bottom-0 left-0 right-0 bg-[#f4ead8] rounded-t-2xl max-h-[78vh] flex flex-col shadow-[0_-8px_40px_rgba(0,0,0,0.15)]">
 
               {/* Drag handle */}
               <div className="flex justify-center pt-3 pb-1 shrink-0">
