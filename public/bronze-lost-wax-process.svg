@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Lost wax casting sequence</title>
+  <desc id="desc">Step-by-step lost wax casting diagram showing wax model creation, clay mold buildup, burnout, and bronze pouring.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1e2c0"/>
+      <stop offset="100%" stop-color="#c89156"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="84" y="102" fill="#3f281d" font-size="46" font-family="Georgia, serif">Lost-Wax Casting Sequence</text>
+  <text x="84" y="144" fill="#6b4b35" font-size="22" font-family="Arial, sans-serif">Each sculpture used one wax model and one clay mold before molten bronze filled the cavity.</text>
+
+  <rect x="84" y="214" width="286" height="520" rx="26" fill="#f8f2e8" stroke="#92623d" stroke-width="4"/>
+  <text x="124" y="264" fill="#6b3f27" font-size="28" font-family="Arial, sans-serif">
+    <tspan x="124" dy="0">1. Wax</tspan>
+    <tspan x="124" dy="30">Model</tspan>
+  </text>
+  <path d="M214 334 C192 374, 194 450, 230 480 C264 450, 266 374, 244 334 Z" fill="#d3a16a"/>
+  <circle cx="230" cy="298" r="28" fill="#d3a16a"/>
+  <text x="118" y="614" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="118" dy="0">The sculptor fixed the final</tspan>
+    <tspan x="118" dy="28">gesture and detail in wax.</tspan>
+  </text>
+
+  <rect x="404" y="214" width="286" height="520" rx="26" fill="#f8f2e8" stroke="#92623d" stroke-width="4"/>
+  <text x="444" y="264" fill="#6b3f27" font-size="28" font-family="Arial, sans-serif">
+    <tspan x="444" dy="0">2. Clay</tspan>
+    <tspan x="444" dy="30">Shell</tspan>
+  </text>
+  <path d="M534 332 C510 376, 514 452, 552 484 C588 452, 592 376, 568 332 Z" fill="#b68150"/>
+  <circle cx="552" cy="296" r="30" fill="#b68150"/>
+  <path d="M530 352 C504 400, 510 462, 552 500 C594 462, 600 400, 574 352" stroke="#7d5a41" stroke-width="14" fill="none"/>
+  <text x="438" y="600" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="438" dy="0">Layered clay captured</tspan>
+    <tspan x="438" dy="27">the surface while</tspan>
+    <tspan x="438" dy="27">strengthening the mold.</tspan>
+  </text>
+
+  <rect x="724" y="214" width="286" height="520" rx="26" fill="#f8f2e8" stroke="#92623d" stroke-width="4"/>
+  <text x="764" y="264" fill="#6b3f27" font-size="28" font-family="Arial, sans-serif">
+    <tspan x="764" dy="0">3. Burnout</tspan>
+  </text>
+  <path d="M854 340 C832 378, 834 446, 868 474 C900 446, 904 378, 882 340 Z" fill="#5a4638"/>
+  <circle cx="868" cy="302" r="28" fill="#5a4638"/>
+  <path d="M848 368 C836 324, 860 304, 868 272 C878 304, 900 328, 888 368 Z" fill="#ec8a27"/>
+  <text x="758" y="600" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="758" dy="0">Heat removed the wax</tspan>
+    <tspan x="758" dy="27">and left a precise</tspan>
+    <tspan x="758" dy="27">negative cavity inside.</tspan>
+  </text>
+
+  <rect x="1044" y="214" width="272" height="520" rx="26" fill="#f8f2e8" stroke="#92623d" stroke-width="4"/>
+  <text x="1082" y="264" fill="#6b3f27" font-size="28" font-family="Arial, sans-serif">
+    <tspan x="1082" dy="0">4. Bronze</tspan>
+    <tspan x="1082" dy="30">Pour</tspan>
+  </text>
+  <path d="M1118 336 L1214 336 L1200 382 L1132 382 Z" fill="#5e4a3d"/>
+  <path d="M1180 382 C1190 434, 1186 466, 1156 500" stroke="#d7862b" stroke-width="14" fill="none"/>
+  <path d="M1156 500 C1190 462, 1216 412, 1222 372" stroke="#d7862b" stroke-width="14" fill="none"/>
+  <circle cx="1224" cy="362" r="16" fill="#ffd17f"/>
+  <text x="1078" y="600" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="1078" dy="0">Molten alloy filled</tspan>
+    <tspan x="1078" dy="27">the mold, later broken</tspan>
+    <tspan x="1078" dy="27">for finishing.</tspan>
+  </text>
+
+  <path d="M370 458 L404 458" stroke="#8c643f" stroke-width="7" stroke-linecap="round"/>
+  <path d="M690 458 L724 458" stroke="#8c643f" stroke-width="7" stroke-linecap="round"/>
+  <path d="M1010 458 L1044 458" stroke="#8c643f" stroke-width="7" stroke-linecap="round"/>
+</svg>

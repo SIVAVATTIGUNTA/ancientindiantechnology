@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Wootz blade pattern and microstructure</title>
+  <desc id="desc">Stylized comparison of watered blade surface and the carbide bands that make the pattern possible.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#efe3c5"/>
+      <stop offset="100%" stop-color="#ceb389"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="84" y="102" fill="#3f281d" font-size="46" font-family="Georgia, serif">Watered Pattern and Internal Structure</text>
+  <text x="84" y="144" fill="#6b4b35" font-size="22" font-family="Arial, sans-serif">The blade surface reflects composition, cooling history, and careful forging.</text>
+
+  <rect x="90" y="210" width="560" height="540" rx="26" fill="#f9f3e6" stroke="#9a6a41" stroke-width="4"/>
+  <text x="128" y="270" fill="#6b3f27" font-size="32" font-family="Arial, sans-serif">Blade Surface</text>
+  <g transform="translate(0,-76)">
+    <path d="M172 470 C238 414, 304 414, 374 470 C430 514, 500 518, 572 468" stroke="#7a6342" stroke-width="16" fill="none"/>
+    <path d="M162 564 C236 502, 324 502, 398 564 C452 606, 520 608, 584 566" stroke="#7a6342" stroke-width="16" fill="none"/>
+    <path d="M168 654 C252 580, 344 592, 420 656 C470 700, 530 694, 584 660" stroke="#7a6342" stroke-width="16" fill="none"/>
+    <path d="M172 424 C246 370, 340 374, 420 434 C464 466, 514 466, 578 434" stroke="#b89967" stroke-width="9" fill="none"/>
+    <path d="M166 520 C238 468, 322 468, 398 528 C442 560, 514 558, 584 528" stroke="#b89967" stroke-width="9" fill="none"/>
+    <path d="M170 612 C244 556, 334 558, 418 622 C456 654, 520 654, 584 620" stroke="#b89967" stroke-width="9" fill="none"/>
+  </g>
+  <text x="128" y="660" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="128" dy="0">Visible waves are not decoration alone.</tspan>
+    <tspan x="128" dy="26">They record how the ingot was cooled,</tspan>
+    <tspan x="128" dy="26">forged, and finally finished by the smith.</tspan>
+  </text>
+
+  <rect x="746" y="210" width="564" height="540" rx="26" fill="#f9f3e6" stroke="#9a6a41" stroke-width="4"/>
+  <text x="784" y="270" fill="#6b3f27" font-size="32" font-family="Arial, sans-serif">Internal Pattern Logic</text>
+  <rect x="816" y="334" width="330" height="228" rx="22" fill="#d6d6d6" stroke="#757575" stroke-width="4"/>
+  <path d="M840 362 C872 380, 916 380, 958 360 C1000 342, 1054 344, 1124 374" stroke="#8d8d8d" stroke-width="10" fill="none"/>
+  <path d="M840 430 C884 456, 924 456, 970 430 C1012 406, 1064 406, 1124 440" stroke="#8d8d8d" stroke-width="10" fill="none"/>
+  <path d="M840 498 C884 526, 930 528, 976 500 C1018 474, 1066 474, 1124 508" stroke="#8d8d8d" stroke-width="10" fill="none"/>
+  <circle cx="900" cy="364" r="14" fill="#4a4a4a"/>
+  <circle cx="994" cy="430" r="14" fill="#4a4a4a"/>
+  <circle cx="1080" cy="498" r="14" fill="#4a4a4a"/>
+  <rect x="1166" y="334" width="112" height="228" rx="20" fill="#efe3c5"/>
+  <text x="1186" y="378" fill="#3d2b1f" font-size="17" font-family="Arial, sans-serif">
+    <tspan x="1186" dy="0">Dark points:</tspan>
+    <tspan x="1186" dy="24">carbide-rich</tspan>
+    <tspan x="1186" dy="24">zones</tspan>
+    <tspan x="1186" dy="42">Light field:</tspan>
+    <tspan x="1186" dy="24">matrix that</tspan>
+    <tspan x="1186" dy="24">surrounds</tspan>
+    <tspan x="1186" dy="24">the bands</tspan>
+  </text>
+  <text x="784" y="640" fill="#3d2b1f" font-size="20" font-family="Arial, sans-serif">
+    <tspan x="784" dy="0">Pattern quality depends on heat discipline and on the</tspan>
+    <tspan x="784" dy="28">smith's ability to preserve banding rather than overwork</tspan>
+    <tspan x="784" dy="28">the ingot during forging.</tspan>
+  </text>
+</svg>

@@ -1,0 +1,41 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F5E8D2"/>
+  <rect x="48" y="48" width="1304" height="804" rx="34" fill="#FFF8EE" stroke="#C89B61" stroke-width="4"/>
+  <text x="92" y="138" fill="#2B1B17" font-family="Georgia, serif" font-size="56">Indus Drainage Network</text>
+  <text x="92" y="188" fill="#7A4A32" font-family="Arial, sans-serif" font-size="24">Harappan sanitation worked as a layered system: house, lane, covered street drain, and outlet.</text>
+
+  <rect x="108" y="270" width="240" height="210" rx="24" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+  <rect x="430" y="270" width="240" height="210" rx="24" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+  <rect x="752" y="270" width="240" height="210" rx="24" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+  <rect x="1074" y="270" width="240" height="210" rx="24" fill="#2B1B17"/>
+
+  <text x="152" y="336" fill="#2B1B17" font-family="Arial, sans-serif" font-size="28" font-weight="700">House bath</text>
+  <text x="152" y="378" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">Bathing floor with</text>
+  <text x="152" y="406" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">a short outlet drain.</text>
+
+  <text x="468" y="336" fill="#2B1B17" font-family="Arial, sans-serif" font-size="28" font-weight="700">Lane drain</text>
+  <text x="468" y="378" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">Collects runoff</text>
+  <text x="468" y="406" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">from nearby homes.</text>
+
+  <text x="786" y="326" fill="#2B1B17" font-family="Arial, sans-serif" font-size="26" font-weight="700">Covered street</text>
+  <text x="786" y="358" fill="#2B1B17" font-family="Arial, sans-serif" font-size="26" font-weight="700">drain</text>
+  <text x="786" y="400" fill="#7A4A32" font-family="Arial, sans-serif" font-size="19">Covered channel, slope,</text>
+  <text x="786" y="427" fill="#7A4A32" font-family="Arial, sans-serif" font-size="19">and cleaning access.</text>
+
+  <text x="1114" y="336" fill="#F5E8D2" font-family="Arial, sans-serif" font-size="28" font-weight="700">Outfall zone</text>
+  <text x="1114" y="378" fill="#D9B46F" font-family="Arial, sans-serif" font-size="22">Wastewater leaves</text>
+  <text x="1114" y="408" fill="#D9B46F" font-family="Arial, sans-serif" font-size="22">living streets.</text>
+
+  <path d="M350 376H416" stroke="#B78852" stroke-width="10" stroke-linecap="round"/>
+  <path d="M672 376H738" stroke="#B78852" stroke-width="10" stroke-linecap="round"/>
+  <path d="M994 376H1060" stroke="#B78852" stroke-width="10" stroke-linecap="round"/>
+  <path d="M396 350L430 376L396 402" fill="#B78852"/>
+  <path d="M718 350L752 376L718 402" fill="#B78852"/>
+  <path d="M1040 350L1074 376L1040 402" fill="#B78852"/>
+
+  <rect x="108" y="570" width="1206" height="182" rx="26" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+  <text x="146" y="630" fill="#2B1B17" font-family="Georgia, serif" font-size="38">Why this system stands out</text>
+  <text x="146" y="676" fill="#7A4A32" font-family="Arial, sans-serif" font-size="23">It is distributed and maintainable. Instead of one heroic sewer,</text>
+  <text x="146" y="708" fill="#7A4A32" font-family="Arial, sans-serif" font-size="23">the city used short, repairable runs joined by standard brickwork</text>
+  <text x="146" y="740" fill="#7A4A32" font-family="Arial, sans-serif" font-size="23">and accessible covers, which still feels practical to planners today.</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Zinc distillation at Zawar</title>
+  <desc id="desc">Diagram of the retort-based zinc distillation process used to condense zinc vapor into metallic zinc.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b1b17"/>
+      <stop offset="100%" stop-color="#714a33"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="84" y="102" fill="#f7efdf" font-size="46" font-family="Georgia, serif">Zawar Zinc Distillation</text>
+  <text x="84" y="144" fill="#e1c69f" font-size="22" font-family="Arial, sans-serif">Ancient engineers solved zinc's vapor problem with enclosed ceramic retorts and controlled condensation.</text>
+
+  <rect x="86" y="210" width="1228" height="570" rx="30" fill="#f8f1e3" fill-opacity="0.96"/>
+  <text x="130" y="276" fill="#6b3f27" font-size="32" font-family="Arial, sans-serif">Retort Logic</text>
+
+  <rect x="150" y="318" width="320" height="230" rx="28" fill="#6b4a39"/>
+  <rect x="198" y="370" width="224" height="114" rx="24" fill="#bb8b4f"/>
+  <circle cx="252" cy="427" r="18" fill="#e6cf9f"/>
+  <circle cx="310" cy="427" r="18" fill="#d2b07b"/>
+  <circle cx="368" cy="427" r="18" fill="#e6cf9f"/>
+  <text x="182" y="640" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="182" dy="0">Roasted ore and reducing</tspan>
+    <tspan x="182" dy="27">charge were packed into</tspan>
+    <tspan x="182" dy="27">ceramic retorts.</tspan>
+  </text>
+
+  <path d="M470 456 L646 456" stroke="#d1a35f" stroke-width="8" stroke-linecap="round"/>
+  <polygon points="646,456 612,436 612,476" fill="#d1a35f"/>
+
+  <rect x="674" y="302" width="248" height="250" rx="28" fill="#5b4031"/>
+  <rect x="742" y="360" width="112" height="126" rx="24" fill="#7b5a46" stroke="#d0b27d" stroke-width="6"/>
+  <path d="M780 342 C770 302, 794 276, 804 246 C818 280, 846 310, 834 342 Z" fill="#eb8e29"/>
+  <path d="M794 352 C788 328, 800 310, 806 292 C816 310, 828 328, 822 352 Z" fill="#ffd27b"/>
+  <text x="680" y="640" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="680" dy="0">Heating converted zinc</tspan>
+    <tspan x="680" dy="27">compounds to vapor inside</tspan>
+    <tspan x="680" dy="27">a sealed pathway.</tspan>
+  </text>
+
+  <path d="M922 456 L1092 456" stroke="#d1a35f" stroke-width="8" stroke-linecap="round"/>
+  <polygon points="1092,456 1058,436 1058,476" fill="#d1a35f"/>
+
+  <rect x="1110" y="334" width="102" height="218" rx="30" fill="#9d7560"/>
+  <rect x="1138" y="360" width="46" height="104" rx="16" fill="#d8dadd"/>
+  <circle cx="1161" cy="496" r="22" fill="#d8dadd"/>
+  <text x="1008" y="640" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="1008" dy="0">A cooler end condensed</tspan>
+    <tspan x="1008" dy="27">vapor into recoverable</tspan>
+    <tspan x="1008" dy="27">metallic zinc.</tspan>
+  </text>
+
+  <rect x="230" y="286" width="118" height="36" rx="18" fill="#e4d0ab"/>
+  <text x="250" y="310" fill="#3d2b1f" font-size="17" font-family="Arial, sans-serif">ore charge</text>
+  <rect x="760" y="236" width="120" height="38" rx="18" fill="#e4d0ab"/>
+  <text x="786" y="261" fill="#3d2b1f" font-size="18" font-family="Arial, sans-serif">furnace heat</text>
+  <rect x="1092" y="292" width="140" height="38" rx="18" fill="#e4d0ab"/>
+  <text x="1116" y="317" fill="#3d2b1f" font-size="18" font-family="Arial, sans-serif">cooling zone</text>
+</svg>

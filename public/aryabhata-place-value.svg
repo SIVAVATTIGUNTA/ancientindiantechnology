@@ -1,0 +1,51 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F7EEDC"/>
+  <rect x="48" y="48" width="1304" height="804" rx="34" fill="#FFF9EE" stroke="#C69A61" stroke-width="4"/>
+  <text x="92" y="138" fill="#2B1B17" font-family="Georgia, serif" font-size="56">Place Value and the Zero Tradition</text>
+  <text x="92" y="188" fill="#7A4A32" font-family="Arial, sans-serif" font-size="24">Aryabhata used positional thinking in astronomy; later Indian mathematics formalized zero arithmetic.</text>
+
+  <rect x="92" y="252" width="848" height="380" rx="24" fill="#F3E4C4" stroke="#C69A61" stroke-width="3"/>
+  <text x="122" y="304" fill="#7A4A32" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">PLACE VALUE EXAMPLE</text>
+  <g font-family="Arial, sans-serif" fill="#2B1B17">
+    <rect x="126" y="342" width="180" height="238" rx="18" fill="#FFF9EE" stroke="#B78852" stroke-width="3"/>
+    <rect x="322" y="342" width="180" height="238" rx="18" fill="#FFF9EE" stroke="#B78852" stroke-width="3"/>
+    <rect x="518" y="342" width="180" height="238" rx="18" fill="#FFF9EE" stroke="#B78852" stroke-width="3"/>
+    <rect x="714" y="342" width="180" height="238" rx="18" fill="#FFF9EE" stroke="#B78852" stroke-width="3"/>
+
+    <text x="162" y="390" font-size="26">1000s</text>
+    <text x="370" y="390" font-size="26">100s</text>
+    <text x="577" y="390" font-size="26">10s</text>
+    <text x="785" y="390" font-size="26">1s</text>
+
+    <text x="200" y="515" font-size="112" font-weight="700">2</text>
+    <text x="392" y="515" font-size="112" font-weight="700">0</text>
+    <text x="592" y="515" font-size="112" font-weight="700">5</text>
+    <text x="788" y="515" font-size="112" font-weight="700">6</text>
+
+    <text x="142" y="555" font-size="20" fill="#7A4A32">2000</text>
+    <text x="352" y="546" font-size="16" fill="#7A4A32">placeholder keeps</text>
+    <text x="352" y="570" font-size="16" fill="#7A4A32">digits in place</text>
+    <text x="556" y="555" font-size="20" fill="#7A4A32">50</text>
+    <text x="790" y="555" font-size="20" fill="#7A4A32">6</text>
+  </g>
+
+  <rect x="972" y="252" width="336" height="380" rx="24" fill="#2B1B17"/>
+  <text x="1002" y="304" fill="#F7EEDC" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">WHY IT MATTERS</text>
+  <text x="1002" y="360" fill="#F7EEDC" font-family="Georgia, serif" font-size="34">Astronomy needs</text>
+  <text x="1002" y="402" fill="#F7EEDC" font-family="Georgia, serif" font-size="34">large cycles,</text>
+  <text x="1002" y="444" fill="#F7EEDC" font-family="Georgia, serif" font-size="34">tables, and</text>
+  <text x="1002" y="486" fill="#F7EEDC" font-family="Georgia, serif" font-size="34">repeatable steps.</text>
+  <text x="1002" y="548" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">Positional notation makes</text>
+  <text x="1002" y="576" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">calculation compact,</text>
+  <text x="1002" y="604" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">checkable, and teachable.</text>
+
+  <rect x="92" y="684" width="1216" height="112" rx="24" fill="#F3E4C4" stroke="#C69A61" stroke-width="3"/>
+  <circle cx="162" cy="740" r="18" fill="#B78852"/>
+  <circle cx="706" cy="740" r="18" fill="#B78852"/>
+  <text x="198" y="727" fill="#2B1B17" font-family="Arial, sans-serif" font-size="24" font-weight="700">499 CE</text>
+  <text x="198" y="754" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">Aryabhata: positional methods,</text>
+  <text x="198" y="780" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">trigonometry, eclipse astronomy.</text>
+  <text x="742" y="727" fill="#2B1B17" font-family="Arial, sans-serif" font-size="24" font-weight="700">628 CE</text>
+  <text x="742" y="754" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">Brahmagupta: explicit zero rules</text>
+  <text x="742" y="780" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">and negative number arithmetic.</text>
+</svg>

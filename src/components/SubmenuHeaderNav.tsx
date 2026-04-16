@@ -9,10 +9,14 @@ export function SubmenuHeaderNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
 
-  const toHref = (label: string): string => {
+  const toHref = (label: string, href?: string): string => {
     if (label.toLowerCase() === 'home') return '/';
+    if (href?.startsWith('/')) return href;
     return topicPathFromLabel(label);
   };
+
+  const getDescription = (description?: string) =>
+    description?.trim() || 'Explore this topic in depth with focused content, visuals, and references.';
 
   return (
     <>
@@ -35,7 +39,7 @@ export function SubmenuHeaderNav() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
-                  to={toHref(link.label)}
+                  to={toHref(link.label, link.href)}
                   className={`rounded-lg px-3.5 py-2.5 leading-none transition-all duration-200 ${
                     activeDropdown === link.label
                       ? 'bg-[#d4b26a]/28 text-[#2b1b17]'
@@ -45,8 +49,12 @@ export function SubmenuHeaderNav() {
                   {link.label}
                 </Link>
                 {activeDropdown === link.label && link.columns && (
-                  <div className="absolute right-0 top-full mt-2.5 w-[460px] rounded-2xl border border-[#2b1b17]/12 bg-[#f4ead8] p-4 shadow-[0_20px_45px_rgba(15,10,8,0.18)] animate-in fade-in slide-in-from-top-1 duration-200">
-                    <div className="grid grid-cols-2 gap-2.5">
+                  <div
+                    className={`absolute right-0 top-full mt-2.5 rounded-2xl border border-[#2b1b17]/12 bg-[#f4ead8] p-4 shadow-[0_20px_45px_rgba(15,10,8,0.18)] animate-in fade-in slide-in-from-top-1 duration-200 ${
+                      link.columns.length > 1 ? 'w-[460px]' : 'w-[300px]'
+                    }`}
+                  >
+                    <div className={`grid gap-2.5 ${link.columns.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
                       {link.columns.flat().map((item) => (
                         <Link
                           key={item.label}
@@ -54,7 +62,9 @@ export function SubmenuHeaderNav() {
                           className="rounded-xl px-3 py-2.5 hover:bg-[#2b1b17]/8 transition-colors duration-200"
                         >
                           <p className="text-[#2b1b17] text-sm font-sans font-semibold leading-tight">{item.label}</p>
-                          <p className="mt-1.5 text-xs text-[#2b1b17]/72 font-body leading-relaxed">{item.description}</p>
+                          <p className="mt-1.5 text-xs text-[#2b1b17]/85 font-body leading-relaxed min-h-[32px]">
+                            {getDescription(item.description)}
+                          </p>
                         </Link>
                       ))}
                     </div>
@@ -85,7 +95,7 @@ export function SubmenuHeaderNav() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-          <div className="absolute top-0 right-0 w-[88%] max-w-[340px] h-full bg-[#2b1b17] border-l border-[#d4b26a]/30 flex flex-col shadow-[-14px_0_40px_rgba(0,0,0,0.45)]">
+          <div className="absolute top-0 right-0 w-[92%] max-w-[420px] h-full bg-[#2b1b17] border-l border-[#d4b26a]/30 flex flex-col shadow-[-14px_0_40px_rgba(0,0,0,0.45)]">
             <div className="flex items-center justify-between px-6 py-5 border-b border-[#d4b26a]/30 shrink-0">
               <div className="h-12 w-12 rounded-full border border-[#d4b26a]/60 p-1">
                 <img src="/logo_ait.jpeg" alt="AIT logo" className="h-full w-full rounded-full object-cover object-center" />
@@ -109,7 +119,7 @@ export function SubmenuHeaderNav() {
                   <div key={link.label} className="border-b border-[#d4b26a]/25">
                     <div className="flex items-stretch">
                       <Link
-                        to={toHref(link.label)}
+                        to={toHref(link.label, link.href)}
                         onClick={() => setMobileMenuOpen(false)}
                         className="flex-1 px-6 py-4 hover:bg-[#f4ead8]/10 transition-colors duration-200"
                       >
@@ -121,8 +131,9 @@ export function SubmenuHeaderNav() {
                       {hasDropdown && (
                         <button
                           onClick={() => setMobileExpanded(isExpanded ? null : link.label)}
-                          className="px-4 text-[#f4ead8]/50 hover:text-[#f4ead8] hover:bg-[#f4ead8]/10 transition-colors duration-200 shrink-0"
+                          className="px-4 text-[#f4ead8]/70 hover:text-[#f4ead8] hover:bg-[#f4ead8]/10 transition-colors duration-200 shrink-0"
                           aria-label={isExpanded ? 'Collapse' : 'Expand'}
+                          aria-expanded={isExpanded}
                         >
                           <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
                         </button>
@@ -130,18 +141,20 @@ export function SubmenuHeaderNav() {
                     </div>
 
                     {isExpanded && link.columns && (
-                      <div className="bg-[#3a231a]/90 border-t border-[#d4b26a]/25">
+                      <div className="bg-[#3a231a] border-t border-[#d4b26a]/25">
                         {link.columns.flat().map((item) => (
                           <Link
                             key={item.label}
                             to={topicPathFromLabel(item.label)}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="flex items-start gap-3 px-6 py-3 border-b border-[#d4b26a]/20 hover:bg-[#f4ead8]/8 transition-colors duration-150"
+                            className="flex items-start gap-3 px-6 py-3.5 border-b border-[#d4b26a]/20 text-[#f4ead8] hover:bg-[#f4ead8]/10 transition-colors duration-150"
                           >
                             <span className="shrink-0 w-1 h-1 rounded-full bg-[#d4b26a]/70 mt-2" />
                             <span>
-                              <span className="block text-[#f4ead8]/80 font-body text-[13px] leading-snug">{item.label}</span>
-                              <span className="block text-[#f4ead8]/55 font-body text-[11px] mt-0.5 leading-relaxed">{item.description}</span>
+                              <span className="block font-body text-[13px] font-semibold leading-snug" style={{ color: 'rgba(244, 234, 216, 0.92)' }}>{item.label}</span>
+                              <span className="block font-body text-[11px] mt-1 leading-relaxed" style={{ color: 'rgba(244, 234, 216, 0.78)' }}>
+                                {getDescription(item.description)}
+                              </span>
                             </span>
                           </Link>
                         ))}

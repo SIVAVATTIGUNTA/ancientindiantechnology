@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Wootz crucible steel process</title>
+  <desc id="desc">Diagram showing ore and carbon charged into sealed crucibles, heated in a furnace, then cooled into ingots for blade forging.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c120f"/>
+      <stop offset="100%" stop-color="#5d3627"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0c27c"/>
+      <stop offset="100%" stop-color="#b87b34"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="84" y="102" fill="#f7efdf" font-size="46" font-family="Georgia, serif">Wootz Steel: Sealed Crucible Route</text>
+  <text x="84" y="144" fill="#dfc7a0" font-size="22" font-family="Arial, sans-serif">Ore selection, carbon charging, furnace control, slow cooling, and ingot forging.</text>
+
+  <rect x="84" y="196" width="272" height="500" rx="30" fill="#f7efdf" fill-opacity="0.96"/>
+  <text x="120" y="244" fill="#6b3f27" font-size="24" font-family="Arial, sans-serif">
+    <tspan x="120" dy="0">1. Charge the</tspan>
+    <tspan x="120" dy="28">Crucible</tspan>
+  </text>
+  <circle cx="158" cy="336" r="50" fill="#894f33"/>
+  <circle cx="244" cy="336" r="38" fill="#d0b27d"/>
+  <circle cx="168" cy="418" r="30" fill="#3d2e26"/>
+  <rect x="112" y="486" width="210" height="136" rx="22" fill="#e4d0ab"/>
+  <text x="130" y="528" fill="#3b251c" font-size="18" font-family="Arial, sans-serif">
+    <tspan x="130" dy="0">Iron bloom, ore, and</tspan>
+    <tspan x="130" dy="26">carbon-rich matter were</tspan>
+    <tspan x="130" dy="26">sealed together inside</tspan>
+    <tspan x="130" dy="26">a clay crucible.</tspan>
+  </text>
+
+  <rect x="404" y="196" width="272" height="500" rx="30" fill="#f7efdf" fill-opacity="0.96"/>
+  <text x="440" y="244" fill="#6b3f27" font-size="24" font-family="Arial, sans-serif">
+    <tspan x="440" dy="0">2. Fire the</tspan>
+    <tspan x="440" dy="28">Furnace</tspan>
+  </text>
+  <rect x="486" y="316" width="110" height="176" rx="22" fill="#2a1c18" stroke="#9d6a42" stroke-width="10"/>
+  <ellipse cx="542" cy="494" rx="74" ry="34" fill="#9d6a42"/>
+  <path d="M510 348 C500 296, 530 274, 542 244 C556 278, 586 304, 576 348 Z" fill="#e98b2a"/>
+  <path d="M528 360 C520 328, 538 310, 544 290 C554 312, 568 330, 562 360 Z" fill="#ffd17f"/>
+  <text x="438" y="552" fill="#3b251c" font-size="18" font-family="Arial, sans-serif">
+    <tspan x="438" dy="0">Restricted oxygen and</tspan>
+    <tspan x="438" dy="26">steady heat let carbon</tspan>
+    <tspan x="438" dy="26">diffuse deep into</tspan>
+    <tspan x="438" dy="26">the metal charge.</tspan>
+  </text>
+
+  <rect x="724" y="196" width="272" height="500" rx="30" fill="#f7efdf" fill-opacity="0.96"/>
+  <text x="760" y="244" fill="#6b3f27" font-size="24" font-family="Arial, sans-serif">
+    <tspan x="760" dy="0">3. Cool into</tspan>
+    <tspan x="760" dy="28">Ingots</tspan>
+  </text>
+  <rect x="806" y="308" width="112" height="198" rx="28" fill="#6a4935" stroke="#cfb287" stroke-width="8"/>
+  <rect x="822" y="344" width="80" height="124" rx="18" fill="#cfd3d7"/>
+  <path d="M830 358 C852 342, 874 342, 894 358" stroke="#8e969d" stroke-width="5" fill="none"/>
+  <path d="M830 404 C852 388, 874 388, 894 404" stroke="#8e969d" stroke-width="5" fill="none"/>
+  <path d="M830 450 C852 434, 874 434, 894 450" stroke="#8e969d" stroke-width="5" fill="none"/>
+  <text x="758" y="552" fill="#3b251c" font-size="18" font-family="Arial, sans-serif">
+    <tspan x="758" dy="0">Slow cooling preserved</tspan>
+    <tspan x="758" dy="26">carbide-rich structures</tspan>
+    <tspan x="758" dy="26">that later shaped the</tspan>
+    <tspan x="758" dy="26">watered blade pattern.</tspan>
+  </text>
+
+  <rect x="1044" y="196" width="272" height="500" rx="30" fill="#f7efdf" fill-opacity="0.96"/>
+  <text x="1080" y="244" fill="#6b3f27" font-size="24" font-family="Arial, sans-serif">
+    <tspan x="1080" dy="0">4. Forge the</tspan>
+    <tspan x="1080" dy="28">Blade</tspan>
+  </text>
+  <path d="M1138 344 L1224 300 L1268 344 L1182 388 Z" fill="url(#gold)"/>
+  <rect x="1106" y="398" width="118" height="30" rx="12" fill="#3f2b22"/>
+  <path d="M1136 312 C1156 324, 1184 326, 1204 314" stroke="#6d583b" stroke-width="5" fill="none"/>
+  <path d="M1126 334 C1148 348, 1178 350, 1212 334" stroke="#6d583b" stroke-width="5" fill="none"/>
+  <path d="M1118 356 C1144 372, 1176 374, 1220 350" stroke="#6d583b" stroke-width="5" fill="none"/>
+  <text x="1078" y="552" fill="#3b251c" font-size="18" font-family="Arial, sans-serif">
+    <tspan x="1078" dy="0">Careful forging kept</tspan>
+    <tspan x="1078" dy="26">the ingot intact while</tspan>
+    <tspan x="1078" dy="26">revealing the final</tspan>
+    <tspan x="1078" dy="26">blade pattern.</tspan>
+  </text>
+
+  <path d="M356 446 L404 446" stroke="#d8b066" stroke-width="8" stroke-linecap="round"/>
+  <path d="M676 446 L724 446" stroke="#d8b066" stroke-width="8" stroke-linecap="round"/>
+  <path d="M996 446 L1044 446" stroke="#d8b066" stroke-width="8" stroke-linecap="round"/>
+</svg>

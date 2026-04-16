@@ -1,141 +1,94 @@
-import { useMemo, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, PlayCircle } from 'lucide-react';
+import { useMemo } from 'react';
+import { AlertCircle, Loader2 } from 'lucide-react';
+import { YouTubeVideoGallery, type YouTubeGalleryVideo } from '../components/video/YouTubeVideoGallery';
+import { useYouTubeChannelVideos } from '@/hooks/useYouTubeChannelVideos';
 
-type VideoItem = {
-  title: string;
-  src: string;
-};
-
-const videos: VideoItem[] = [
+const fallbackVideos: YouTubeGalleryVideo[] = [
   {
-    title: 'Ancient Indian Technology - Featured Documentary I',
+    title: 'Ancient Indian Technology — Featured Documentary I',
     src: 'https://www.youtube.com/embed/Xhc-hT71AnA?si=ulBRclKafIvKwxXO',
   },
   {
-    title: 'Ancient Indian Technology - Featured Documentary II',
+    title: 'Ancient Indian Technology — Featured Documentary II',
     src: 'https://www.youtube.com/embed/HjRBdayDkk0?si=iUZCkzms44H4x9hw',
   },
   {
-    title: 'Ancient Indian Technology - Featured Documentary III',
+    title: 'Ancient Indian Technology — Featured Documentary III',
     src: 'https://www.youtube.com/embed/WZzK1sQoeHo?si=Q1Zf4KXtEzkZt44B',
   },
   {
-    title: 'Ancient Indian Technology - Featured Documentary IV',
+    title: 'Ancient Indian Technology — Featured Documentary IV',
     src: 'https://www.youtube.com/embed/GwUtRso7aNw?si=wxrUkvCRDGUnBhHk',
   },
   {
-    title: 'Ancient Indian Technology - Featured Documentary V',
+    title: 'Ancient Indian Technology — Featured Documentary V',
     src: 'https://www.youtube.com/embed/ixrQqNogOwc?si=HKuGzodkRdexBQ9B',
   },
 ];
 
 export function HomeVideoSlides() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const latestCount = Number(import.meta.env.VITE_YOUTUBE_HOMEPAGE_LIMIT ?? 6);
+  const { videos, loading, error } = useYouTubeChannelVideos({
+    fallbackVideos,
+    maxResults: latestCount,
+  });
 
-  const cardWidth = useMemo(() => {
-    if (typeof window === 'undefined') return 0;
-    if (window.innerWidth >= 1024) return 520;
-    if (window.innerWidth >= 768) return 460;
-    return 320;
-  }, []);
-
-  const updateActiveFromScroll = () => {
-    if (!scrollRef.current || !cardWidth) return;
-    const nextIndex = Math.round(scrollRef.current.scrollLeft / cardWidth);
-    setActiveIndex(Math.max(0, Math.min(videos.length - 1, nextIndex)));
-  };
-
-  const scrollToIndex = (index: number) => {
-    if (!scrollRef.current || !cardWidth) return;
-    scrollRef.current.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
-    setActiveIndex(index);
-  };
-
-  const handlePrev = () => scrollToIndex(Math.max(0, activeIndex - 1));
-  const handleNext = () => scrollToIndex(Math.min(videos.length - 1, activeIndex + 1));
+  const syncState = useMemo(() => {
+    if (loading) {
+      return {
+        icon: <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden />,
+        text: 'Loading latest channel videos...',
+      };
+    }
+    if (error) {
+      return {
+        icon: <AlertCircle className="h-3.5 w-3.5" aria-hidden />,
+        text: error,
+      };
+    }
+    if (videos.length === 0) {
+      return {
+        icon: <AlertCircle className="h-3.5 w-3.5" aria-hidden />,
+        text: 'No videos found on the channel yet.',
+      };
+    }
+    return null;
+  }, [loading, error, videos.length]);
 
   return (
-    <section id="home-video-slides" className="bg-[#2b1b17] text-[#f4ead8] py-16 md:py-20">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
-          <div>
-            <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-[#d4b26a]/90">
-              <PlayCircle className="h-3.5 w-3.5" />
-              Channel Highlights
-            </p>
-            <h2 className="mt-2 text-3xl md:text-4xl font-sans font-bold">
-              Ancient Indian Technology Documentary Series
-            </h2>
-            <p className="mt-3 text-[#f4ead8]/78 max-w-2xl">
-              Scroll through curated videos from the Ancient Indian Technology channel. Use arrows or horizontal swipe to navigate each slide.
-            </p>
-          </div>
+    <section id="videos" className="relative overflow-hidden bg-[#2b1b17] py-16 text-[#f4ead8] md:py-24" aria-labelledby="videos-heading">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#d4b26a]/45 to-transparent"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -right-24 top-1/4 h-[420px] w-[420px] rounded-full bg-[#d4b26a]/[0.06] blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute -left-32 bottom-0 h-[320px] w-[320px] rounded-full bg-[#0f6b5c]/[0.12] blur-3xl"
+        aria-hidden
+      />
 
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={handlePrev}
-              disabled={activeIndex === 0}
-              className="h-10 w-10 border border-[#d4b26a]/45 text-[#f4ead8] disabled:opacity-40 hover:bg-[#f4ead8]/10 transition-colors"
-              aria-label="Previous video"
-            >
-              <ChevronLeft className="h-4 w-4 mx-auto" />
-            </button>
-            <button
-              type="button"
-              onClick={handleNext}
-              disabled={activeIndex === videos.length - 1}
-              className="h-10 w-10 border border-[#d4b26a]/45 text-[#f4ead8] disabled:opacity-40 hover:bg-[#f4ead8]/10 transition-colors"
-              aria-label="Next video"
-            >
-              <ChevronRight className="h-4 w-4 mx-auto" />
-            </button>
-          </div>
-        </div>
-
-        <div
-          ref={scrollRef}
-          onScroll={updateActiveFromScroll}
-          className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-4"
-          style={{ scrollbarWidth: 'thin' }}
-        >
-          {videos.map((video) => (
-            <article
-              key={video.src}
-              className="snap-start shrink-0 w-[320px] md:w-[460px] lg:w-[520px] border border-[#d4b26a]/25 bg-[#3a231a]"
-            >
-              <div className="aspect-video bg-black">
-                <iframe
-                  width="560"
-                  height="315"
-                  src={video.src}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="h-full w-full border-0"
-                />
+      <div className="relative mx-auto max-w-7xl px-6 md:px-12">
+        <div className="rounded-2xl border border-[#f4ead8]/[0.06] bg-[#2b1b17]/40 p-1 shadow-[inset_0_1px_0_rgba(244,234,216,0.04)] md:rounded-3xl md:p-2">
+          <div className="rounded-[14px] bg-[#241812]/90 px-4 py-8 md:rounded-[22px] md:px-8 md:py-10">
+            {syncState && (
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d4b26a]/25 bg-[#2b1b17]/50 px-3 py-1.5 text-xs text-[#f4ead8]/80">
+                {syncState.icon}
+                <span>{syncState.text}</span>
               </div>
-              <div className="p-4">
-                <p className="text-sm font-semibold">{video.title}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <div className="mt-5 flex items-center justify-center gap-2">
-          {videos.map((video, index) => (
-            <button
-              key={video.src}
-              onClick={() => scrollToIndex(index)}
-              className={`h-2.5 transition-all ${
-                activeIndex === index ? 'w-9 bg-[#d4b26a]' : 'w-2.5 bg-[#f4ead8]/40 hover:bg-[#f4ead8]/70'
-              }`}
-              aria-label={`Go to video ${index + 1}`}
+            )}
+            <YouTubeVideoGallery
+              variant="dark"
+              titleId="videos-heading"
+              eyebrow="Channel highlights"
+              title="Ancient Indian Technology documentary series"
+              description="Latest uploads from the channel in a focused showcase. Tap a card to watch in the player; nothing loads until you choose."
+              videos={videos}
+              gridClassName="grid-flow-col auto-cols-[88%] gap-5 overflow-x-auto pb-2 pr-1 snap-x snap-mandatory sm:auto-cols-[48%] lg:auto-cols-[32%]"
             />
-          ))}
+          </div>
         </div>
       </div>
     </section>

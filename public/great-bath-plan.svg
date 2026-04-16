@@ -1,0 +1,28 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F4E7D0"/>
+  <rect x="48" y="48" width="1304" height="804" rx="34" fill="#FFF8EE" stroke="#C89B61" stroke-width="4"/>
+  <text x="92" y="138" fill="#2B1B17" font-family="Georgia, serif" font-size="56">Great Bath Plan and Section</text>
+  <text x="92" y="188" fill="#7A4A32" font-family="Arial, sans-serif" font-size="24">The structure is a system: tank, stairs, waterproofing, water supply, and drain.</text>
+
+  <rect x="110" y="254" width="620" height="500" rx="28" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+  <rect x="790" y="254" width="500" height="500" rx="28" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+
+  <text x="146" y="314" fill="#2B1B17" font-family="Arial, sans-serif" font-size="28" font-weight="700">Top view</text>
+  <rect x="188" y="360" width="466" height="286" rx="22" fill="#B78852"/>
+  <rect x="246" y="404" width="350" height="198" rx="18" fill="#7FB7CF"/>
+  <rect x="188" y="404" width="44" height="198" fill="#E8C98B"/>
+  <rect x="610" y="404" width="44" height="198" fill="#E8C98B"/>
+  <text x="276" y="674" fill="#7A4A32" font-family="Arial, sans-serif" font-size="22">Stairs at both ends guide entry and exit.</text>
+
+  <text x="826" y="314" fill="#2B1B17" font-family="Arial, sans-serif" font-size="28" font-weight="700">Section</text>
+  <path d="M862 640H1218" stroke="#B78852" stroke-width="16" stroke-linecap="round"/>
+  <path d="M904 638L974 462H1106L1176 638" fill="#7FB7CF"/>
+  <path d="M904 638L974 462H1106L1176 638" stroke="#B78852" stroke-width="12" stroke-linejoin="round"/>
+  <line x1="974" y1="462" x2="904" y2="638" stroke="#E8C98B" stroke-width="10"/>
+  <line x1="1106" y1="462" x2="1176" y2="638" stroke="#E8C98B" stroke-width="10"/>
+  <rect x="1188" y="378" width="54" height="178" rx="16" fill="#D9B46F"/>
+  <path d="M1176 548H1242" stroke="#2B1B17" stroke-width="6"/>
+  <text x="856" y="682" fill="#7A4A32" font-family="Arial, sans-serif" font-size="21">Brick tank lined with gypsum mortar</text>
+  <text x="856" y="712" fill="#7A4A32" font-family="Arial, sans-serif" font-size="21">and bitumen sealing.</text>
+  <text x="856" y="742" fill="#7A4A32" font-family="Arial, sans-serif" font-size="21">Well and drain show controlled emptying.</text>
+</svg>

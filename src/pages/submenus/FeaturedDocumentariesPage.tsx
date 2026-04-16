@@ -1,12 +1,40 @@
-import { useEffect } from 'react';
-import { PlayCircle, Flame, Film } from 'lucide-react';
+import { useEffect, useMemo } from 'react';
+import { AlertCircle, Flame, Film, Loader2, PlayCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Footer } from '../../sections/Footer';
 import { SubmenuHeaderNav } from '../../components/SubmenuHeaderNav';
 import { VideoCard } from '../../components/video/VideoCard';
 import { VideoRowCarousel } from '../../components/video/VideoRowCarousel';
+import { VideoTopicHighlights } from '../../components/video/VideoTopicHighlights';
+import { useYouTubeChannelVideos } from '@/hooks/useYouTubeChannelVideos';
 
 const CHANNEL_URL = 'https://www.youtube.com/@Ancientindiantechnology';
+
+const documentaryHighlights = [
+  {
+    label: 'Watch Path',
+    title: 'Start broad, then go technical',
+    text: 'Begin with overview documentaries, then move into metallurgy, astronomy, medicine, and urban planning so viewers understand both story and evidence.',
+  },
+  {
+    label: 'Research Lens',
+    title: 'Compare claims with sources',
+    text: 'Use each film as a conversation starter. Strong documentaries should separate archaeology, textual tradition, material analysis, and later interpretation.',
+  },
+  {
+    label: 'Learning Outcome',
+    title: 'Turn viewing into topic pages',
+    text: 'After a long-form video, guide visitors toward related subpages where diagrams, timelines, and page-specific explanations make the topic more usable.',
+  },
+];
+
+const documentaryTakeaways = [
+  'Best first stop for new visitors who want the whole Ancient Indian Technology theme.',
+  'Useful for classroom introductions before assigning focused pages like Wootz, Jantar Mantar, Ayurveda, or Lothal.',
+  'Long-form viewing should lead to evidence questions: what is excavated, what is textual, and what is reconstructed?',
+];
+
+const documentaryTerms = ['overview films', 'metallurgy stories', 'astronomy heritage', 'urban engineering', 'medical history', 'evidence-based viewing'];
 
 export function FeaturedDocumentariesPage() {
   useEffect(() => {
@@ -22,6 +50,23 @@ export function FeaturedDocumentariesPage() {
     { title: 'Urban Planning and Hydraulic Intelligence', query: 'indus valley drainage system documentary', category: 'documentary', duration: '15-25 min', reason: 'Infrastructure lens for urban pages', placement: 'carousel', src: 'https://www.youtube.com/embed?listType=search&list=indus%20valley%20drainage%20system%20documentary' },
     { title: 'Ayurveda: Texts, Practice, and Modern Relevance', query: 'ayurveda history documentary india', category: 'documentary', duration: '20-40 min', reason: 'Medical legacy playlist anchor', placement: 'carousel', src: 'https://www.youtube.com/embed?listType=search&list=ayurveda%20history%20documentary%20india' },
   ];
+  const { videos: latestVideos, loading, error } = useYouTubeChannelVideos({
+    fallbackVideos: docs.slice(0, 6).map((doc) => ({ title: doc.title, src: doc.src })),
+    maxResults: 9,
+  });
+  const docsFromChannel = useMemo(
+    () =>
+      latestVideos.map((video, index) => ({
+        title: video.title,
+        src: video.src,
+        category: 'documentary',
+        duration: 'Latest upload',
+        reason: 'Auto-synced from channel',
+        query: 'channel latest',
+        placement: index === 0 ? 'hero' : index < 4 ? 'featured' : 'grid',
+      })),
+    [latestVideos]
+  );
 
   return (
     <main className="min-h-screen bg-[#070d17] text-[#f4ead8]">
@@ -63,29 +108,33 @@ export function FeaturedDocumentariesPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-10">
+        {(loading || error || docsFromChannel.length === 0) && (
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#d4b26a]/25 bg-[#101a2f]/50 px-3 py-1.5 text-xs text-[#f4ead8]/80">
+            {loading ? <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden /> : <AlertCircle className="h-3.5 w-3.5" aria-hidden />}
+            <span>{loading ? 'Syncing latest videos...' : error || 'No videos found on the channel yet.'}</span>
+          </div>
+        )}
         <section>
           <div className="flex items-center gap-2 mb-4">
             <Flame className="h-5 w-5 text-[#d4b26a]" />
             <h2 className="text-2xl font-bold">Trending Now</h2>
           </div>
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-            {docs.slice(1).map((video) => (
+            {docsFromChannel.slice(1).map((video) => (
               <VideoCard key={video.title} item={video} />
             ))}
           </div>
         </section>
 
-        <VideoRowCarousel title="Category Rows" items={docs} />
+        <VideoRowCarousel title="Category Rows" items={docsFromChannel} />
 
-        <section className="border border-[#d4b26a]/22 bg-[#101a2f] p-5 text-sm">
-          <h3 className="text-lg font-semibold">Thumbnail Support</h3>
-          <p className="mt-2 text-[#f4ead8]/78">
-            AI thumbnail prompts: dramatic steel blade macro with wave patterns; moonlit observatory silhouette with instrument shadows; copper furnace sparks in dark workshop; manuscript and compass cinematic desk shot; wide ancient dockyard sunset with ships.
-          </p>
-          <p className="mt-2 text-[#f4ead8]/78">
-            Search keywords: ancient india documentary thumbnail, indian metallurgy documentary poster, jantar mantar cinematic still, ayurveda manuscript visual, indus valley engineering footage, harappan city reconstruction scene, damascus blade texture.
-          </p>
-        </section>
+        <VideoTopicHighlights
+          title="Documentary Watch Guide"
+          description="These videos work best as guided entry points. The goal is not passive viewing, but helping visitors connect visual stories to the site's deeper topic pages and evidence-based explanations."
+          highlights={documentaryHighlights}
+          takeaways={documentaryTakeaways}
+          terms={documentaryTerms}
+        />
       </section>
 
       <Footer />

@@ -1,0 +1,53 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F5E9D3"/>
+  <rect x="48" y="48" width="1304" height="804" rx="34" fill="#FFF8EE" stroke="#C69A61" stroke-width="4"/>
+  <text x="92" y="138" fill="#2B1B17" font-family="Georgia, serif" font-size="56">How a Siddhantic Calculation Works</text>
+  <text x="92" y="188" fill="#7A4A32" font-family="Arial, sans-serif" font-size="24">A siddhanta is a reusable pipeline: epoch, mean motion, correction, and output.</text>
+
+  <rect x="108" y="300" width="210" height="170" rx="22" fill="#2B1B17"/>
+  <rect x="370" y="300" width="210" height="170" rx="22" fill="#F3E4C4" stroke="#C69A61" stroke-width="3"/>
+  <rect x="632" y="300" width="210" height="170" rx="22" fill="#F3E4C4" stroke="#C69A61" stroke-width="3"/>
+  <rect x="894" y="300" width="210" height="170" rx="22" fill="#F3E4C4" stroke="#C69A61" stroke-width="3"/>
+  <rect x="1148" y="300" width="144" height="170" rx="22" fill="#F3E4C4" stroke="#C69A61" stroke-width="3"/>
+
+  <text x="152" y="360" fill="#F5E9D3" font-family="Arial, sans-serif" font-size="28" font-weight="700">1. Epoch</text>
+  <text x="138" y="404" fill="#F5E9D3" font-family="Arial, sans-serif" font-size="18">Start from a</text>
+  <text x="138" y="430" fill="#F5E9D3" font-family="Arial, sans-serif" font-size="18">known reference</text>
+  <text x="138" y="456" fill="#F5E9D3" font-family="Arial, sans-serif" font-size="18">date.</text>
+
+  <text x="402" y="354" fill="#2B1B17" font-family="Arial, sans-serif" font-size="25" font-weight="700">2. Mean</text>
+  <text x="402" y="386" fill="#2B1B17" font-family="Arial, sans-serif" font-size="25" font-weight="700">Motion</text>
+  <text x="402" y="418" fill="#7A4A32" font-family="Arial, sans-serif" font-size="18">Advance luminaries</text>
+  <text x="402" y="444" fill="#7A4A32" font-family="Arial, sans-serif" font-size="18">by tabulated rates.</text>
+
+  <text x="666" y="360" fill="#2B1B17" font-family="Arial, sans-serif" font-size="28" font-weight="700">3. Corrections</text>
+  <text x="666" y="404" fill="#7A4A32" font-family="Arial, sans-serif" font-size="19">Apply anomaly, node,</text>
+  <text x="666" y="431" fill="#7A4A32" font-family="Arial, sans-serif" font-size="19">latitude, and local</text>
+  <text x="666" y="458" fill="#7A4A32" font-family="Arial, sans-serif" font-size="19">rules.</text>
+
+  <text x="928" y="360" fill="#2B1B17" font-family="Arial, sans-serif" font-size="28" font-weight="700">4. Sine Table</text>
+  <text x="928" y="404" fill="#7A4A32" font-family="Arial, sans-serif" font-size="19">Use trig tables for</text>
+  <text x="928" y="431" fill="#7A4A32" font-family="Arial, sans-serif" font-size="19">angles, arcs,</text>
+  <text x="928" y="458" fill="#7A4A32" font-family="Arial, sans-serif" font-size="19">and shadows.</text>
+
+  <text x="1174" y="358" fill="#2B1B17" font-family="Arial, sans-serif" font-size="25" font-weight="700">5. Output</text>
+  <text x="1174" y="402" fill="#7A4A32" font-family="Arial, sans-serif" font-size="17">Planet</text>
+  <text x="1174" y="426" fill="#7A4A32" font-family="Arial, sans-serif" font-size="17">positions,</text>
+  <text x="1174" y="450" fill="#7A4A32" font-family="Arial, sans-serif" font-size="17">calendars,</text>
+  <text x="1174" y="474" fill="#7A4A32" font-family="Arial, sans-serif" font-size="17">eclipses.</text>
+
+  <path d="M320 385H362" stroke="#B78852" stroke-width="8" stroke-linecap="round"/>
+  <path d="M582 385H624" stroke="#B78852" stroke-width="8" stroke-linecap="round"/>
+  <path d="M844 385H886" stroke="#B78852" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1106 385H1140" stroke="#B78852" stroke-width="8" stroke-linecap="round"/>
+  <path d="M352 365L382 385L352 405" fill="#B78852"/>
+  <path d="M614 365L644 385L614 405" fill="#B78852"/>
+  <path d="M876 365L906 385L876 405" fill="#B78852"/>
+  <path d="M1130 365L1160 385L1130 405" fill="#B78852"/>
+
+  <rect x="108" y="560" width="1184" height="186" rx="28" fill="#F3E4C4" stroke="#C69A61" stroke-width="3"/>
+  <text x="144" y="624" fill="#2B1B17" font-family="Georgia, serif" font-size="38">Why the tradition matters</text>
+  <text x="144" y="672" fill="#7A4A32" font-family="Arial, sans-serif" font-size="23">The model can be reused with new dates, locations, and tables.</text>
+  <text x="144" y="704" fill="#7A4A32" font-family="Arial, sans-serif" font-size="23">That is why siddhantic astronomy belongs to algorithmic science,</text>
+  <text x="144" y="736" fill="#7A4A32" font-family="Arial, sans-serif" font-size="23">not only to sky myths or temple symbolism.</text>
+</svg>

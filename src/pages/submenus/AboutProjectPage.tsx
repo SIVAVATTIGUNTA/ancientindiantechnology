@@ -3,6 +3,7 @@ import { Footer } from '../../sections/Footer';
 import { SubmenuHeaderNav } from '../../components/SubmenuHeaderNav';
 import { ResourceHero } from '../../components/resources/ResourceHero';
 import { ResourceImageSupport } from '../../components/resources/ResourceImageSupport';
+import { ResourceRelatedSection } from '../../components/resources/ResourceRelatedSection';
 
 export function AboutProjectPage() {
   return (
@@ -10,10 +11,12 @@ export function AboutProjectPage() {
       <SubmenuHeaderNav />
 
       <ResourceHero
-        eyebrow='Resources · Project Documentation'
+        eyebrow='Resources - Project Documentation'
         title='About This Project'
         description='An academic-style platform preserving evidence-based narratives of ancient Indian technology through cross-disciplinary research.'
         searchPlaceholder='Search mission, editorial policy, contributors...'
+        heroImage='/hero-metallurgy.png'
+        heroImageAlt='Ancient Indian technology project documentation and research context'
       />
 
       <section className='max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-8'>
@@ -45,6 +48,34 @@ export function AboutProjectPage() {
           ))}
         </section>
 
+        <ResourceRelatedSection
+          title='How the Project Organizes Knowledge'
+          description='The platform is designed to make complex heritage topics readable without flattening the evidence. Each page should show what is known, what is debated, and how visitors can continue learning.'
+          cards={[
+            {
+              label: 'Content',
+              title: 'Evidence-backed pages',
+              body: 'Topic pages combine historical background, visual explanation, careful claims, and related media so readers can learn without chasing scattered notes.',
+            },
+            {
+              label: 'Review',
+              title: 'Correction-friendly workflow',
+              body: 'The project expects updates. Corrections, better sources, and improved images can be routed through the contribution desk.',
+            },
+            {
+              label: 'Audience',
+              title: 'Built for learners',
+              body: 'Students, teachers, and general readers should all find a clear path from overview to deeper research resources.',
+            },
+          ]}
+          checklist={[
+            'Understanding the purpose of the website.',
+            'Seeing how topic pages should be evaluated.',
+            'Learning where corrections and suggestions belong.',
+            'Explaining the project to collaborators or educators.',
+          ]}
+        />
+
         <section className='border border-[#8d4f36]/20 bg-white p-6'>
           <h3 className='text-xl font-semibold'>Future Goals</h3>
           <ul className='mt-3 grid md:grid-cols-2 gap-3 text-sm text-[#3a231a]/84'>
@@ -59,21 +90,21 @@ export function AboutProjectPage() {
           <article className='border border-[#8d4f36]/20 bg-white p-6'>
             <h3 className='text-lg font-semibold'>Educational Videos</h3>
             <ul className='mt-3 space-y-2 text-sm text-[#3a231a]/84'>
-              <li>• Title: Building Trustworthy Public History Platforms</li>
+              <li>- Title: Building Trustworthy Public History Platforms</li>
               <li>Search: <span className='text-[#8d4f36]'>public history digital project methodology</span></li>
               <li>Why: aligns with editorial and platform credibility goals.</li>
               <li>Placement: mid-page after editorial principles.</li>
             </ul>
             <div className='mt-3 aspect-video bg-black'>
-              <iframe src='https://www.youtube.com/embed?listType=search&list=public%20history%20digital%20project%20methodology' title='Project methodology video' className='h-full w-full' loading='lazy' referrerPolicy='strict-origin-when-cross-origin' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
+              <iframe data-skip-global-embed='true' src='https://www.youtube.com/embed?listType=search&list=public%20history%20digital%20project%20methodology' title='Project methodology video' className='h-full w-full' loading='lazy' referrerPolicy='strict-origin-when-cross-origin' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
             </div>
           </article>
           <article className='border border-[#8d4f36]/20 bg-white p-6'>
             <h3 className='text-lg font-semibold'>Additional Suggestions</h3>
             <ul className='mt-3 space-y-2 text-sm text-[#3a231a]/84'>
-              <li>• Editorial workflows for digital humanities projects</li>
+              <li>- Editorial workflows for digital humanities projects</li>
               <li>Search: <span className='text-[#8d4f36]'>digital humanities editorial workflow</span></li>
-              <li>• Research communication best practices</li>
+              <li>- Research communication best practices</li>
               <li>Search: <span className='text-[#8d4f36]'>research communication for public audience</span></li>
               <li>Placement: end.</li>
             </ul>
@@ -81,8 +112,11 @@ export function AboutProjectPage() {
         </section>
 
         <ResourceImageSupport
-          promptsText='AI prompts: clean editorial desk with manuscripts and laptop; academic team reviewing citations on board; university archive room with labeled shelves; research workflow cards on a minimal interface.'
-          keywordsText='Search keywords: digital humanities project team, academic editorial process, research archive workspace, manuscript review session, university documentation portal, scholarly collaboration.'
+          notes={[
+            'Use images that communicate research collaboration: review boards, archive desks, editorial notes, source packets, and project planning.',
+            'The visual tone should feel scholarly, calm, and transparent rather than promotional or overly cinematic.',
+          ]}
+          terms={['project mission', 'editorial workflow', 'research review', 'contributors', 'knowledge platform', 'public history']}
         />
       </section>
       <Footer />

@@ -138,6 +138,11 @@ export const heroConfig: HeroConfig = {
         ],
       ],
     },
+    {
+      label: "Contact",
+      subtitle: "संपर्क",
+      href: "/contact",
+    },
   ],
 };
 
@@ -277,7 +282,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       year: "Vedic Period",
       image: "/vimana.jpg",
       description: "Narratives around vimana concepts are explored through textual interpretation, comparative mythology, and modern digital reconstruction approaches.",
-      href: "/topic/3d-reconstructions",
+      href: "/topic/vimana-technology",
     },
     {
       id: 10,
@@ -286,7 +291,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       year: "Agastya Samhita",
       image: "/ancient-battery.jpg",
       description: "Electrochemical interpretations in traditional texts are presented with caution, comparing philology, material evidence, and modern scientific testing limits.",
-      href: "/topic/lecture-series",
+      href: "/topic/ancient-battery-technology",
     },
     {
       id: 11,
@@ -295,7 +300,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       year: "15th Century",
       image: "/musical-pillars.jpg",
       description: "Temple acoustics and resonant stone pillars reveal interplay between material geometry, sonic response, and ritual-performance architecture.",
-      href: "/topic/featured-documentaries",
+      href: "/topic/musical-pillars-of-hampi",
     },
     {
       id: 12,
@@ -304,7 +309,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       year: "Ancient Period",
       image: "/levitation.jpg",
       description: "Claims around levitation are treated as exploratory narratives, with focus on what is textually attested versus physically reproducible today.",
-      href: "/topic/research-papers",
+      href: "/topic/magnetic-levitation",
     },
   ],
 };
@@ -314,6 +319,8 @@ export interface ServiceItem {
   iconName: string;
   title: string;
   description: string;
+  /** Topic route for clickable slider cards */
+  href: string;
 }
 
 export interface ServicesConfig {
@@ -334,31 +341,37 @@ export const servicesConfig: ServicesConfig = {
       iconName: "Sparkles",
       title: "Metallurgy (धातु विज्ञान)",
       description: "Study Wootz steel, the Delhi Iron Pillar, zinc distillation, and lost-wax casting as case studies in advanced pre-modern materials engineering.",
+      href: "/topic/metallurgy",
     },
     {
       iconName: "Diamond",
       title: "Astronomy (खगोल शास्त्र)",
       description: "Trace Aryabhata, Siddhantic models, eclipse mathematics, and monumental observatories that translated celestial theory into precise instruments.",
+      href: "/topic/astronomy",
     },
     {
       iconName: "Users",
       title: "Urban Planning (नगर नियोजन)",
       description: "Examine drainage networks, stepwells, dockyard engineering, and spatial planning traditions that shaped resilient city design.",
+      href: "/topic/urban-planning",
     },
     {
       iconName: "Camera",
       title: "Medicine (आयुर्वेद)",
       description: "Explore Sushruta, Charaka, diagnostic frameworks, and therapeutic systems that formed one of history's longest medical knowledge traditions.",
+      href: "/topic/medicine",
     },
     {
       iconName: "Zap",
       title: "Engineering Imagination",
       description: "Review acoustic engineering, instrument architecture, and debated high-concept technologies through a careful evidence-plus-interpretation lens.",
+      href: "/topic/3d-reconstructions",
     },
     {
       iconName: "BookOpen",
       title: "Research & Resources",
       description: "Use curated papers, bibliographies, documentaries, and external archives to move from interest to credible, referenced understanding.",
+      href: "/topic/resources",
     },
   ],
 };
@@ -463,6 +476,27 @@ export const testimonialsConfig: TestimonialsConfig = {
       image: "/testimonial-3.jpg",
       quote: "The section on ancient Indian metallurgy is exceptional. It accurately portrays how Indian craftsmen created materials that were centuries ahead of their time, from wootz steel to corrosion-resistant iron.",
     },
+    {
+      id: 4,
+      name: "Dr. Meera Kulkarni",
+      role: "Historian of Science",
+      image: "/testimonial-1.jpg",
+      quote: "What stands out here is the balance between cultural pride and research discipline. The platform makes ancient Indian knowledge approachable without losing the seriousness that scholarly topics deserve.",
+    },
+    {
+      id: 5,
+      name: "Prof. Vivek Rao",
+      role: "Architectural Heritage Researcher",
+      image: "/testimonial-2.jpg",
+      quote: "The coverage of observatories, temples, and urban systems is especially valuable. It helps readers see architecture not just as art, but as a carrier of mathematics, acoustics, and environmental intelligence.",
+    },
+    {
+      id: 6,
+      name: "Dr. Kavita Deshpande",
+      role: "Sanskrit and Knowledge Systems Scholar",
+      image: "/testimonial-3.jpg",
+      quote: "This project succeeds because it does more than list achievements. It gives learners a framework for reading texts, technologies, and traditions together in a way that feels both respectful and intellectually honest.",
+    },
   ],
 };
 
@@ -489,7 +523,7 @@ export const faqConfig: FAQConfig = {
   titleItalic: "Questions",
   ctaText: "Still have questions about ancient Indian technology?",
   ctaButtonText: "Contact Us",
-  ctaHref: "#contact",
+  ctaHref: "/contact",
   faqs: [
     {
       id: "faq-1",
@@ -607,8 +641,8 @@ export const footerConfig: FooterConfig = {
 
   connectLabel: "Connect",
   connectLinks: [
-    { label: "Contact Us",                href: "#contact" },
-    { label: "Contribute / Submit Research", href: "#contribute" },
+    { label: "Contact Us",                href: "/contact" },
+    { label: "Contribute / Submit Research", href: "/topic/contact-contribute" },
     { label: "Report an Error",           href: "#report" },
     { label: "Partner with Us",           href: "#partner" },
   ],

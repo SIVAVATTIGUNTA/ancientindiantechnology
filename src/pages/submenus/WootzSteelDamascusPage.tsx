@@ -69,10 +69,9 @@ export function WootzSteelDamascusPage() {
   ];
 
   const gallery = [
-    { src: '/wootz-blade.jpg', alt: 'Damascus blade pattern close-up' },
-    { src: '/hero-metallurgy.png', alt: 'Historic sword and metallurgical craft visual' },
-    { src: '/iron-pillar.jpg', alt: 'Indian metallurgical mastery and corrosion resistance' },
-    { src: '/bronze-casting.jpg', alt: 'Ancient furnace craftsmanship context' },
+    { src: '/wootz-blade.jpg', alt: 'Watered surface pattern on a Wootz-derived blade' },
+    { src: '/wootz-crucible-process.svg', alt: 'Diagram of the sealed crucible route used to produce Wootz ingots' },
+    { src: '/wootz-pattern-map.svg', alt: 'Visual explanation of banding and pattern formation in Wootz steel' },
   ];
 
   const scrollGallery = (direction: 'left' | 'right') => {
@@ -124,9 +123,9 @@ export function WootzSteelDamascusPage() {
             watered patterns and exceptional sharpness.
           </p>
           <p className='mt-3 text-[#3a231a]/82 leading-relaxed'>
-            Historical and metallurgical studies point to a deeply skilled production culture: ore and carbon-bearing inputs were
-            sealed in crucibles, heated under controlled conditions, then cooled carefully to preserve internal structures that later
-            expressed as distinctive blade patterns.
+            Historical and metallurgical studies point to a deeply skilled production culture in peninsular India: ore and
+            carbon-bearing inputs were sealed in crucibles, heated under controlled conditions, then cooled carefully to preserve the
+            internal banding that later expressed as distinctive watered blade patterns after forging and finishing.
           </p>
         </article>
 
@@ -165,9 +164,46 @@ export function WootzSteelDamascusPage() {
               <li>- Carbon enrichment targeted high-performance steel chemistry.</li>
               <li>- Controlled cooling preserved microstructural pattern potential.</li>
             </ul>
+            <div className='mt-5 grid sm:grid-cols-2 gap-3'>
+              <div className='border border-[#8d4f36]/15 bg-white/45 p-3'>
+                <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Stage 1</p>
+                <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>
+                  Ore and carbon inputs were selected for repeatable chemistry and ingot consistency.
+                </p>
+              </div>
+              <div className='border border-[#8d4f36]/15 bg-white/45 p-3'>
+                <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Stage 2</p>
+                <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>
+                  Crucibles were sealed and fired at sustained heat to encourage deep carbon diffusion.
+                </p>
+              </div>
+              <div className='border border-[#8d4f36]/15 bg-white/45 p-3'>
+                <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Stage 3</p>
+                <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>
+                  Slow furnace cooling helped protect the ingot&apos;s internal carbide distribution.
+                </p>
+              </div>
+              <div className='border border-[#8d4f36]/15 bg-white/45 p-3'>
+                <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Stage 4</p>
+                <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>
+                  Final forging transformed ingots into blades while preserving strength and visible patterning.
+                </p>
+              </div>
+            </div>
+            <div className='mt-4 border border-[#8d4f36]/15 bg-white/45 p-4'>
+              <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Workshop Quality Markers</p>
+              <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>
+                Smiths evaluated fracture behavior, hardness response, and forging stability before a blade was considered complete.
+                This process control was one reason Wootz gained a premium reputation across trade networks.
+              </p>
+            </div>
           </article>
-          <div className='min-h-[280px]'>
-            <img src='/hero-metallurgy.png' alt='Ancient Indian steel making furnace' className='h-full w-full object-cover object-center border border-[#8d4f36]/20' />
+          <div className='min-h-[420px] md:min-h-[520px] border border-[#8d4f36]/20 bg-[#f7efdf] p-3 flex items-center justify-center'>
+            <img
+              src='/wootz-crucible-process.svg'
+              alt='Process diagram of Wootz crucible steel production'
+              className='h-full w-full object-contain object-center bg-white p-3'
+            />
           </div>
         </section>
 
@@ -175,13 +211,14 @@ export function WootzSteelDamascusPage() {
           <h2 className='text-2xl font-sans font-semibold'>The Science Behind the Strength</h2>
           <p className='mt-4 text-[#3a231a]/85 leading-relaxed'>
             Wootz steel&apos;s high carbon range (often around 1-2%) contributed to hard edges and strong cutting performance.
-            Microscopic carbide-rich structures helped sustain sharpness and generated characteristic patterning after forging and
-            etching. Some modern studies discuss nanostructural features, including carbon nanotube-like observations in specific
-            historical samples, though replication remains complex and context-dependent.
+            Carbide-rich banding helped sustain sharpness and generated characteristic patterning after forging and etching. The
+            visible &ldquo;watering&rdquo; on the blade surface is therefore linked to both chemistry and workshop handling, not merely
+            decoration. Some modern studies also discuss nanostructural features in selected samples, though replication remains
+            complex and context-dependent.
           </p>
           <div className='mt-5 grid md:grid-cols-2 gap-5'>
-            <img src='/wootz-blade.jpg' alt='Wootz steel ingots and patterned blade surface' className='h-60 w-full object-cover object-center border border-[#8d4f36]/20' />
-            <img src='/iron-pillar.jpg' alt='Carbon nanotube steel microstructure diagram concept visual' className='h-60 w-full object-cover object-center border border-[#8d4f36]/20' />
+            <img src='/wootz-blade.jpg' alt='Close view of watered pattern on a Damascus blade made from Wootz steel' className='h-[360px] md:h-[30rem] w-full object-cover object-center border border-[#8d4f36]/20' />
+            <img src='/wootz-pattern-map.svg' alt='Diagram connecting blade surface pattern to internal carbide banding' className='h-[360px] md:h-[30rem] w-full object-contain object-center border border-[#8d4f36]/20 bg-white p-2 md:p-3' />
           </div>
         </section>
 
@@ -202,8 +239,8 @@ export function WootzSteelDamascusPage() {
         </section>
 
         <section className='mt-8 grid lg:grid-cols-2 gap-6 items-stretch'>
-          <div className='min-h-[280px]'>
-            <img src='/wootz-blade.jpg' alt='Damascus sword historical artifact' className='h-full w-full object-cover object-center border border-[#8d4f36]/20' />
+          <div className='min-h-[420px] md:min-h-[520px] border border-[#8d4f36]/20 bg-[#f7efdf] p-3 flex items-center justify-center'>
+            <img src='/wootz-pattern-map.svg' alt='Pattern logic behind Wootz and Damascus blade surfaces' className='h-full w-full object-contain object-center bg-white p-3' />
           </div>
           <article className='border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7'>
             <h2 className='text-2xl font-sans font-semibold'>Global Trade & Influence</h2>
@@ -217,6 +254,27 @@ export function WootzSteelDamascusPage() {
               Middle Eastern bladesmiths forged imported Wootz into famous Damascus swords noted for wave-like surfaces, resilient
               bodies, and razor-like edges.
             </p>
+            <div className='mt-5 grid sm:grid-cols-3 gap-3'>
+              <div className='border border-[#8d4f36]/15 bg-white/45 p-3'>
+                <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Export Hubs</p>
+                <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>South Indian production zones linked inland workshops to coastal ports.</p>
+              </div>
+              <div className='border border-[#8d4f36]/15 bg-white/45 p-3'>
+                <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Transmission</p>
+                <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>Trade carried both ingots and process knowledge into specialist smithing centers.</p>
+              </div>
+              <div className='border border-[#8d4f36]/15 bg-white/45 p-3'>
+                <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Legacy</p>
+                <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>Damascus sword prestige kept Indian crucible steel central to elite weapon culture.</p>
+              </div>
+            </div>
+            <div className='mt-4 border border-[#8d4f36]/15 bg-white/45 p-4'>
+              <p className='text-[11px] uppercase tracking-[0.12em] text-[#8d4f36]'>Why This Matters</p>
+              <p className='mt-1.5 text-sm text-[#3a231a]/84 leading-relaxed'>
+                Wootz demonstrates that pre-modern metallurgy in India operated at global scale - combining production precision,
+                long-distance commerce, and downstream craftsmanship that influenced weapon-making traditions beyond the subcontinent.
+              </p>
+            </div>
           </article>
         </section>
 
@@ -260,7 +318,7 @@ export function WootzSteelDamascusPage() {
 
         <section className='mt-8' id='legacy'>
           <div className='flex items-center justify-between gap-3'>
-            <h2 className='text-2xl font-sans font-semibold'>Gallery: Pattern Variations & Blade Legacy</h2>
+            <h2 className='text-2xl font-sans font-semibold'>Gallery: Ingot Process, Pattern, and Blade Finish</h2>
             <div className='flex items-center gap-2'>
               <button onClick={() => scrollGallery('left')} className='h-10 w-10 border border-[#8d4f36]/30 bg-[#f8f0e3] text-[#2b1b17] flex items-center justify-center hover:bg-[#eadbc5] transition-colors' aria-label='Scroll gallery left'>
                 <ChevronLeft className='h-5 w-5' />
@@ -273,7 +331,12 @@ export function WootzSteelDamascusPage() {
           <div ref={galleryRef} className='mt-4 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2'>
             {gallery.map((item) => (
               <figure key={item.alt} className='min-w-[78vw] md:min-w-[42vw] lg:min-w-[30vw] snap-start border border-[#8d4f36]/20 bg-[#f8f0e3] p-2'>
-                <img src={item.src} alt={item.alt} className='h-64 w-full object-cover object-center' loading='lazy' />
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className={`h-80 md:h-[26rem] w-full ${item.src.endsWith('.svg') ? 'object-contain object-center bg-[#f7efdf] p-2 md:p-3' : 'object-cover object-center'}`}
+                  loading='lazy'
+                />
                 <figcaption className='p-3 text-sm text-[#3a231a]/80'>{item.alt}</figcaption>
               </figure>
             ))}

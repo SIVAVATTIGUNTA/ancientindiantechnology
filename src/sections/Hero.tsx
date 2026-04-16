@@ -16,24 +16,24 @@ export function Hero() {
       badge: 'Metal Innovation',
       title: 'Wootz Steel and the Iron Pillar Legacy',
       description: 'Explore how ancient India produced world-famous steel and corrosion-resistant iron that still challenges modern metallurgy.',
-      primaryCta: { label: 'Explore Metallurgy', href: '#metallurgy' },
-      secondaryCta: { label: 'Read Topics', href: '#urban' },
+      primaryCta: { label: 'Explore Metallurgy', href: '/topic/metallurgy' },
+      secondaryCta: { label: 'Read Topics', href: '/topic/urban-planning' },
     },
     {
       image: '/astronomy-jantar.jpg',
       badge: 'Astronomy and Mathematics',
       title: 'From Aryabhata to Precision Observatories',
       description: 'Discover celestial calculations, zero, and monumental instruments like Jantar Mantar that measured the sky with remarkable accuracy.',
-      primaryCta: { label: 'Explore Astronomy', href: '#astronomy' },
-      secondaryCta: { label: 'View Resources', href: '#resources' },
+      primaryCta: { label: 'Explore Astronomy', href: '/topic/astronomy' },
+      secondaryCta: { label: 'View Resources', href: '/topic/resources' },
     },
     {
       image: '/sushruta-surgery.jpg',
       badge: 'Medicine and Knowledge',
       title: 'Sushruta, Ayurveda, and Surgical Excellence',
       description: 'Uncover foundational medical systems, advanced procedures, and healing traditions that shaped healthcare for centuries.',
-      primaryCta: { label: 'Explore Medicine', href: '#medicine' },
-      secondaryCta: { label: 'Watch Videos', href: '#videos' },
+      primaryCta: { label: 'Explore Medicine', href: '/topic/medicine' },
+      secondaryCta: { label: 'Watch Videos', href: '/topic/videos' },
     },
   ]), []);
 
@@ -68,8 +68,12 @@ export function Hero() {
 
   const toHref = (label: string, fallbackHref: string): string => {
     if (label.toLowerCase() === 'home' || fallbackHref === '#home') return '#home';
+    if (fallbackHref.startsWith('/')) return fallbackHref;
     return topicPathFromLabel(label);
   };
+
+  const getDescription = (description?: string) =>
+    description?.trim() || 'Explore this topic in depth with focused content, visuals, and references.';
 
   const handlePrev = () => {
     setActiveSlide((prev) => (prev - 1 + slides.length) % slides.length);
@@ -81,63 +85,82 @@ export function Hero() {
 
   const currentSlide = slides[activeSlide];
 
+  const primaryCtaClass =
+    'inline-flex min-h-[44px] touch-manipulation items-center justify-center rounded-full bg-[#d4b26a] px-7 py-3.5 text-sm font-sans font-semibold text-[#2b1b17] hover:bg-[#c6a055] transition-colors before:content-none after:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4b26a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1b17]';
+  const secondaryCtaClass =
+    'inline-flex min-h-[44px] touch-manipulation items-center justify-center rounded-full border border-[#d4b26a]/60 bg-[#2b1b17]/40 px-7 py-3.5 text-sm font-sans font-semibold text-[#f4ead8] hover:bg-[#3a231a]/70 transition-colors before:content-none after:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4b26a]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1b17]';
+
   return (
-    <section id="home" className="relative min-h-screen w-full overflow-hidden bg-[#2b1b17]">
+    <section id="home" className="relative min-h-screen min-h-[100dvh] w-full overflow-hidden bg-[#2b1b17]">
       {slides.map((slide, index) => (
         <div
           key={slide.title}
-          className={`absolute inset-0 transition-opacity duration-1000 ${index === activeSlide ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === activeSlide ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
           aria-hidden={index !== activeSlide}
         >
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="h-full w-full object-cover object-center scale-110 blur-[2px] opacity-30"
-            loading={index === 0 ? 'eager' : 'lazy'}
-          />
-          <img
-            src={slide.image}
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-contain"
-            loading={index === 0 ? 'eager' : 'lazy'}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2b1b17]/92 via-[#2b1b17]/70 to-[#2b1b17]/88" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-[#2b1b17]/55" />
+          {/* Full-bleed layered hero — same visual system on all breakpoints; scales via responsive typography + padding on copy */}
+          <div className="absolute inset-0" aria-hidden>
+            <img
+              src={slide.image}
+              alt=""
+              className="h-full w-full object-cover object-center blur-[2px] opacity-30"
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+            <img
+              src={slide.image}
+              alt=""
+              className="absolute inset-0 h-full w-full object-contain object-center"
+              loading={index === 0 ? 'eager' : 'lazy'}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#2b1b17]/92 via-[#2b1b17]/70 to-[#2b1b17]/88 max-md:from-[#2b1b17]/94 max-md:via-[#2b1b17]/78 max-md:to-[#2b1b17]/90" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-[#2b1b17]/55 max-md:from-black/30 max-md:to-[#2b1b17]/65" />
+          </div>
         </div>
       ))}
 
-      <div className="absolute inset-0 z-10 px-6 md:px-12 pt-32 md:pt-40 pb-16 flex items-end">
-        <div className="max-w-3xl">
+      <div className="absolute inset-0 z-10 flex items-end px-5 pb-28 pt-24 sm:px-6 sm:pb-24 sm:pt-28 md:px-12 md:pb-16 md:pt-40">
+        <div className="max-w-3xl w-full">
           <p className="inline-flex items-center rounded-full border border-[#d4b26a]/45 bg-[#2b1b17]/40 px-4 py-1.5 text-xs md:text-sm font-body uppercase tracking-[0.16em] text-[#d4b26a]">
             {currentSlide.badge}
           </p>
-          <h1 className="mt-5 text-4xl md:text-6xl lg:text-7xl font-sans font-extrabold leading-tight tracking-tight text-[#f4ead8]">
+          <h1 className="mt-4 text-[1.65rem] leading-tight sm:text-3xl md:mt-5 md:text-6xl lg:text-7xl font-sans font-extrabold tracking-tight text-[#f4ead8]">
             {currentSlide.title}
           </h1>
-          <p className="mt-5 max-w-2xl text-base md:text-lg text-[#f4ead8]/82 font-body leading-relaxed">
+          <p className="mt-3 max-w-2xl text-sm sm:text-base md:mt-5 md:text-lg text-[#f4ead8]/82 font-body leading-relaxed">
             {currentSlide.description}
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href={currentSlide.primaryCta.href}
-              onClick={(e) => handleNavClick(e, currentSlide.primaryCta.href)}
-              className="inline-flex items-center justify-center rounded-full bg-[#d4b26a] px-7 py-3.5 text-sm font-sans font-semibold text-[#2b1b17] hover:bg-[#c6a055] transition-colors before:content-none after:content-none focus-visible:outline-none"
-            >
-              <span className="block leading-none whitespace-nowrap">{currentSlide.primaryCta.label}</span>
-            </a>
-            <a
-              href={currentSlide.secondaryCta.href}
-              onClick={(e) => handleNavClick(e, currentSlide.secondaryCta.href)}
-              className="inline-flex items-center justify-center rounded-full border border-[#d4b26a]/60 bg-[#2b1b17]/40 px-7 py-3.5 text-sm font-sans font-semibold text-[#f4ead8] hover:bg-[#3a231a]/70 transition-colors before:content-none after:content-none focus-visible:outline-none"
-            >
-              <span className="block leading-none whitespace-nowrap">{currentSlide.secondaryCta.label}</span>
-            </a>
+          <div className="mt-6 flex flex-wrap gap-3 md:mt-8">
+            {currentSlide.primaryCta.href.startsWith('#') ? (
+              <a
+                href={currentSlide.primaryCta.href}
+                onClick={(e) => handleNavClick(e, currentSlide.primaryCta.href)}
+                className={primaryCtaClass}
+              >
+                <span className="block leading-none whitespace-nowrap">{currentSlide.primaryCta.label}</span>
+              </a>
+            ) : (
+              <Link to={currentSlide.primaryCta.href} className={primaryCtaClass}>
+                <span className="block leading-none whitespace-nowrap">{currentSlide.primaryCta.label}</span>
+              </Link>
+            )}
+            {currentSlide.secondaryCta.href.startsWith('#') ? (
+              <a
+                href={currentSlide.secondaryCta.href}
+                onClick={(e) => handleNavClick(e, currentSlide.secondaryCta.href)}
+                className={secondaryCtaClass}
+              >
+                <span className="block leading-none whitespace-nowrap">{currentSlide.secondaryCta.label}</span>
+              </a>
+            ) : (
+              <Link to={currentSlide.secondaryCta.href} className={secondaryCtaClass}>
+                <span className="block leading-none whitespace-nowrap">{currentSlide.secondaryCta.label}</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
 
-      <div className="absolute right-6 md:right-12 bottom-20 z-20 flex items-center gap-3">
+      <div className="absolute bottom-24 right-5 z-20 flex items-center gap-3 md:bottom-20 md:right-12">
         <button
           onClick={handlePrev}
           className="h-10 w-10 rounded-full border border-[#d4b26a]/45 bg-[#2b1b17]/60 text-[#f4ead8] hover:bg-[#3a231a] transition-colors"
@@ -188,44 +211,55 @@ export function Hero() {
 
           {heroConfig.navLinks.length > 0 && (
             <div className="hidden lg:flex items-center gap-1 text-[14px] font-body">
-              {heroConfig.navLinks.map((link) => (
-                <div
-                  key={link.label}
-                  className="relative"
-                  onMouseEnter={() => link.columns?.length && setActiveDropdown(link.label)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <a
-                    href={toHref(link.label, link.href)}
-                    onClick={(e) => {
-                      if (toHref(link.label, link.href) === '#home') handleNavClick(e, '#home');
-                    }}
-                    className={`rounded-lg px-3.5 py-2.5 leading-none transition-all duration-200 ${
-                      activeDropdown === link.label
-                        ? 'bg-[#d4b26a]/25 text-[#f4ead8]'
-                        : 'text-[#f4ead8]/90 hover:bg-[#f4ead8]/12 hover:text-[#ffffff]'
-                    }`}
+              {heroConfig.navLinks.map((link) => {
+                const resolved = toHref(link.label, link.href);
+                const navClass = `rounded-lg px-3.5 py-2.5 leading-none transition-all duration-200 ${
+                  activeDropdown === link.label
+                    ? 'bg-[#d4b26a]/25 text-[#f4ead8]'
+                    : 'text-[#f4ead8]/90 hover:bg-[#f4ead8]/12 hover:text-[#ffffff]'
+                }`;
+                const colCount = link.columns?.length ?? 0;
+                return (
+                  <div
+                    key={link.label}
+                    className="relative"
+                    onMouseEnter={() => link.columns?.length && setActiveDropdown(link.label)}
+                    onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    {link.label}
-                  </a>
-                  {activeDropdown === link.label && link.columns && (
-                    <div className="absolute right-0 top-full mt-2.5 w-[460px] rounded-2xl border border-[#d4b26a]/25 bg-[#2b1b17]/96 p-4 shadow-[0_20px_46px_rgba(0,0,0,0.38)] backdrop-blur-sm animate-in fade-in slide-in-from-top-1 duration-200">
-                      <div className="grid grid-cols-2 gap-2.5">
-                        {link.columns.flat().map((item) => (
-                          <a
-                            key={item.label}
-                            href={topicPathFromLabel(item.label)}
-                            className="rounded-xl px-3 py-2.5 hover:bg-[#f4ead8]/10 transition-colors duration-200"
-                          >
-                            <p className="text-[#f4ead8] text-sm font-sans font-semibold leading-tight">{item.label}</p>
-                            <p className="mt-1.5 text-xs text-[#f4ead8]/68 font-body leading-relaxed">{item.description}</p>
-                          </a>
-                        ))}
+                    {resolved.startsWith('/') ? (
+                      <Link to={resolved} className={navClass} onClick={() => setActiveDropdown(null)}>
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a href={resolved} onClick={(e) => handleNavClick(e, resolved)} className={navClass}>
+                        {link.label}
+                      </a>
+                    )}
+                    {activeDropdown === link.label && link.columns && (
+                      <div
+                        className={`absolute right-0 top-full mt-2.5 rounded-2xl border border-[#d4b26a]/25 bg-[#2b1b17]/96 p-4 shadow-[0_20px_46px_rgba(0,0,0,0.38)] backdrop-blur-sm animate-in fade-in slide-in-from-top-1 duration-200 ${
+                          colCount > 1 ? 'w-[460px]' : 'w-[300px]'
+                        }`}
+                      >
+                        <div className={`grid gap-2.5 ${colCount > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                          {link.columns.flat().map((item) => (
+                            <Link
+                              key={item.label}
+                              to={topicPathFromLabel(item.label)}
+                              className="rounded-xl px-3 py-2.5 hover:bg-[#f4ead8]/10 transition-colors duration-200"
+                            >
+                              <p className="text-[#f4ead8] text-sm font-sans font-semibold leading-tight">{item.label}</p>
+                              <p className="mt-1.5 text-xs text-[#f4ead8]/82 font-body leading-relaxed min-h-[32px]">
+                                {getDescription(item.description)}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                    )}
+                  </div>
+                );
+              })}
             </div>
           )}
 
@@ -274,22 +308,27 @@ export function Hero() {
               {heroConfig.navLinks.map((link) => {
                 const hasDropdown = !!link.columns?.length;
                 const isExpanded = mobileExpanded === link.label;
+                const resolved = toHref(link.label, link.href);
+                const rowClass = 'flex-1 px-6 py-4 hover:bg-[#f4ead8]/10 transition-colors duration-200';
 
                 return (
                   <div key={link.label} className="border-b border-[#d4b26a]/25">
                     <div className="flex items-stretch">
-                      <a
-                        href={toHref(link.label, link.href)}
-                        onClick={(e) => {
-                          if (toHref(link.label, link.href) === '#home') handleNavClick(e, '#home');
-                        }}
-                        className="flex-1 px-6 py-4 hover:bg-[#f4ead8]/10 transition-colors duration-200"
-                      >
-                        <span className="block text-[#f4ead8]/90 font-body text-[15px] leading-tight">{link.label}</span>
-                        {link.subtitle && (
-                          <span className="block text-[#d4b26a]/75 text-[10px] font-body mt-0.5 tracking-wide">{link.subtitle}</span>
-                        )}
-                      </a>
+                      {resolved.startsWith('/') ? (
+                        <Link to={resolved} onClick={() => setMobileMenuOpen(false)} className={rowClass}>
+                          <span className="block text-[#f4ead8]/90 font-body text-[15px] leading-tight">{link.label}</span>
+                          {link.subtitle && (
+                            <span className="block text-[#d4b26a]/75 text-[10px] font-body mt-0.5 tracking-wide">{link.subtitle}</span>
+                          )}
+                        </Link>
+                      ) : (
+                        <a href={resolved} onClick={(e) => handleNavClick(e, resolved)} className={rowClass}>
+                          <span className="block text-[#f4ead8]/90 font-body text-[15px] leading-tight">{link.label}</span>
+                          {link.subtitle && (
+                            <span className="block text-[#d4b26a]/75 text-[10px] font-body mt-0.5 tracking-wide">{link.subtitle}</span>
+                          )}
+                        </a>
+                      )}
                       {hasDropdown && (
                         <button
                           onClick={() => setMobileExpanded(isExpanded ? null : link.label)}
@@ -304,17 +343,20 @@ export function Hero() {
                     {isExpanded && link.columns && (
                       <div className="bg-[#3a231a]/90 border-t border-[#d4b26a]/25">
                         {link.columns.flat().map((item) => (
-                          <a
+                          <Link
                             key={item.label}
-                            href={topicPathFromLabel(item.label)}
+                            to={topicPathFromLabel(item.label)}
+                            onClick={() => setMobileMenuOpen(false)}
                             className="flex items-start gap-3 px-6 py-3 border-b border-[#d4b26a]/20 hover:bg-[#f4ead8]/8 transition-colors duration-150"
                           >
                             <span className="shrink-0 w-1 h-1 rounded-full bg-[#d4b26a]/70 mt-2" />
                             <span>
                               <span className="block text-[#f4ead8]/80 font-body text-[13px] leading-snug">{item.label}</span>
-                              <span className="block text-[#f4ead8]/55 font-body text-[11px] mt-0.5 leading-relaxed">{item.description}</span>
+                              <span className="block text-[#f4ead8]/72 font-body text-[11px] mt-0.5 leading-relaxed">
+                                {getDescription(item.description)}
+                              </span>
                             </span>
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}

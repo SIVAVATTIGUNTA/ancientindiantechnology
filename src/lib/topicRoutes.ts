@@ -28,7 +28,7 @@ export function slugify(value: string): string {
 }
 
 const topLevelTopics: TopicItem[] = heroConfig.navLinks
-  .filter((link) => link.label.toLowerCase() !== 'home')
+  .filter((link) => link.label.toLowerCase() !== 'home' && !link.href.startsWith('/'))
   .map((link) => ({
     slug: slugify(link.label),
     title: link.label,

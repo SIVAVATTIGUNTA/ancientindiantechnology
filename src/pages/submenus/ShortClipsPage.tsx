@@ -1,7 +1,36 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
+import { AlertCircle, Loader2 } from 'lucide-react';
 import { VideoCard } from '../../components/video/VideoCard';
+import { VideoTopicHighlights } from '../../components/video/VideoTopicHighlights';
 import { Footer } from '../../sections/Footer';
 import { SubmenuHeaderNav } from '../../components/SubmenuHeaderNav';
+import { useYouTubeChannelVideos } from '@/hooks/useYouTubeChannelVideos';
+
+const shortClipHighlights = [
+  {
+    label: 'Format',
+    title: 'One idea per clip',
+    text: 'Short clips should explain a single mechanism, object, or question clearly: one pillar, one instrument, one drainage idea, or one medical text insight.',
+  },
+  {
+    label: 'Retention',
+    title: 'Hook with the visible detail',
+    text: 'Lead with what viewers can immediately see: a blade pattern, a stepwell section, a sundial shadow, or a dockyard channel before adding context.',
+  },
+  {
+    label: 'Next Step',
+    title: 'Bridge to deeper pages',
+    text: 'Each clip should point visitors toward the matching detailed page so quick learning turns into structured exploration.',
+  },
+];
+
+const shortClipTakeaways = [
+  'Use clips for quick orientation before the user opens a longer documentary or lecture.',
+  'Group clips by theme so mobile users can binge metallurgy, astronomy, medicine, or urban planning in small bursts.',
+  'Keep claims narrow and practical: show the object, explain the mechanism, then link to the longer context.',
+];
+
+const shortClipTerms = ['micro-learning', 'quick facts', 'visual hooks', 'topic clusters', 'mobile viewing', 'next-watch flow'];
 
 export function ShortClipsPage() {
   useEffect(() => {
@@ -16,6 +45,21 @@ export function ShortClipsPage() {
     { title: 'Sushruta Surgical Legacy', duration: '02:24', query: 'sushruta surgery history short', reason: 'Medicine highlight', src: 'https://www.youtube.com/embed?listType=search&list=sushruta%20surgery%20history%20short' },
     { title: 'Lothal Dock in Motion', duration: '01:55', query: 'lothal dockyard short animation', reason: 'Engineering explain-in-a-minute', src: 'https://www.youtube.com/embed?listType=search&list=lothal%20dockyard%20short%20animation' },
   ];
+  const { videos: latestVideos, loading, error } = useYouTubeChannelVideos({
+    fallbackVideos: shortCards.map((card) => ({ title: card.title, src: card.src })),
+    maxResults: 9,
+  });
+  const syncedShortCards = useMemo(
+    () =>
+      latestVideos.map((video) => ({
+        title: video.title,
+        src: video.src,
+        duration: 'Latest',
+        query: 'channel latest',
+        reason: 'Auto-synced short/clip from channel',
+      })),
+    [latestVideos]
+  );
 
   return (
     <main className='min-h-screen bg-[#0b1020] text-[#f4ead8]'>
@@ -38,6 +82,12 @@ export function ShortClipsPage() {
       </section>
 
       <section className='max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-10 md:space-y-12'>
+        {(loading || error || syncedShortCards.length === 0) && (
+          <div className='inline-flex items-center gap-2 rounded-full border border-[#d4b26a]/25 bg-[#121a30]/70 px-3 py-1.5 text-xs text-[#f4ead8]/80'>
+            {loading ? <Loader2 className='h-3.5 w-3.5 animate-spin' aria-hidden /> : <AlertCircle className='h-3.5 w-3.5' aria-hidden />}
+            <span>{loading ? 'Syncing latest videos...' : error || 'No videos found on the channel yet.'}</span>
+          </div>
+        )}
         <div className='flex flex-wrap gap-2'>
           {['All', '<10 min', 'Metallurgy', 'Astronomy', 'Medicine', 'Urban Planning'].map((chip) => (
             <button key={chip} className='rounded-full border border-[#d4b26a]/30 bg-[#121a30] px-3 py-1.5 text-xs text-[#f4ead8]/85 hover:bg-[#d4b26a]/15 transition-colors'>
@@ -47,7 +97,7 @@ export function ShortClipsPage() {
         </div>
 
         <section className='grid sm:grid-cols-2 lg:grid-cols-3 gap-5'>
-          {shortCards.map((card) => (
+          {syncedShortCards.map((card) => (
             <VideoCard key={card.title} item={card} aspectClassName='aspect-[9/16]' className='rounded-2xl bg-[#121a30]' />
           ))}
         </section>
@@ -66,15 +116,13 @@ export function ShortClipsPage() {
           </div>
         </section>
 
-        <section className='rounded-2xl border border-[#d4b26a]/22 bg-[#121a30] p-6 text-sm'>
-          <h3 className='text-lg font-semibold'>Thumbnail Support</h3>
-          <p className='mt-2 text-[#f4ead8]/78'>
-            AI prompts: vertical cinematic close-up of Damascus blade sparks in forge, top-view animated stepwell geometry with bold captions, dark observatory instrument silhouette under stars, quick timeline style iron pillar corrosion graphic, herbal manuscript macro with clean motion-design overlays.
-          </p>
-          <p className='mt-2 text-[#f4ead8]/78'>
-            Search keywords: ancient india shorts thumbnail, metallurgy short video poster, jantar mantar short clip visual, sushruta quick explainer thumbnail, lothal dock short animation, indus valley shorts educational.
-          </p>
-        </section>
+        <VideoTopicHighlights
+          title='Short Clip Learning Guide'
+          description='Short-form videos are strongest when they turn one impressive detail into a clear learning moment. This section helps visitors understand how to use quick clips without losing the deeper historical context.'
+          highlights={shortClipHighlights}
+          takeaways={shortClipTakeaways}
+          terms={shortClipTerms}
+        />
       </section>
       <Footer />
     </main>

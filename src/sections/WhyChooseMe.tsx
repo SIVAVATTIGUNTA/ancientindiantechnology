@@ -101,8 +101,8 @@ export function WhyChooseMe() {
               if (img) {
                 gsap.fromTo(
                   img,
-                  { scale: 1.35 },
-                  { scale: 1.1, duration: 1.6, ease: 'power3.out', delay: i * 0.15 }
+                  { scale: 1.12 },
+                  { scale: 1, duration: 1.6, ease: 'power3.out', delay: i * 0.15 }
                 );
               }
             },
@@ -177,8 +177,8 @@ export function WhyChooseMe() {
             if (wideImg) {
               gsap.fromTo(
                 wideImg,
-                { scale: 1.25 },
-                { scale: 1.08, duration: 1.8, ease: 'power3.out' }
+                { scale: 1.08 },
+                { scale: 1, duration: 1.8, ease: 'power3.out' }
               );
             }
           },
@@ -253,7 +253,7 @@ export function WhyChooseMe() {
                 <img
                   src={card.image}
                   alt={card.imageAlt}
-                  className="w-full h-full object-cover object-center will-change-transform"
+                  className="w-full h-full object-contain object-center will-change-transform"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2b1b17]/85 via-transparent to-transparent" />
@@ -305,11 +305,11 @@ export function WhyChooseMe() {
         {/* Wide Landscape Image */}
         {whyChooseMeConfig.wideImage && (
           <div ref={wideRef} className="mt-14 md:mt-24 relative rounded-lg overflow-hidden group opacity-0">
-            <div className="aspect-[16/10] sm:aspect-[21/9] md:aspect-[3/1] overflow-hidden">
+            <div className="aspect-[16/10] sm:aspect-[21/9] md:aspect-[3/1] overflow-hidden bg-[#2b1b17]">
               <img
                 src={whyChooseMeConfig.wideImage}
                 alt={whyChooseMeConfig.wideImageAlt}
-                className="w-full h-full object-cover object-center md:object-[50%_32%] will-change-transform"
+                className="w-full h-full object-contain object-center will-change-transform"
                 loading="lazy"
               />
             </div>

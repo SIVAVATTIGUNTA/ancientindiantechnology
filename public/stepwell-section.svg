@@ -1,0 +1,23 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F4E7D1"/>
+  <rect x="48" y="48" width="1304" height="804" rx="34" fill="#FFF8EE" stroke="#C89B61" stroke-width="4"/>
+  <text x="92" y="138" fill="#2B1B17" font-family="Georgia, serif" font-size="56">Stepwell Section</text>
+  <text x="92" y="188" fill="#7A4A32" font-family="Arial, sans-serif" font-size="24">A stepwell turns changing water depth into a usable, shaded, and social descent.</text>
+
+  <rect x="104" y="246" width="1192" height="568" rx="30" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+  <path d="M188 332H1220V708H940L874 642H808L742 576H676L610 510H544L478 444H412L346 378H188V332Z" fill="#D9B46F"/>
+  <path d="M230 372H1188V674H956L890 608H824L758 542H692L626 476H560L494 410H428L362 372H230Z" fill="#FFF8EE"/>
+  <rect x="1008" y="566" width="168" height="108" rx="18" fill="#7FB7CF"/>
+  <text x="1028" y="730" fill="#2B1B17" font-family="Arial, sans-serif" font-size="26" font-weight="700">Water level</text>
+
+  <rect x="284" y="286" width="118" height="94" rx="18" fill="#B78852"/>
+  <rect x="544" y="412" width="118" height="94" rx="18" fill="#B78852"/>
+  <rect x="804" y="540" width="118" height="94" rx="18" fill="#B78852"/>
+  <text x="190" y="732" fill="#7A4A32" font-family="Arial, sans-serif" font-size="21">Landings make rest, gathering, and ritual possible.</text>
+
+  <rect x="980" y="286" width="256" height="172" rx="24" fill="#2B1B17"/>
+  <text x="1012" y="344" fill="#F4E7D1" font-family="Arial, sans-serif" font-size="28" font-weight="700">Climate lesson</text>
+  <text x="1012" y="386" fill="#D9B46F" font-family="Arial, sans-serif" font-size="21">Stone mass, shade,</text>
+  <text x="1012" y="416" fill="#D9B46F" font-family="Arial, sans-serif" font-size="21">and depth create</text>
+  <text x="1012" y="446" fill="#D9B46F" font-family="Arial, sans-serif" font-size="21">cooler microclimates.</text>
+</svg>

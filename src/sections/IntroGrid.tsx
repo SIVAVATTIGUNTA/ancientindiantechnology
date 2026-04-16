@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { introGridConfig } from '../config';
+import { YouTubeVideoGallery, type YouTubeGalleryVideo } from '../components/video/YouTubeVideoGallery';
+import { useYouTubeChannelVideos } from '@/hooks/useYouTubeChannelVideos';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,18 +21,23 @@ const imageAnimConfigs = [
   { clipFrom: 'inset(0% 0% 0% 100%)', rotation: -1.5, parallax: [-7, 7], delay: 0.18 },
 ];
 
-function getYoutubeSrc(embedCodeOrSrc: string): string {
-  const match = embedCodeOrSrc.match(/src=["']([^"']+)["']/i);
-  return match?.[1] ?? embedCodeOrSrc;
-}
-
 export function IntroGrid() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleLine1Ref = useRef<HTMLSpanElement>(null);
   const titleLine2Ref = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-
+  const fallbackVideos: YouTubeGalleryVideo[] = [
+    {
+      title: 'Ancient Indian Technology Documentary',
+      src: 'https://www.youtube.com/embed/Xhc-hT71AnA?si=ulBRclKafIvKwxXO',
+    },
+    {
+      title: 'Astronomy and Scientific Heritage',
+      src: 'https://www.youtube.com/embed/HjRBdayDkk0?si=iUZCkzms44H4x9hw',
+    },
+  ];
+  const { videos: introVideos } = useYouTubeChannelVideos({ fallbackVideos, maxResults: 2 });
   if (!introGridConfig.titleLine1 && !introGridConfig.titleLine2 && introGridConfig.portfolioImages.length === 0) return null;
 
   useEffect(() => {
@@ -100,9 +107,9 @@ export function IntroGrid() {
                 // Scale zoom-out (Ken Burns)
                 gsap.fromTo(
                   img,
-                  { scale: 1.45, rotate: cfg.rotation },
+                  { scale: 1.18, rotate: cfg.rotation },
                   {
-                    scale: 1.12,
+                    scale: 1,
                     rotate: 0,
                     duration: 1.8,
                     ease: 'power3.out',
@@ -194,14 +201,14 @@ export function IntroGrid() {
           {introGridConfig.portfolioImages.map((image, index) => (
             <div
               key={index}
-              className={`grid-item relative overflow-hidden rounded-lg group cursor-pointer opacity-0 ${
+              className={`grid-item relative overflow-hidden rounded-lg group cursor-pointer opacity-0 bg-[#e5d9c8] ${
                 index === 0 ? 'row-span-2 md:col-span-1' : ''
               }`}
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover object-center will-change-transform"
+                className="w-full h-full object-contain object-center will-change-transform"
                 loading="lazy"
               />
 
@@ -217,38 +224,13 @@ export function IntroGrid() {
           ))}
         </div>
 
-        {/* Video strip for this section */}
-        <div className="mt-9 grid md:grid-cols-2 gap-5">
-          {[
-            {
-              title: 'Ancient Indian Technology Documentary',
-              embedCode:
-                '<iframe width="560" height="315" src="https://www.youtube.com/embed/Xhc-hT71AnA?si=ulBRclKafIvKwxXO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
-            {
-              title: 'Astronomy and Scientific Heritage',
-              embedCode:
-                '<iframe width="560" height="315" src="https://www.youtube.com/embed/HjRBdayDkk0?si=iUZCkzms44H4x9hw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-            },
-          ].map((video) => (
-            <article key={video.title} className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-3 md:p-4">
-              <p className="text-sm font-sans font-semibold text-[#2b1b17] mb-2">{video.title}</p>
-              <div className="aspect-video border border-[#8d4f36]/20 bg-black overflow-hidden">
-                <iframe
-                  width="560"
-                  height="315"
-                  src={getYoutubeSrc(video.embedCode)}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  className="h-full w-full border-0"
-                />
-              </div>
-            </article>
-          ))}
-        </div>
+        <YouTubeVideoGallery
+          className="mt-9"
+          variant="light"
+          hideHeader
+          gridClassName="grid-cols-1 md:grid-cols-2 gap-5"
+          videos={introVideos}
+        />
 
         {/* Floating accent text */}
         {introGridConfig.accentText && (

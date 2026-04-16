@@ -1,9 +1,36 @@
 import { useEffect } from 'react';
-import { Play, ScanLine, Layers3 } from 'lucide-react';
+import { Play, ScanLine } from 'lucide-react';
 import { Footer } from '../../sections/Footer';
 import { SubmenuHeaderNav } from '../../components/SubmenuHeaderNav';
 import { VideoCard } from '../../components/video/VideoCard';
 import { VideoRowCarousel } from '../../components/video/VideoRowCarousel';
+import { VideoTopicHighlights } from '../../components/video/VideoTopicHighlights';
+
+const reconstructionHighlights = [
+  {
+    label: 'Spatial Reading',
+    title: 'Show the plan before the spectacle',
+    text: 'Good reconstructions first orient the viewer: site layout, water route, furnace chamber, instrument scale, or temple axis before adding cinematic movement.',
+  },
+  {
+    label: 'Evidence Layer',
+    title: 'Separate remains from inference',
+    text: 'A useful 3D model should make clear what is archaeologically visible, what is reconstructed from comparison, and what is interpretive visualization.',
+  },
+  {
+    label: 'Engineering Value',
+    title: 'Explain function through motion',
+    text: 'Animations are most helpful when they show how water drains, shadows move, retorts condense vapor, or a city network connects buildings and streets.',
+  },
+];
+
+const reconstructionTakeaways = [
+  'Use 3D videos to teach scale, sequence, and spatial relationships that flat images cannot show well.',
+  'Pair every reconstruction with a question: what physical evidence supports this model?',
+  'The strongest simulations reveal function, not just appearance.',
+];
+
+const reconstructionTerms = ['site layout', 'before-after model', 'functional simulation', 'archaeology layers', 'cutaway view', 'spatial learning'];
 
 export function Reconstructions3DPage() {
   useEffect(() => {
@@ -45,7 +72,7 @@ export function Reconstructions3DPage() {
         <div className='grid lg:grid-cols-[1.35fr_0.65fr] gap-6'>
           <article className='border border-[#d4b26a]/22 bg-[#101a2f] overflow-hidden'>
             <div className='aspect-video bg-black'>
-              <iframe src={showcaseVideos[0].src} title={showcaseVideos[0].title} className='h-full w-full' loading='lazy' referrerPolicy='strict-origin-when-cross-origin' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
+              <iframe data-skip-global-embed='true' src={showcaseVideos[0].src} title={showcaseVideos[0].title} className='h-full w-full' loading='lazy' referrerPolicy='strict-origin-when-cross-origin' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
             </div>
             <div className='p-5'>
               <p className='text-xs uppercase tracking-wide text-[#d4b26a]'>Hero video</p>
@@ -76,18 +103,14 @@ export function Reconstructions3DPage() {
           ))}
         </section>
 
-        <section className='border border-[#d4b26a]/22 bg-[#101a2f] p-6'>
-          <h3 className='text-xl font-semibold inline-flex items-center gap-2'>
-            <Layers3 className='h-5 w-5 text-[#d4b26a]' />
-            Thumbnail and Search Support
-          </h3>
-          <p className='mt-3 text-sm text-[#f4ead8]/76'>
-            Thumbnail prompts: cinematic aerial of reconstructed Harappan dockyard, split before-after ruins vs 3D model, temple alignment rays simulation, cutaway of drainage channels, volumetric render of ancient furnace.
-          </p>
-          <p className='mt-2 text-sm text-[#f4ead8]/76'>
-            Search keywords: ancient india 3d reconstruction, mohenjo daro cgi, lothal dockyard animation, jantar mantar 3d, stepwell architecture 3d, sun temple simulation, indus city virtual model.
-          </p>
-        </section>
+        <VideoTopicHighlights
+          eyebrow='Topic Highlights'
+          title='How to Read a Reconstruction'
+          description='These videos are most useful when viewers understand what the model is explaining: layout, function, sequence, and the boundary between evidence and interpretation.'
+          highlights={reconstructionHighlights}
+          takeaways={reconstructionTakeaways}
+          terms={reconstructionTerms}
+        />
       </section>
       <Footer />
     </main>

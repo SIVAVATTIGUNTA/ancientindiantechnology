@@ -64,8 +64,8 @@ export function FeaturedProjects() {
                 if (img) {
                   gsap.fromTo(
                     img,
-                    { scale: 1.35 },
-                    { scale: 1.1, duration: 1.8, ease: 'power3.out' }
+                    { scale: 1.12 },
+                    { scale: 1, duration: 1.8, ease: 'power3.out' }
                   );
                 }
               },
@@ -161,16 +161,18 @@ export function FeaturedProjects() {
               className="project-card grid md:grid-cols-2 gap-8 md:gap-12 items-center"
             >
               {/* Image with Viewfinder */}
-              <div
-                className={`project-image-wrap relative overflow-hidden rounded-lg group cursor-pointer opacity-0 ${
+              <Link
+                to={project.href}
+                aria-label={`Open ${project.title}`}
+                className={`project-image-wrap relative overflow-hidden rounded-lg group block opacity-0 ${
                   index % 2 === 1 ? 'md:order-2' : ''
                 }`}
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden bg-[#2b1b17] flex items-center justify-center">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="project-image w-full h-full object-cover object-center will-change-transform"
+                    className="project-image w-full h-full max-h-full object-contain object-center will-change-transform"
                     loading="lazy"
                   />
                 </div>
@@ -190,7 +192,7 @@ export function FeaturedProjects() {
 
                 {/* Hover gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2b1b17]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+              </Link>
 
               {/* Content */}
               <div className={`project-content opacity-0 ${index % 2 === 1 ? 'md:order-1 md:text-right' : ''}`}>
@@ -200,7 +202,9 @@ export function FeaturedProjects() {
                   <span className="text-[#d4b26a]/85 font-body text-sm">{project.year}</span>
                 </div>
                 <h3 className="project-text-item text-2xl md:text-3xl lg:text-4xl font-sans font-bold text-[#f4ead8] tracking-tight mb-4">
-                  {project.title}
+                  <Link to={project.href} className="transition-colors duration-300 hover:text-[#d4b26a]">
+                    {project.title}
+                  </Link>
                 </h3>
                 <p className="project-text-item text-[#f4ead8]/75 font-body text-base md:text-lg leading-relaxed mb-6">
                   {project.description}

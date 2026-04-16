@@ -1,0 +1,33 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F3E7D3"/>
+  <rect x="48" y="48" width="1304" height="804" rx="34" fill="#FFF8EE" stroke="#C89B61" stroke-width="4"/>
+  <text x="92" y="138" fill="#2B1B17" font-family="Georgia, serif" font-size="56">Lothal Basin Layout</text>
+  <text x="92" y="188" fill="#7A4A32" font-family="Arial, sans-serif" font-size="24">The basin is easiest to understand when shown with channels, warehouse, and industrial town context.</text>
+
+  <rect x="100" y="244" width="828" height="576" rx="28" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+  <rect x="972" y="244" width="328" height="576" rx="28" fill="#2B1B17"/>
+
+  <rect x="204" y="314" width="544" height="220" rx="24" fill="#7FB7CF"/>
+  <text x="392" y="440" fill="#2B1B17" font-family="Arial, sans-serif" font-size="34" font-weight="700">Brick-lined basin</text>
+
+  <rect x="214" y="598" width="206" height="116" rx="18" fill="#D9B46F"/>
+  <text x="242" y="660" fill="#2B1B17" font-family="Arial, sans-serif" font-size="28" font-weight="700">Warehouse</text>
+
+  <rect x="496" y="598" width="206" height="116" rx="18" fill="#B78852"/>
+  <text x="536" y="646" fill="#FFF8EE" font-family="Arial, sans-serif" font-size="25" font-weight="700">Bead</text>
+  <text x="526" y="678" fill="#FFF8EE" font-family="Arial, sans-serif" font-size="25" font-weight="700">workshops</text>
+
+  <path d="M748 420H864V360H920" stroke="#B78852" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M920 360H968" stroke="#B78852" stroke-width="16" stroke-linecap="round"/>
+  <text x="746" y="488" fill="#7A4A32" font-family="Arial, sans-serif" font-size="20">Tidal channel</text>
+
+  <text x="1010" y="318" fill="#F3E7D3" font-family="Arial, sans-serif" font-size="28" font-weight="700">How to teach it honestly</text>
+  <text x="1010" y="380" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">1. Trade town status</text>
+  <text x="1040" y="408" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">is certain.</text>
+  <text x="1010" y="456" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">2. Basin and channel</text>
+  <text x="1040" y="484" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">support dockyard use.</text>
+  <text x="1010" y="532" fill="#F3E7D3" font-family="Arial, sans-serif" font-size="20">3. Reservoir reading</text>
+  <text x="1040" y="560" fill="#F3E7D3" font-family="Arial, sans-serif" font-size="20">is still debated.</text>
+  <text x="1010" y="608" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">4. Water planning</text>
+  <text x="1040" y="636" fill="#D9B46F" font-family="Arial, sans-serif" font-size="20">matters either way.</text>
+</svg>

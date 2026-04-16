@@ -26,9 +26,6 @@ html.lenis, html.lenis body {
   overflow: hidden;
 }
 
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
 
 /* Selection styling */
 ::selection {
@@ -52,10 +49,21 @@ img {
   object-position: center center;
 }
 
+/* Cards that intentionally show the full image inside an aspect box */
+[class*="aspect-"] > img.object-contain {
+  object-fit: contain;
+}
+
 /* Prevent baseline gaps and odd offsets in media-heavy cards */
 main img,
 main iframe {
   vertical-align: middle;
+}
+
+/* Keep subpage hero title and subtitle bright over image overlays. */
+main > section:first-of-type h1,
+main > section:first-of-type h1 + p {
+  color: #ffffff !important;
 }
 
 /* Custom scrollbar for desktop */

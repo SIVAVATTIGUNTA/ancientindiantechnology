@@ -1,0 +1,37 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#0B1322"/>
+  <rect x="48" y="48" width="1304" height="804" rx="34" fill="#121C30" stroke="#D5AF67" stroke-width="4"/>
+  <text x="92" y="138" fill="#F4EAD8" font-family="Georgia, serif" font-size="56">Eclipse Geometry</text>
+  <text x="92" y="188" fill="#D7B875" font-family="Arial, sans-serif" font-size="24">Indian astronomers explained eclipses through alignment, nodes, and shadow cones.</text>
+
+  <rect x="92" y="240" width="570" height="540" rx="28" fill="#182641" stroke="#D5AF67" stroke-width="3"/>
+  <rect x="738" y="240" width="570" height="540" rx="28" fill="#182641" stroke="#D5AF67" stroke-width="3"/>
+  <text x="126" y="300" fill="#F4EAD8" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">SOLAR ECLIPSE</text>
+  <text x="772" y="300" fill="#F4EAD8" font-family="Arial, sans-serif" font-size="28" letter-spacing="3">LUNAR ECLIPSE</text>
+
+  <circle cx="230" cy="512" r="74" fill="#F4C75E"/>
+  <circle cx="404" cy="512" r="38" fill="#D4D7DD"/>
+  <circle cx="572" cy="512" r="92" fill="#86B2D3"/>
+  <path d="M442 490L486 470L486 554L442 534Z" fill="#2B1B17" fill-opacity="0.72"/>
+  <path d="M442 498L572 474L572 550L442 526Z" fill="#2B1B17" fill-opacity="0.32"/>
+  <text x="188" y="624" fill="#D7B875" font-family="Arial, sans-serif" font-size="24">Sun</text>
+  <text x="374" y="624" fill="#D7B875" font-family="Arial, sans-serif" font-size="24">Moon</text>
+  <text x="536" y="624" fill="#D7B875" font-family="Arial, sans-serif" font-size="24">Earth</text>
+  <text x="188" y="690" fill="#F4EAD8" font-family="Arial, sans-serif" font-size="22">New moon must occur near a node.</text>
+  <text x="188" y="724" fill="#F4EAD8" font-family="Arial, sans-serif" font-size="22">The Moon's umbra and penumbra</text>
+  <text x="188" y="758" fill="#F4EAD8" font-family="Arial, sans-serif" font-size="22">create narrow and wide visibility zones.</text>
+
+  <circle cx="862" cy="512" r="74" fill="#F4C75E"/>
+  <circle cx="1030" cy="512" r="92" fill="#86B2D3"/>
+  <circle cx="1186" cy="512" r="40" fill="#D4D7DD"/>
+  <path d="M1080 476L1148 498L1148 526L1080 548Z" fill="#2B1B17" fill-opacity="0.72"/>
+  <path d="M1058 456L1200 494L1200 530L1058 568Z" fill="#2B1B17" fill-opacity="0.32"/>
+  <text x="820" y="624" fill="#D7B875" font-family="Arial, sans-serif" font-size="24">Sun</text>
+  <text x="994" y="624" fill="#D7B875" font-family="Arial, sans-serif" font-size="24">Earth</text>
+  <text x="1152" y="624" fill="#D7B875" font-family="Arial, sans-serif" font-size="24">Moon</text>
+  <text x="820" y="690" fill="#F4EAD8" font-family="Arial, sans-serif" font-size="22">Full moon must occur near a node.</text>
+  <text x="820" y="724" fill="#F4EAD8" font-family="Arial, sans-serif" font-size="22">Earth's shadow darkens the Moon,</text>
+  <text x="820" y="758" fill="#F4EAD8" font-family="Arial, sans-serif" font-size="22">which is why one event can be seen widely.</text>
+
+  <line x1="700" y1="240" x2="700" y2="780" stroke="#D5AF67" stroke-width="2" stroke-dasharray="8 10"/>
+</svg>

@@ -3,6 +3,7 @@ import { Footer } from '../../sections/Footer';
 import { SubmenuHeaderNav } from '../../components/SubmenuHeaderNav';
 import { ResourceHero } from '../../components/resources/ResourceHero';
 import { ResourceImageSupport } from '../../components/resources/ResourceImageSupport';
+import { ResourceRelatedSection } from '../../components/resources/ResourceRelatedSection';
 
 export function ExternalLinksPage() {
   return (
@@ -10,10 +11,12 @@ export function ExternalLinksPage() {
       <SubmenuHeaderNav />
 
       <ResourceHero
-        eyebrow='Resources · Verified Directory'
+        eyebrow='Resources - Verified Directory'
         title='External Links'
         description='Curated gateways to museums, digital archives, and educational institutions for reliable cross-verification.'
         searchPlaceholder='Search institutions, archive type, or topic...'
+        heroImage='/urban-planning.jpg'
+        heroImageAlt='Verified heritage archive and urban planning reference visual'
       />
 
       <section className='max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-8'>
@@ -41,13 +44,41 @@ export function ExternalLinksPage() {
           ))}
         </section>
 
+        <ResourceRelatedSection
+          title='Verification Workflow for External Sources'
+          description='External links are useful only when visitors know how to evaluate them. This section gives a simple method for turning outside resources into reliable supporting evidence.'
+          cards={[
+            {
+              label: 'Authority',
+              title: 'Who published it?',
+              body: 'Prefer museums, universities, archives, archaeological departments, peer-reviewed journals, and clearly credited experts.',
+            },
+            {
+              label: 'Traceability',
+              title: 'Can the claim be followed?',
+              body: 'Look for dates, catalogue IDs, excavation references, image credits, article titles, and stable archive links.',
+            },
+            {
+              label: 'Usefulness',
+              title: 'What does it support?',
+              body: 'Map each link to a page purpose: background reading, primary evidence, image source, lecture material, or further research.',
+            },
+          ]}
+          checklist={[
+            'Checking whether an external source is credible.',
+            'Finding archives for images, manuscripts, and museum objects.',
+            'Building source lists for teachers and researchers.',
+            'Cross-verifying claims before adding them to topic pages.',
+          ]}
+        />
+
         <section className='border border-[#8d4f36]/20 bg-white p-6'>
           <h3 className='text-xl font-semibold inline-flex items-center gap-2'><ShieldCheck className='h-5 w-5 text-[#8d4f36]' /> Link Verification Checklist</h3>
           <ul className='mt-3 space-y-2 text-sm text-[#3a231a]/84'>
-            <li>• Is the source institutional or peer-reviewed?</li>
-            <li>• Are dates, references, and archival IDs clearly mentioned?</li>
-            <li>• Does the content separate evidence from interpretation?</li>
-            <li>• Are images and diagrams traceable to primary repositories?</li>
+            <li>- Is the source institutional or peer-reviewed?</li>
+            <li>- Are dates, references, and archival IDs clearly mentioned?</li>
+            <li>- Does the content separate evidence from interpretation?</li>
+            <li>- Are images and diagrams traceable to primary repositories?</li>
           </ul>
         </section>
 
@@ -55,21 +86,21 @@ export function ExternalLinksPage() {
           <article className='border border-[#8d4f36]/20 bg-white p-6'>
             <h3 className='text-lg font-semibold'>Educational Videos</h3>
             <ul className='mt-3 space-y-2 text-sm text-[#3a231a]/84'>
-              <li>• Title: Evaluating Online Historical Sources</li>
+              <li>- Title: Evaluating Online Historical Sources</li>
               <li>Search: <span className='text-[#8d4f36]'>how to evaluate historical websites</span></li>
               <li>Why: improves research reliability and citation quality.</li>
               <li>Placement: mid-page after verification section.</li>
             </ul>
             <div className='mt-3 aspect-video bg-black'>
-              <iframe src='https://www.youtube.com/embed?listType=search&list=how%20to%20evaluate%20historical%20websites' title='Evaluating sources video' className='h-full w-full' loading='lazy' referrerPolicy='strict-origin-when-cross-origin' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
+              <iframe data-skip-global-embed='true' src='https://www.youtube.com/embed?listType=search&list=how%20to%20evaluate%20historical%20websites' title='Evaluating sources video' className='h-full w-full' loading='lazy' referrerPolicy='strict-origin-when-cross-origin' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
             </div>
           </article>
           <article className='border border-[#8d4f36]/20 bg-white p-6'>
             <h3 className='text-lg font-semibold'>Additional Video Suggestions</h3>
             <ul className='mt-3 space-y-2 text-sm text-[#3a231a]/84'>
-              <li>• Museums and digital heritage archives overview</li>
+              <li>- Museums and digital heritage archives overview</li>
               <li>Search: <span className='text-[#8d4f36]'>digital heritage archives explained</span></li>
-              <li>• Open-access academic databases tutorial</li>
+              <li>- Open-access academic databases tutorial</li>
               <li>Search: <span className='text-[#8d4f36]'>using open access academic databases</span></li>
               <li>Placement: end section.</li>
             </ul>
@@ -77,8 +108,11 @@ export function ExternalLinksPage() {
         </section>
 
         <ResourceImageSupport
-          promptsText='AI prompts: institutional museum website dashboard on a study desk; archive terminal with manuscript thumbnails; scholarly portal with metadata tags; library card catalog and notebook in soft daylight.'
-          keywordsText='Search keywords: indian museum digital archive, archaeological survey india resources, manuscript digital library india, open heritage database, research institution portal india, history education archive.'
+          notes={[
+            'Use museum, archive, catalogue, and institutional portal visuals that communicate verification and source discovery.',
+            'Images should support trust: labelled shelves, digital catalogues, object records, maps, and cited archive pages work best.',
+          ]}
+          terms={['external archives', 'museum records', 'digital collections', 'source verification', 'catalogue IDs', 'open access']}
         />
       </section>
       <Footer />

@@ -3,6 +3,7 @@ import { Footer } from '../../sections/Footer';
 import { SubmenuHeaderNav } from '../../components/SubmenuHeaderNav';
 import { ResourceHero } from '../../components/resources/ResourceHero';
 import { ResourceImageSupport } from '../../components/resources/ResourceImageSupport';
+import { ResourceRelatedSection } from '../../components/resources/ResourceRelatedSection';
 
 export function ResearchPapersPage() {
   return (
@@ -10,10 +11,12 @@ export function ResearchPapersPage() {
       <SubmenuHeaderNav />
 
       <ResourceHero
-        eyebrow='Resources · Academic Index'
+        eyebrow='Resources - Academic Index'
         title='Research Papers'
         description='Curated academic references on ancient Indian technology with thematic indexing, methodology notes, and modern-science relevance.'
         searchPlaceholder='Search topics: wootz, jantar mantar, sanitation, sushruta...'
+        heroImage='/astronomy-jantar.jpg'
+        heroImageAlt='Research archive view connecting instruments, manuscripts, and historical science study'
       />
 
       <section className='max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-8'>
@@ -48,23 +51,51 @@ export function ResearchPapersPage() {
           </div>
         </section>
 
+        <ResourceRelatedSection
+          title='How to Read the Research Trail'
+          description='Research pages are most useful when readers can move from a claim to the evidence behind it. This section turns papers into a practical pathway for checking method, source type, and interpretation.'
+          cards={[
+            {
+              label: 'Step 1',
+              title: 'Identify the evidence type',
+              body: 'Separate laboratory analysis, excavation reports, inscriptions, translated texts, and later historical interpretation before comparing conclusions.',
+            },
+            {
+              label: 'Step 2',
+              title: 'Check the method',
+              body: 'Look for how the author measures, dates, translates, samples, or models the material. Strong claims usually explain their method clearly.',
+            },
+            {
+              label: 'Step 3',
+              title: 'Connect to topic pages',
+              body: 'Use the paper list to support deeper pages on metallurgy, astronomy, medicine, and urban planning with source-backed details.',
+            },
+          ]}
+          checklist={[
+            'Preparing citation-backed classroom notes.',
+            'Finding scholarly support for a specific topic page.',
+            'Comparing archaeology, text, and laboratory evidence.',
+            'Building a bibliography for long-form research.',
+          ]}
+        />
+
         <section className='grid md:grid-cols-2 gap-5'>
           <article className='border border-[#8d4f36]/20 bg-white p-6'>
             <h4 className='text-lg font-semibold'>Methodologies Used</h4>
             <ul className='mt-3 space-y-2 text-sm text-[#3a231a]/84'>
-              <li>• Metallographic microscopy and compositional analysis</li>
-              <li>• Archaeological context mapping and site stratigraphy</li>
-              <li>• Epigraphy and philological reading of Sanskrit/Pali sources</li>
-              <li>• Experimental archaeology and process replication</li>
+              <li>- Metallographic microscopy and compositional analysis</li>
+              <li>- Archaeological context mapping and site stratigraphy</li>
+              <li>- Epigraphy and philological reading of Sanskrit/Pali sources</li>
+              <li>- Experimental archaeology and process replication</li>
             </ul>
           </article>
           <article className='border border-[#8d4f36]/20 bg-white p-6'>
             <h4 className='text-lg font-semibold'>Further Reading</h4>
             <ul className='mt-3 space-y-2 text-sm text-[#3a231a]/84'>
-              <li>• Indian Journal of History of Science</li>
-              <li>• Journal of Archaeological Science</li>
-              <li>• Current Science thematic issues on heritage technology</li>
-              <li>• Proceedings from archaeometallurgy conferences</li>
+              <li>- Indian Journal of History of Science</li>
+              <li>- Journal of Archaeological Science</li>
+              <li>- Current Science thematic issues on heritage technology</li>
+              <li>- Proceedings from archaeometallurgy conferences</li>
             </ul>
           </article>
         </section>
@@ -74,16 +105,16 @@ export function ResearchPapersPage() {
             <h3 className='text-lg font-semibold'>Educational Videos</h3>
             <p className='mt-2 text-sm text-[#3a231a]/80'>Placement: mid section for methodology orientation.</p>
             <div className='mt-3 aspect-video bg-black'>
-              <iframe src='https://www.youtube.com/embed?listType=search&list=research%20methodology%20for%20history%20of%20science' title='Research methodology lecture' className='h-full w-full' loading='lazy' referrerPolicy='strict-origin-when-cross-origin' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
+              <iframe data-skip-global-embed='true' src='https://www.youtube.com/embed?listType=search&list=research%20methodology%20for%20history%20of%20science' title='Research methodology lecture' className='h-full w-full' loading='lazy' referrerPolicy='strict-origin-when-cross-origin' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen />
             </div>
           </article>
           <article className='border border-[#8d4f36]/20 bg-white p-6'>
             <h3 className='text-lg font-semibold'>Video 2 and 3 (Suggested at end)</h3>
             <ul className='mt-3 space-y-2 text-sm text-[#3a231a]/84'>
-              <li>• Title: Archaeometallurgy and Ancient Innovation</li>
+              <li>- Title: Archaeometallurgy and Ancient Innovation</li>
               <li>Search: <span className='text-[#8d4f36]'>archaeometallurgy lecture ancient india</span></li>
               <li>Why: bridges field methods and metallurgy case studies.</li>
-              <li>• Title: How to Read a Research Paper in Humanities</li>
+              <li>- Title: How to Read a Research Paper in Humanities</li>
               <li>Search: <span className='text-[#8d4f36]'>how to read research paper history</span></li>
               <li>Why: improves evidence literacy for non-academic readers.</li>
             </ul>
@@ -91,8 +122,11 @@ export function ResearchPapersPage() {
         </section>
 
         <ResourceImageSupport
-          promptsText='AI prompts: archival desk with manuscripts and citation cards; university library shelf with history-of-science books; close-up of annotated research paper and index tabs; archaeological field notebook beside artifact sketches.'
-          keywordsText='Search keywords: ancient india research papers, archaeometallurgy journal article, history of science library, manuscript studies india, indus valley academic publication, Delhi iron pillar research.'
+          notes={[
+            'Prefer archival desks, annotated papers, field notebooks, library shelves, or instrument close-ups that make research work visible.',
+            'Avoid unrelated decorative stock images; each image should point to citation work, analysis, field evidence, or academic reading.',
+          ]}
+          terms={['research papers', 'archaeometallurgy', 'history of science', 'field notes', 'citations', 'source review']}
         />
       </section>
       <Footer />

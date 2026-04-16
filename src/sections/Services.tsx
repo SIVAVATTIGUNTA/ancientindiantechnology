@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import { Camera, Diamond, Users, Sparkles, Zap, BookOpen, ChevronLeft, ChevronRight, type LucideIcon } from 'lucide-react';
 import { servicesConfig } from '../config';
 
@@ -151,20 +152,27 @@ export function Services() {
             {servicesConfig.services.map((service, index) => {
               const Icon = iconMap[service.iconName] || Camera;
               return (
-                <div
+                <Link
                   key={index}
-                  className="service-card snap-start shrink-0 w-[85vw] sm:w-[62vw] md:w-[44vw] lg:w-[31vw] xl:w-[24vw] border border-[#d4b26a]/20 bg-[#3a231a] p-5 md:p-6 opacity-0 transition-all duration-500 hover:bg-[#4a2e23] cursor-pointer"
+                  to={service.href}
+                  className="service-card group/card snap-start shrink-0 flex min-h-[44px] w-[85vw] touch-manipulation flex-col sm:w-[62vw] md:w-[44vw] lg:w-[31vw] xl:w-[24vw] border border-[#d4b26a]/20 bg-[#3a231a] p-5 opacity-0 transition-all duration-500 hover:border-[#d4b26a]/40 hover:bg-[#4a2e23] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4b26a]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1b17] md:p-6"
                 >
                   <div className="mb-3">
-                    <Icon className="w-8 h-8 text-[#d4b26a]/85 transition-colors duration-300" strokeWidth={1.5} />
+                    <Icon className="w-8 h-8 text-[#d4b26a]/85 transition-colors duration-300 group-hover/card:text-[#d4b26a]" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-base md:text-lg font-sans font-semibold text-[#f4ead8] mb-2">
+                  <h3 className="mb-2 text-base font-sans font-semibold text-[#f4ead8] md:text-lg">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#f4ead8]/70 font-body leading-relaxed">
+                  <p className="text-sm leading-relaxed text-[#f4ead8]/70 font-body">
                     {service.description}
                   </p>
-                </div>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#d4b26a]/90 transition-colors group-hover/card:text-[#d4b26a]">
+                    Open topic
+                    <span aria-hidden className="translate-x-0 transition-transform group-hover/card:translate-x-0.5">
+                      →
+                    </span>
+                  </span>
+                </Link>
               );
             })}
           </div>
@@ -189,8 +197,8 @@ export function Services() {
             },
           ].map((item) => (
             <article key={item.title} className="border border-[#d4b26a]/25 bg-[#3a231a] overflow-hidden">
-              <div className="h-36 md:h-40 overflow-hidden">
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover object-center" loading="lazy" />
+              <div className="h-36 md:h-40 overflow-hidden flex items-center justify-center bg-[#2b1b17]">
+                <img src={item.image} alt={item.title} className="w-full h-full object-contain object-center" loading="lazy" />
               </div>
               <div className="p-3.5">
                 <h3 className="text-[#f4ead8] font-sans font-semibold text-base">{item.title}</h3>

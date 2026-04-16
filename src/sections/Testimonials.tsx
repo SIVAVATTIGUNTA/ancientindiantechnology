@@ -77,6 +77,9 @@ export function Testimonials() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-[#2b1b17] tracking-tight">
             {testimonialsConfig.titleRegular} <span className="font-serif italic font-normal text-[#8d4f36]">{testimonialsConfig.titleItalic}</span>
           </h2>
+          <p className="mt-4 text-sm md:text-base text-[#3a231a]/72">
+            Swipe or drag to move through more scholar perspectives.
+          </p>
         </div>
       </div>
 
@@ -89,9 +92,17 @@ export function Testimonials() {
           centeredSlides={true}
           loop={true}
           speed={800}
+          grabCursor={true}
+          allowTouchMove={true}
+          freeMode={{
+            enabled: true,
+            momentum: true,
+            momentumRatio: 0.35,
+          }}
           autoplay={{
             delay: 4000,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
           }}
           breakpoints={{
             640: {

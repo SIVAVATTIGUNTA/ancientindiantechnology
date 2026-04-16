@@ -1,0 +1,43 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F4E8D6"/>
+  <rect x="48" y="48" width="1304" height="804" rx="34" fill="#FFF8EE" stroke="#C89B61" stroke-width="4"/>
+  <text x="92" y="138" fill="#2B1B17" font-family="Georgia, serif" font-size="56">Vaastu Mandala Grid</text>
+  <text x="92" y="188" fill="#7A4A32" font-family="Arial, sans-serif" font-size="24">The mandala is best read as a spatial ordering tool for center, edge, threshold, and direction.</text>
+
+  <rect x="128" y="252" width="540" height="540" rx="28" fill="#F3E4C4" stroke="#C89B61" stroke-width="3"/>
+  <g stroke="#B78852" stroke-width="4">
+    <rect x="194" y="318" width="408" height="408" fill="#FFF8EE"/>
+    <line x1="245" y1="318" x2="245" y2="726"/>
+    <line x1="296" y1="318" x2="296" y2="726"/>
+    <line x1="347" y1="318" x2="347" y2="726"/>
+    <line x1="398" y1="318" x2="398" y2="726"/>
+    <line x1="449" y1="318" x2="449" y2="726"/>
+    <line x1="500" y1="318" x2="500" y2="726"/>
+    <line x1="551" y1="318" x2="551" y2="726"/>
+    <line x1="194" y1="369" x2="602" y2="369"/>
+    <line x1="194" y1="420" x2="602" y2="420"/>
+    <line x1="194" y1="471" x2="602" y2="471"/>
+    <line x1="194" y1="522" x2="602" y2="522"/>
+    <line x1="194" y1="573" x2="602" y2="573"/>
+    <line x1="194" y1="624" x2="602" y2="624"/>
+    <line x1="194" y1="675" x2="602" y2="675"/>
+  </g>
+  <rect x="347" y="471" width="102" height="102" fill="#D9B46F"/>
+  <text x="358" y="530" fill="#2B1B17" font-family="Arial, sans-serif" font-size="24" font-weight="700">Center</text>
+
+  <text x="184" y="300" fill="#7A4A32" font-family="Arial, sans-serif" font-size="22">North</text>
+  <text x="610" y="534" fill="#7A4A32" font-family="Arial, sans-serif" font-size="22">East</text>
+  <text x="352" y="760" fill="#7A4A32" font-family="Arial, sans-serif" font-size="22">South</text>
+  <text x="116" y="534" fill="#7A4A32" font-family="Arial, sans-serif" font-size="22">West</text>
+
+  <rect x="766" y="252" width="516" height="540" rx="28" fill="#2B1B17"/>
+  <text x="808" y="318" fill="#F4E8D6" font-family="Arial, sans-serif" font-size="28" font-weight="700">How to use the grid well</text>
+  <text x="808" y="390" fill="#D9B46F" font-family="Arial, sans-serif" font-size="22">Treat it as a framework for hierarchy,</text>
+  <text x="808" y="420" fill="#D9B46F" font-family="Arial, sans-serif" font-size="22">proportion, orientation, and thresholds.</text>
+  <text x="808" y="474" fill="#F4E8D6" font-family="Arial, sans-serif" font-size="22">Do not force every square to equal one</text>
+  <text x="808" y="504" fill="#F4E8D6" font-family="Arial, sans-serif" font-size="22">literal room in a modern plan.</text>
+  <text x="808" y="558" fill="#D9B46F" font-family="Arial, sans-serif" font-size="22">Translate direction into daylight, heat,</text>
+  <text x="808" y="588" fill="#D9B46F" font-family="Arial, sans-serif" font-size="22">airflow, privacy, and circulation.</text>
+  <text x="808" y="654" fill="#F4E8D6" font-family="Arial, sans-serif" font-size="22">That keeps the architectural intelligence</text>
+  <text x="808" y="684" fill="#F4E8D6" font-family="Arial, sans-serif" font-size="22">while avoiding magical overclaiming.</text>
+</svg>

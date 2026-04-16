@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Copper smelting and exchange route</title>
+  <desc id="desc">Diagram showing ore extraction, furnace smelting, workshop shaping, and distribution of copper artifacts across exchange networks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0dfc5"/>
+      <stop offset="100%" stop-color="#d8a66a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <text x="84" y="102" fill="#3f281d" font-size="46" font-family="Georgia, serif">Copper Metallurgy from Mine to Market</text>
+  <text x="84" y="144" fill="#6b4b35" font-size="22" font-family="Arial, sans-serif">Copper economies linked ore sources, furnaces, urban workshops, and long-distance exchange.</text>
+
+  <rect x="86" y="210" width="1228" height="570" rx="28" fill="#f8f2e8" stroke="#91623d" stroke-width="4"/>
+  <rect x="132" y="286" width="236" height="374" rx="24" fill="#ece0c9"/>
+  <text x="160" y="340" fill="#6b3f27" font-size="30" font-family="Arial, sans-serif">Ore Source</text>
+  <path d="M168 534 L236 414 L300 534 Z" fill="#8b674e"/>
+  <path d="M232 508 L264 458 L294 508 Z" fill="#c77f38"/>
+  <text x="154" y="610" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="154" dy="0">Mining zones supplied</tspan>
+    <tspan x="154" dy="28">copper-bearing ores.</tspan>
+  </text>
+
+  <rect x="424" y="286" width="248" height="374" rx="24" fill="#ece0c9"/>
+  <text x="456" y="340" fill="#6b3f27" font-size="30" font-family="Arial, sans-serif">Smelting</text>
+  <rect x="510" y="466" width="78" height="92" rx="18" fill="#5d4031"/>
+  <path d="M516 448 C506 410, 536 386, 548 354 C562 386, 594 412, 584 448 Z" fill="#ea8b28"/>
+  <path d="M534 458 C530 436, 542 418, 548 400 C556 418, 568 436, 566 458 Z" fill="#ffd17f"/>
+  <text x="452" y="610" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="452" dy="0">Furnaces reduced ore into</tspan>
+    <tspan x="452" dy="28">metal, slag, and blooms.</tspan>
+  </text>
+
+  <rect x="728" y="286" width="256" height="374" rx="24" fill="#ece0c9"/>
+  <text x="760" y="340" fill="#6b3f27" font-size="30" font-family="Arial, sans-serif">Workshop</text>
+  <rect x="808" y="422" width="96" height="24" rx="10" fill="#c37e37"/>
+  <rect x="844" y="386" width="24" height="42" rx="8" fill="#c37e37"/>
+  <path d="M868 490 C886 468, 914 466, 938 488" stroke="#78553c" stroke-width="10" fill="none"/>
+  <text x="756" y="598" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="756" dy="0">Smiths hammered, cast,</tspan>
+    <tspan x="756" dy="27">and alloyed metal into</tspan>
+    <tspan x="756" dy="27">finished forms.</tspan>
+  </text>
+
+  <rect x="1040" y="286" width="220" height="374" rx="24" fill="#ece0c9"/>
+  <text x="1070" y="340" fill="#6b3f27" font-size="30" font-family="Arial, sans-serif">Exchange</text>
+  <circle cx="1104" cy="458" r="24" fill="#9a6f47"/>
+  <circle cx="1184" cy="402" r="24" fill="#9a6f47"/>
+  <circle cx="1196" cy="532" r="24" fill="#9a6f47"/>
+  <path d="M1104 458 L1184 402 L1196 532 Z" stroke="#9a6f47" stroke-width="6" fill="none"/>
+  <text x="1060" y="610" fill="#3d2b1f" font-size="19" font-family="Arial, sans-serif">
+    <tspan x="1060" dy="0">Finished goods moved</tspan>
+    <tspan x="1060" dy="28">through urban networks.</tspan>
+  </text>
+
+  <path d="M368 474 L424 474" stroke="#8c643f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M672 474 L728 474" stroke="#8c643f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M984 474 L1040 474" stroke="#8c643f" stroke-width="8" stroke-linecap="round"/>
+</svg>

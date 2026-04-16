@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Link } from 'react-router-dom';
 import { faqConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -150,17 +151,28 @@ export function FAQ() {
                 {faqConfig.ctaText}
               </p>
             )}
-            {faqConfig.ctaButtonText && (
-              <a
-                href={faqConfig.ctaHref || '#contact'}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#d4b26a] text-[#2b1b17] font-sans font-semibold text-sm rounded-full hover:bg-[#c6a055] transition-colors duration-300"
-              >
-                {faqConfig.ctaButtonText}
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            )}
+            {faqConfig.ctaButtonText &&
+              (faqConfig.ctaHref?.startsWith('/') ? (
+                <Link
+                  to={faqConfig.ctaHref}
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#d4b26a] text-[#2b1b17] font-sans font-semibold text-sm rounded-full hover:bg-[#c6a055] transition-colors duration-300"
+                >
+                  {faqConfig.ctaButtonText}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              ) : (
+                <a
+                  href={faqConfig.ctaHref || '#contact'}
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#d4b26a] text-[#2b1b17] font-sans font-semibold text-sm rounded-full hover:bg-[#c6a055] transition-colors duration-300"
+                >
+                  {faqConfig.ctaButtonText}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              ))}
           </div>
         )}
       </div>
