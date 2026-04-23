@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { heroConfig } from '../config';
@@ -9,6 +9,8 @@ export function Hero() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [homeHeaderHeight, setHomeHeaderHeight] = useState(0);
 
   const slides = useMemo(() => ([
     {
@@ -55,6 +57,60 @@ export function Hero() {
     return () => document.removeEventListener('keydown', onKey);
   }, []);
 
+  useEffect(() => {
+    let ticking = false;
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 24);
+        ticking = false;
+      });
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const header = document.getElementById('ait-home-header');
+    if (!header) return;
+
+    const update = () => {
+      setHomeHeaderHeight(Math.round(header.getBoundingClientRect().height));
+    };
+
+    update();
+
+    if (typeof window.ResizeObserver === 'undefined') {
+      window.addEventListener('resize', update, { passive: true });
+      return () => window.removeEventListener('resize', update);
+    }
+
+    const observer = new ResizeObserver(update);
+    observer.observe(header);
+    window.addEventListener('resize', update, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', update);
+    };
+  }, []);
+
+  const scrollToWithOffset = (targetId: string) => {
+    const element = document.getElementById(targetId);
+    if (!element) return;
+
+    const header = document.getElementById('ait-home-header');
+    const headerHeight = header ? header.getBoundingClientRect().height : 0;
+    const top = element.getBoundingClientRect().top + window.scrollY - Math.max(72, headerHeight + 14);
+
+    window.scrollTo({ top, behavior: 'smooth' });
+  };
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
@@ -63,7 +119,7 @@ export function Hero() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    document.getElementById(href.replace('#', ''))?.scrollIntoView({ behavior: 'smooth' });
+    scrollToWithOffset(href.replace('#', ''));
   };
 
   const toHref = (label: string, fallbackHref: string): string => {
@@ -86,12 +142,12 @@ export function Hero() {
   const currentSlide = slides[activeSlide];
 
   const primaryCtaClass =
-    'inline-flex min-h-[44px] touch-manipulation items-center justify-center rounded-full bg-[#d4b26a] px-7 py-3.5 text-sm font-sans font-semibold text-[#2b1b17] hover:bg-[#c6a055] transition-colors before:content-none after:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4b26a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1b17]';
+    'inline-flex w-full sm:w-auto min-h-[44px] touch-manipulation items-center justify-center rounded-full bg-[#d4b26a] px-7 py-3.5 text-sm font-sans font-semibold text-[#2b1b17] hover:bg-[#c6a055] transition-colors before:content-none after:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4b26a] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1b17]';
   const secondaryCtaClass =
-    'inline-flex min-h-[44px] touch-manipulation items-center justify-center rounded-full border border-[#d4b26a]/60 bg-[#2b1b17]/40 px-7 py-3.5 text-sm font-sans font-semibold text-[#f4ead8] hover:bg-[#3a231a]/70 transition-colors before:content-none after:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4b26a]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1b17]';
+    'inline-flex w-full sm:w-auto min-h-[44px] touch-manipulation items-center justify-center rounded-full border border-[#d4b26a]/60 bg-[#2b1b17]/40 px-7 py-3.5 text-sm font-sans font-semibold text-[#f4ead8] hover:bg-[#3a231a]/70 transition-colors before:content-none after:content-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4b26a]/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1b17]';
 
   return (
-    <section id="home" className="relative min-h-screen min-h-[100dvh] w-full overflow-hidden bg-[#2b1b17]">
+    <section id="home" className="relative min-h-[100svh] min-h-[100dvh] w-full overflow-hidden bg-[#2b1b17]">
       {slides.map((slide, index) => (
         <div
           key={slide.title}
@@ -103,13 +159,13 @@ export function Hero() {
             <img
               src={slide.image}
               alt=""
-              className="h-full w-full object-cover object-center blur-[2px] opacity-30"
+              className="hidden md:block h-full w-full object-cover object-center blur-[2px] opacity-30"
               loading={index === 0 ? 'eager' : 'lazy'}
             />
             <img
               src={slide.image}
               alt=""
-              className="absolute inset-0 h-full w-full object-contain object-center"
+              className="absolute inset-0 h-full w-full object-cover object-center md:object-contain md:object-center"
               loading={index === 0 ? 'eager' : 'lazy'}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#2b1b17]/92 via-[#2b1b17]/70 to-[#2b1b17]/88 max-md:from-[#2b1b17]/94 max-md:via-[#2b1b17]/78 max-md:to-[#2b1b17]/90" />
@@ -118,18 +174,21 @@ export function Hero() {
         </div>
       ))}
 
-      <div className="absolute inset-0 z-10 flex items-end px-5 pb-28 pt-24 sm:px-6 sm:pb-24 sm:pt-28 md:px-12 md:pb-16 md:pt-40">
-        <div className="max-w-3xl w-full">
-          <p className="inline-flex items-center rounded-full border border-[#d4b26a]/45 bg-[#2b1b17]/40 px-4 py-1.5 text-xs md:text-sm font-body uppercase tracking-[0.16em] text-[#d4b26a]">
+      <div
+        className="absolute inset-0 z-10 flex items-center justify-center px-5 pb-20 pt-[calc(var(--ait-home-header,0px)+22px)] sm:px-6 sm:pb-24 sm:pt-36 sm:items-end sm:justify-start md:px-12 md:pb-16 md:pt-40"
+        style={{ '--ait-home-header': `${homeHeaderHeight}px` } as CSSProperties}
+      >
+        <div key={activeSlide} className="max-w-3xl w-full text-center sm:text-left">
+          <p className="inline-flex items-center rounded-full border border-[#d4b26a]/45 bg-[#2b1b17]/40 px-4 py-1.5 text-xs md:text-sm font-body uppercase tracking-[0.16em] text-[#d4b26a] animate-in fade-in slide-in-from-bottom-2 duration-700">
             {currentSlide.badge}
           </p>
-          <h1 className="mt-4 text-[1.65rem] leading-tight sm:text-3xl md:mt-5 md:text-6xl lg:text-7xl font-sans font-extrabold tracking-tight text-[#f4ead8]">
+          <h1 className="mt-4 text-[clamp(2.35rem,7vw,5.25rem)] leading-[1.04] font-sans font-extrabold tracking-tight text-[#f4ead8] animate-in fade-in slide-in-from-bottom-3 duration-700">
             {currentSlide.title}
           </h1>
-          <p className="mt-3 max-w-2xl text-sm sm:text-base md:mt-5 md:text-lg text-[#f4ead8]/82 font-body leading-relaxed">
+          <p className="mt-4 mx-auto sm:mx-0 max-w-2xl text-[0.98rem] sm:text-base md:mt-5 md:text-lg text-[#f4ead8]/82 font-body leading-relaxed animate-in fade-in slide-in-from-bottom-3 duration-700">
             {currentSlide.description}
           </p>
-          <div className="mt-6 flex flex-wrap gap-3 md:mt-8">
+          <div className="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center justify-center sm:justify-start gap-3 md:mt-8 animate-in fade-in slide-in-from-bottom-3 duration-700">
             {currentSlide.primaryCta.href.startsWith('#') ? (
               <a
                 href={currentSlide.primaryCta.href}
@@ -195,11 +254,15 @@ export function Hero() {
         <ChevronDown className="w-4 h-4 text-[#d4b26a]/70" strokeWidth={1.5} />
       </div>
 
-      <nav className="absolute top-0 left-0 right-0 z-30 px-4 md:px-10 py-4">
-        <div className="flex items-center justify-between rounded-2xl border border-[#d4b26a]/20 bg-[#2b1b17]/45 px-4 md:px-6 py-2 shadow-[0_8px_28px_rgba(0,0,0,0.24)]">
+      <nav id="ait-home-header" className="fixed top-0 left-0 right-0 z-40 px-4 sm:px-6 md:px-10 py-3 sm:py-4">
+        <div
+          className={`flex items-center justify-between rounded-2xl border px-4 md:px-6 py-2 shadow-[0_8px_28px_rgba(0,0,0,0.24)] backdrop-blur-sm transition-colors duration-300 ${
+            isScrolled ? 'border-[#2b1b17]/10 bg-[#f4ead8]/95' : 'border-[#d4b26a]/20 bg-[#2b1b17]/45'
+          }`}
+        >
           <Link
             to="/"
-            className="h-24 w-24 md:h-[100px] md:w-[100px] p-1.5 shrink-0"
+            className="h-16 w-16 sm:h-20 sm:w-20 md:h-[100px] md:w-[100px] p-1.5 shrink-0"
             aria-label="Home"
           >
             <img
@@ -215,8 +278,12 @@ export function Hero() {
                 const resolved = toHref(link.label, link.href);
                 const navClass = `rounded-lg px-3.5 py-2.5 leading-none transition-all duration-200 ${
                   activeDropdown === link.label
-                    ? 'bg-[#d4b26a]/25 text-[#f4ead8]'
-                    : 'text-[#f4ead8]/90 hover:bg-[#f4ead8]/12 hover:text-[#ffffff]'
+                    ? isScrolled
+                      ? 'bg-[#d4b26a]/28 text-[#2b1b17]'
+                      : 'bg-[#d4b26a]/25 text-[#f4ead8]'
+                    : isScrolled
+                      ? 'text-[#1f1612] hover:bg-[#2b1b17]/8 hover:text-[#140d0a]'
+                      : 'text-[#f4ead8]/90 hover:bg-[#f4ead8]/12 hover:text-[#ffffff]'
                 }`;
                 const colCount = link.columns?.length ?? 0;
                 return (
@@ -237,19 +304,31 @@ export function Hero() {
                     )}
                     {activeDropdown === link.label && link.columns && (
                       <div
-                        className={`absolute right-0 top-full mt-2.5 rounded-2xl border border-[#d4b26a]/25 bg-[#2b1b17]/96 p-4 shadow-[0_20px_46px_rgba(0,0,0,0.38)] backdrop-blur-sm animate-in fade-in slide-in-from-top-1 duration-200 ${
-                          colCount > 1 ? 'w-[460px]' : 'w-[300px]'
-                        }`}
+                        className={`absolute right-0 top-full mt-2.5 z-50 rounded-2xl border p-4 shadow-[0_20px_46px_rgba(0,0,0,0.38)] animate-in fade-in slide-in-from-top-1 duration-200 ${
+                          isScrolled ? 'border-[#2b1b17]/12 bg-[#f4ead8]' : 'border-[#d4b26a]/25 bg-[#2b1b17]'
+                        } ${colCount > 1 ? 'w-[460px]' : 'w-[300px]'}`}
                       >
                         <div className={`grid gap-2.5 ${colCount > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
                           {link.columns.flat().map((item) => (
                             <Link
                               key={item.label}
                               to={topicPathFromLabel(item.label)}
-                              className="rounded-xl px-3 py-2.5 hover:bg-[#f4ead8]/10 transition-colors duration-200"
+                              className={`rounded-xl px-3 py-2.5 transition-colors duration-200 ${
+                                isScrolled ? 'hover:bg-[#2b1b17]/8' : 'hover:bg-[#f4ead8]/10'
+                              }`}
                             >
-                              <p className="text-[#f4ead8] text-sm font-sans font-semibold leading-tight">{item.label}</p>
-                              <p className="mt-1.5 text-xs text-[#f4ead8]/82 font-body leading-relaxed min-h-[32px]">
+                              <p
+                                className={`text-sm font-sans font-semibold leading-tight ${
+                                  isScrolled ? 'text-[#2b1b17]' : 'text-[#f4ead8]'
+                                }`}
+                              >
+                                {item.label}
+                              </p>
+                              <p
+                                className={`mt-1.5 text-xs font-body leading-relaxed min-h-[32px] ${
+                                  isScrolled ? 'text-[#2b1b17]/85' : 'text-[#f4ead8]/82'
+                                }`}
+                              >
                                 {getDescription(item.description)}
                               </p>
                             </Link>
@@ -264,7 +343,9 @@ export function Hero() {
           )}
 
           <button
-            className="lg:hidden text-[#f4ead8] p-2.5 rounded-lg hover:bg-[#f4ead8]/10 transition-colors"
+            className={`lg:hidden p-2.5 rounded-lg transition-colors ${
+              isScrolled ? 'text-[#2b1b17] hover:bg-[#2b1b17]/8' : 'text-[#f4ead8] hover:bg-[#f4ead8]/10'
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
