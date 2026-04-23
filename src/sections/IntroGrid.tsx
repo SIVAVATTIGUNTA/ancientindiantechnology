@@ -21,23 +21,26 @@ const imageAnimConfigs = [
   { clipFrom: 'inset(0% 0% 0% 100%)', rotation: -1.5, parallax: [-7, 7], delay: 0.18 },
 ];
 
+const fallbackVideos: YouTubeGalleryVideo[] = [
+  {
+    title: 'Ancient Indian Technology Documentary',
+    src: 'https://www.youtube.com/embed/Xhc-hT71AnA?si=ulBRclKafIvKwxXO',
+    videoType: 'fullLength',
+  },
+  {
+    title: 'Astronomy and Scientific Heritage',
+    src: 'https://www.youtube.com/embed/HjRBdayDkk0?si=iUZCkzms44H4x9hw',
+    videoType: 'fullLength',
+  },
+];
+
 export function IntroGrid() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleLine1Ref = useRef<HTMLSpanElement>(null);
   const titleLine2Ref = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-  const fallbackVideos: YouTubeGalleryVideo[] = [
-    {
-      title: 'Ancient Indian Technology Documentary',
-      src: 'https://www.youtube.com/embed/Xhc-hT71AnA?si=ulBRclKafIvKwxXO',
-    },
-    {
-      title: 'Astronomy and Scientific Heritage',
-      src: 'https://www.youtube.com/embed/HjRBdayDkk0?si=iUZCkzms44H4x9hw',
-    },
-  ];
-  const { videos: introVideos } = useYouTubeChannelVideos({ fallbackVideos, maxResults: 2 });
+  const { videos: introVideos } = useYouTubeChannelVideos({ fallbackVideos, maxResults: 2, videoKind: 'fullLength' });
   if (!introGridConfig.titleLine1 && !introGridConfig.titleLine2 && introGridConfig.portfolioImages.length === 0) return null;
 
   useEffect(() => {

@@ -16,7 +16,7 @@ export function CopperMetallurgyPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#2b1b17]/82 via-[#2b1b17]/55 to-[#2b1b17]/75" />
         <div className="absolute inset-0 max-w-7xl mx-auto px-6 md:px-12 pb-10 flex items-end">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-700">
             <p className="inline-flex bg-[#d4b26a]/30 px-4 py-1.5 text-xs uppercase tracking-[0.16em] font-body text-[#f4ead8]">Metallurgy</p>
             <h1 className="mt-5 text-4xl md:text-6xl font-sans font-bold tracking-tight text-[#f4ead8]">Copper Metallurgy</h1>
             <p className="mt-3 text-[#f4ead8]/90">The metal system that linked ore zones, furnaces, toolmakers, and exchange networks across early South Asian society.</p>
@@ -25,7 +25,7 @@ export function CopperMetallurgyPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-8">
-        <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
+        <article data-ait-reveal className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-sans font-semibold">Why Copper Was Foundational</h2>
           <p className="mt-4 text-[#3a231a]/85 leading-relaxed">
             Copper was one of the first metals to transform everyday and specialist production. It could be smelted, hammered, cast,
@@ -37,7 +37,7 @@ export function CopperMetallurgyPage() {
           </p>
         </article>
 
-        <section className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
+        <section data-ait-reveal data-ait-delay="60" className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
           <p className="text-xs uppercase tracking-[0.14em] text-[#8d4f36]">Top Video</p>
           <h3 className="mt-2 text-xl font-semibold font-sans">Copper in the Indus Valley Civilization</h3>
           <div className="mt-3 aspect-video bg-black overflow-hidden border border-[#8d4f36]/20">
@@ -53,7 +53,7 @@ export function CopperMetallurgyPage() {
           </div>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-5">
+        <section data-ait-reveal data-ait-delay="40" className="grid md:grid-cols-2 gap-5">
           <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
             <h3 className="text-xl font-semibold font-sans">Extraction and Smelting</h3>
             <p className="mt-3 text-sm text-[#3a231a]/84 leading-relaxed">
@@ -70,7 +70,7 @@ export function CopperMetallurgyPage() {
           </article>
         </section>
 
-        <section className="grid lg:grid-cols-[1fr_1fr] gap-6 items-stretch">
+        <section data-ait-reveal data-ait-delay="60" className="grid lg:grid-cols-[1fr_1fr] gap-6 items-stretch">
           <figure className="border border-[#8d4f36]/20 bg-[#f7efdf] p-3 flex flex-col">
             <img
               src="/copper-smelting-route.svg"
@@ -104,7 +104,7 @@ export function CopperMetallurgyPage() {
           </article>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-5">
+        <section data-ait-reveal data-ait-delay="40" className="grid md:grid-cols-2 gap-5">
           <figure className="border border-[#8d4f36]/20 bg-[#f7efdf] p-3">
             <img src="/copper-toolkit.svg" alt="Illustrated copper toolkit showing blades, vessels, rods, and ornaments" className="h-[24rem] md:h-[28rem] w-full object-contain object-center bg-white p-2 md:p-3" />
             <figcaption className="p-3 text-sm text-[#3a231a]/80">
@@ -123,7 +123,7 @@ export function CopperMetallurgyPage() {
           </article>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-6">
+        <section data-ait-reveal data-ait-delay="60" className="grid md:grid-cols-2 gap-6">
           <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
             <p className="text-xs uppercase tracking-[0.14em] text-[#8d4f36]">Mid Video</p>
             <h3 className="text-lg font-semibold font-sans">Indus Valley Copper Metallurgy</h3>
@@ -155,7 +155,7 @@ export function CopperMetallurgyPage() {
           </article>
         </section>
 
-        <section className="bg-[#2b1b17] text-[#f4ead8] p-6 border border-[#8d4f36]/20">
+        <section data-ait-reveal="scale" className="bg-[#2b1b17] text-[#f4ead8] p-6 border border-[#8d4f36]/20">
           <h3 className="text-xl font-semibold font-sans">Conclusion</h3>
           <p className="mt-3 text-sm md:text-base text-[#f4ead8]/85">
             Copper metallurgy formed a practical backbone for early South Asian craft and exchange. Its significance lies in the full

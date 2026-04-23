@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useLenis } from './hooks/useLenis';
+import { useAutoRevealAnimations } from './hooks/useAutoRevealAnimations';
 import { Hero } from './sections/Hero';
 import { IntroGrid } from './sections/IntroGrid';
 import { Services } from './sections/Services';
@@ -85,6 +86,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ defa
 function App() {
   // Initialize Lenis smooth scroll
   useLenis();
+  useAutoRevealAnimations();
 
   useEffect(() => {
     if (siteConfig.siteTitle) {

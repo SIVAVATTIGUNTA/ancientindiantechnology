@@ -20,7 +20,7 @@ export function ResourceRelatedSection({
   checklist = [],
 }: ResourceRelatedSectionProps) {
   return (
-    <section className='rounded-2xl border border-[#8d4f36]/20 bg-white p-6 md:p-7'>
+    <section data-ait-reveal className='rounded-2xl border border-[#8d4f36]/20 bg-white p-6 md:p-7'>
       <p className='text-xs uppercase tracking-[0.16em] text-[#8d4f36]'>{eyebrow}</p>
       <h2 className='mt-2 text-2xl font-semibold'>{title}</h2>
       <p className='mt-3 max-w-4xl text-sm md:text-base leading-relaxed text-[#3a231a]/82'>{description}</p>

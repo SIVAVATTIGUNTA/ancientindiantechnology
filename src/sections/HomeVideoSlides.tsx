@@ -7,22 +7,27 @@ const fallbackVideos: YouTubeGalleryVideo[] = [
   {
     title: 'Ancient Indian Technology — Featured Documentary I',
     src: 'https://www.youtube.com/embed/Xhc-hT71AnA?si=ulBRclKafIvKwxXO',
+    videoType: 'fullLength',
   },
   {
     title: 'Ancient Indian Technology — Featured Documentary II',
     src: 'https://www.youtube.com/embed/HjRBdayDkk0?si=iUZCkzms44H4x9hw',
+    videoType: 'fullLength',
   },
   {
     title: 'Ancient Indian Technology — Featured Documentary III',
     src: 'https://www.youtube.com/embed/WZzK1sQoeHo?si=Q1Zf4KXtEzkZt44B',
+    videoType: 'fullLength',
   },
   {
     title: 'Ancient Indian Technology — Featured Documentary IV',
     src: 'https://www.youtube.com/embed/GwUtRso7aNw?si=wxrUkvCRDGUnBhHk',
+    videoType: 'fullLength',
   },
   {
     title: 'Ancient Indian Technology — Featured Documentary V',
     src: 'https://www.youtube.com/embed/ixrQqNogOwc?si=HKuGzodkRdexBQ9B',
+    videoType: 'fullLength',
   },
 ];
 
@@ -31,6 +36,7 @@ export function HomeVideoSlides() {
   const { videos, loading, error } = useYouTubeChannelVideos({
     fallbackVideos,
     maxResults: latestCount,
+    videoKind: 'fullLength',
   });
 
   const syncState = useMemo(() => {

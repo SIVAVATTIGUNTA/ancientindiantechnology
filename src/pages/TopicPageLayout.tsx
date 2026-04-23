@@ -68,7 +68,7 @@ export function TopicPageLayout({ slug }: TopicPageLayoutProps) {
         </div>
         <div className={`absolute inset-0 bg-gradient-to-r ${styleMap[topic.pageStyle]}`} />
         <div className="absolute inset-0 max-w-7xl mx-auto px-6 md:px-12 pb-10 flex items-end">
-          <div className="max-w-3xl">
+          <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-4 duration-700">
             <p className="inline-flex rounded-full bg-[#d4b26a]/30 px-4 py-1.5 text-xs uppercase tracking-[0.16em] font-body text-[#f4ead8]">
               {topic.category}
             </p>
@@ -80,7 +80,10 @@ export function TopicPageLayout({ slug }: TopicPageLayoutProps) {
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-16">
         <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-8">
-          <div className="rounded-2xl border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
+          <div
+            data-ait-reveal="left"
+            className="rounded-2xl border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8"
+          >
             <div className="flex items-center gap-3">
               <Icon className="h-5 w-5 text-[#0b5c5c]" />
               <h2 className="text-2xl font-sans font-semibold">Topic Overview</h2>
@@ -96,7 +99,11 @@ export function TopicPageLayout({ slug }: TopicPageLayoutProps) {
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7">
+          <aside
+            data-ait-reveal="right"
+            data-ait-delay="80"
+            className="rounded-2xl border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7"
+          >
             <h3 className="text-xl font-sans font-semibold">Key Highlights</h3>
             <ul className="mt-4 space-y-3">
               {topic.highlights.map((point) => (
@@ -109,7 +116,11 @@ export function TopicPageLayout({ slug }: TopicPageLayoutProps) {
           </aside>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
+        <div
+          data-ait-reveal
+          data-ait-delay="40"
+          className="mt-10 rounded-2xl border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8"
+        >
           <h2 className="text-2xl font-sans font-semibold">Timeline</h2>
           <div className="mt-6 grid md:grid-cols-3 gap-4">
             {topic.timeline.map((step) => (
@@ -121,7 +132,7 @@ export function TopicPageLayout({ slug }: TopicPageLayoutProps) {
           </div>
         </div>
 
-        <div className="mt-10 grid md:grid-cols-2 gap-6">
+        <div data-ait-reveal data-ait-delay="60" className="mt-10 grid md:grid-cols-2 gap-6">
           {topic.gallery.map((img, idx) => (
             <div key={`${img}-${idx}`} className="rounded-2xl overflow-hidden border border-[#8d4f36]/20 bg-white/40">
               <img src={img} alt={`${topic.title} visual ${idx + 1}`} className="h-64 w-full object-cover object-center" loading="lazy" />
@@ -129,7 +140,7 @@ export function TopicPageLayout({ slug }: TopicPageLayoutProps) {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
+        <div data-ait-reveal data-ait-delay="60" className="mt-10 rounded-2xl border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
           <h2 className="text-2xl font-sans font-semibold">Featured Video</h2>
           <p className="mt-3 text-[#3a231a]/80 font-body">A curated visual reference to complement this topic.</p>
           <div className="mt-5 overflow-hidden rounded-xl border border-[#8d4f36]/20 bg-black">
@@ -147,7 +158,11 @@ export function TopicPageLayout({ slug }: TopicPageLayoutProps) {
           </div>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-[#8d4f36]/20 bg-gradient-to-r from-[#2b1b17] to-[#3a231a] p-6 md:p-8">
+        <div
+          data-ait-reveal="scale"
+          data-ait-delay="60"
+          className="mt-10 rounded-2xl border border-[#8d4f36]/20 bg-gradient-to-r from-[#2b1b17] to-[#3a231a] p-6 md:p-8"
+        >
           <h3 className="text-2xl font-sans font-semibold text-[#f4ead8]">{topic.ctaTitle}</h3>
           <p className="mt-3 text-[#f4ead8]/80 max-w-3xl font-body">{topic.ctaText}</p>
           <div className="mt-5">
@@ -161,7 +176,7 @@ export function TopicPageLayout({ slug }: TopicPageLayoutProps) {
         </div>
 
         {related.length > 0 && (
-          <div className="mt-12">
+          <div data-ait-reveal data-ait-delay="80" className="mt-12">
             <h3 className="text-2xl font-sans font-semibold mb-5">Related Topics</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {related.map((item) => (

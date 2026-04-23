@@ -7,6 +7,7 @@ import { VideoCard } from '../../components/video/VideoCard';
 import { VideoRowCarousel } from '../../components/video/VideoRowCarousel';
 import { VideoTopicHighlights } from '../../components/video/VideoTopicHighlights';
 import { useYouTubeChannelVideos } from '@/hooks/useYouTubeChannelVideos';
+import { formatDurationLabel } from '@/lib/youtubeVideoFilters';
 
 const CHANNEL_URL = 'https://www.youtube.com/@Ancientindiantechnology';
 
@@ -36,23 +37,31 @@ const documentaryTakeaways = [
 
 const documentaryTerms = ['overview films', 'metallurgy stories', 'astronomy heritage', 'urban engineering', 'medical history', 'evidence-based viewing'];
 
+const docs = [
+  { title: 'Ancient Indian Technology Documentary', query: 'Ancient Indian Technology Documentary', category: 'documentary', duration: '30-60 min', reason: 'Gateway film for first-time users', placement: 'hero', src: 'https://www.youtube.com/embed/Xhc-hT71AnA?si=ulBRclKafIvKwxXO' },
+  { title: 'Astronomy and Scientific Heritage', query: 'Astronomy and Scientific Heritage India documentary', category: 'documentary', duration: '20-45 min', reason: 'Strong observatory and math context', placement: 'featured', src: 'https://www.youtube.com/embed/HjRBdayDkk0?si=iUZCkzms44H4x9hw' },
+  { title: 'Engineering in Ancient Civilizations of India', query: 'ancient india engineering documentary', category: 'documentary', duration: '20-45 min', reason: 'Cross-topic technical depth', placement: 'grid', src: 'https://www.youtube.com/embed/WZzK1sQoeHo?si=Q1Zf4KXtEzkZt44B' },
+  { title: 'Knowledge Systems and Text Traditions', query: 'ancient indian knowledge systems documentary', category: 'documentary', duration: '15-30 min', reason: 'Textual and research framing', placement: 'grid', src: 'https://www.youtube.com/embed/GwUtRso7aNw?si=wxrUkvCRDGUnBhHk' },
+  { title: 'Metallurgy of Wootz and Zinc', query: 'wootz steel zinc distillation documentary', category: 'documentary', duration: '15-30 min', reason: 'Premium metallurgy narrative', placement: 'grid', src: 'https://www.youtube.com/embed/ixrQqNogOwc?si=HKuGzodkRdexBQ9B' },
+  { title: 'Urban Planning and Hydraulic Intelligence', query: 'indus valley drainage system documentary', category: 'documentary', duration: '15-25 min', reason: 'Infrastructure lens for urban pages', placement: 'carousel', src: 'https://www.youtube.com/embed?listType=search&list=indus%20valley%20drainage%20system%20documentary' },
+  { title: 'Ayurveda: Texts, Practice, and Modern Relevance', query: 'ayurveda history documentary india', category: 'documentary', duration: '20-40 min', reason: 'Medical legacy playlist anchor', placement: 'carousel', src: 'https://www.youtube.com/embed?listType=search&list=ayurveda%20history%20documentary%20india' },
+];
+
+const fallbackDocumentaryVideos = docs.slice(0, 6).map((doc) => ({
+  title: doc.title,
+  src: doc.src,
+  videoType: 'fullLength' as const,
+}));
+
 export function FeaturedDocumentariesPage() {
   useEffect(() => {
     document.title = 'Featured Documentaries - Ancient Indian Technology';
   }, []);
 
-  const docs = [
-    { title: 'Ancient Indian Technology Documentary', query: 'Ancient Indian Technology Documentary', category: 'documentary', duration: '30-60 min', reason: 'Gateway film for first-time users', placement: 'hero', src: 'https://www.youtube.com/embed/Xhc-hT71AnA?si=ulBRclKafIvKwxXO' },
-    { title: 'Astronomy and Scientific Heritage', query: 'Astronomy and Scientific Heritage India documentary', category: 'documentary', duration: '20-45 min', reason: 'Strong observatory and math context', placement: 'featured', src: 'https://www.youtube.com/embed/HjRBdayDkk0?si=iUZCkzms44H4x9hw' },
-    { title: 'Engineering in Ancient Civilizations of India', query: 'ancient india engineering documentary', category: 'documentary', duration: '20-45 min', reason: 'Cross-topic technical depth', placement: 'grid', src: 'https://www.youtube.com/embed/WZzK1sQoeHo?si=Q1Zf4KXtEzkZt44B' },
-    { title: 'Knowledge Systems and Text Traditions', query: 'ancient indian knowledge systems documentary', category: 'documentary', duration: '15-30 min', reason: 'Textual and research framing', placement: 'grid', src: 'https://www.youtube.com/embed/GwUtRso7aNw?si=wxrUkvCRDGUnBhHk' },
-    { title: 'Metallurgy of Wootz and Zinc', query: 'wootz steel zinc distillation documentary', category: 'documentary', duration: '15-30 min', reason: 'Premium metallurgy narrative', placement: 'grid', src: 'https://www.youtube.com/embed/ixrQqNogOwc?si=HKuGzodkRdexBQ9B' },
-    { title: 'Urban Planning and Hydraulic Intelligence', query: 'indus valley drainage system documentary', category: 'documentary', duration: '15-25 min', reason: 'Infrastructure lens for urban pages', placement: 'carousel', src: 'https://www.youtube.com/embed?listType=search&list=indus%20valley%20drainage%20system%20documentary' },
-    { title: 'Ayurveda: Texts, Practice, and Modern Relevance', query: 'ayurveda history documentary india', category: 'documentary', duration: '20-40 min', reason: 'Medical legacy playlist anchor', placement: 'carousel', src: 'https://www.youtube.com/embed?listType=search&list=ayurveda%20history%20documentary%20india' },
-  ];
   const { videos: latestVideos, loading, error } = useYouTubeChannelVideos({
-    fallbackVideos: docs.slice(0, 6).map((doc) => ({ title: doc.title, src: doc.src })),
+    fallbackVideos: fallbackDocumentaryVideos,
     maxResults: 9,
+    videoKind: 'fullLength',
   });
   const docsFromChannel = useMemo(
     () =>
@@ -60,8 +69,8 @@ export function FeaturedDocumentariesPage() {
         title: video.title,
         src: video.src,
         category: 'documentary',
-        duration: 'Latest upload',
-        reason: 'Auto-synced from channel',
+        duration: formatDurationLabel(video.durationSeconds) ?? 'Latest upload',
+        reason: 'Auto-synced full-length video from channel',
         query: 'channel latest',
         placement: index === 0 ? 'hero' : index < 4 ? 'featured' : 'grid',
       })),

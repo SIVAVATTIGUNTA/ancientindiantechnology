@@ -18,7 +18,7 @@ export function ResourceImageSupport({
   const visualNotes = notes ?? [promptsText, keywordsText].filter((item): item is string => Boolean(item));
 
   return (
-    <section className='rounded-2xl border border-[#8d4f36]/20 bg-white p-6 text-sm'>
+    <section data-ait-reveal className='rounded-2xl border border-[#8d4f36]/20 bg-white p-6 text-sm'>
       <h3 className='text-lg font-semibold'>{title}</h3>
       <p className='mt-2 text-[#3a231a]/82'>{description}</p>
       <div className='mt-4 grid md:grid-cols-2 gap-3'>

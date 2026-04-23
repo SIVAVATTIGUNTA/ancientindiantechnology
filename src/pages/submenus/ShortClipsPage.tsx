@@ -5,6 +5,7 @@ import { VideoTopicHighlights } from '../../components/video/VideoTopicHighlight
 import { Footer } from '../../sections/Footer';
 import { SubmenuHeaderNav } from '../../components/SubmenuHeaderNav';
 import { useYouTubeChannelVideos } from '@/hooks/useYouTubeChannelVideos';
+import { formatDurationLabel } from '@/lib/youtubeVideoFilters';
 
 const shortClipHighlights = [
   {
@@ -32,31 +33,39 @@ const shortClipTakeaways = [
 
 const shortClipTerms = ['micro-learning', 'quick facts', 'visual hooks', 'topic clusters', 'mobile viewing', 'next-watch flow'];
 
+const shortCards = [
+  { title: 'Iron Pillar in 90 Seconds', duration: '01:28', query: 'delhi iron pillar quick facts', reason: 'Quick science hook', src: 'https://www.youtube.com/embed?listType=search&list=delhi%20iron%20pillar%20quick%20facts' },
+  { title: 'How Stepwells Stay Cool', duration: '02:10', query: 'stepwell cooling system explained short', reason: 'Architecture micro-learning', src: 'https://www.youtube.com/embed?listType=search&list=stepwell%20cooling%20system%20explained%20short' },
+  { title: 'Wootz Steel Pattern Secrets', duration: '03:05', query: 'wootz steel pattern short documentary', reason: 'Material science teaser', src: 'https://www.youtube.com/embed?listType=search&list=wootz%20steel%20pattern%20short%20documentary' },
+  { title: 'Jantar Mantar Instrument Demo', duration: '02:42', query: 'jantar mantar instrument short', reason: 'Visual astronomy learning', src: 'https://www.youtube.com/embed?listType=search&list=jantar%20mantar%20instrument%20short' },
+  { title: 'Sushruta Surgical Legacy', duration: '02:24', query: 'sushruta surgery history short', reason: 'Medicine highlight', src: 'https://www.youtube.com/embed?listType=search&list=sushruta%20surgery%20history%20short' },
+  { title: 'Lothal Dock in Motion', duration: '01:55', query: 'lothal dockyard short animation', reason: 'Engineering explain-in-a-minute', src: 'https://www.youtube.com/embed?listType=search&list=lothal%20dockyard%20short%20animation' },
+];
+
+const fallbackShortVideos = shortCards.map((card) => ({
+  title: card.title,
+  src: card.src,
+  videoType: 'short' as const,
+}));
+
 export function ShortClipsPage() {
   useEffect(() => {
     document.title = 'Short Clips - Ancient Indian Technology Reels';
   }, []);
 
-  const shortCards = [
-    { title: 'Iron Pillar in 90 Seconds', duration: '01:28', query: 'delhi iron pillar quick facts', reason: 'Quick science hook', src: 'https://www.youtube.com/embed?listType=search&list=delhi%20iron%20pillar%20quick%20facts' },
-    { title: 'How Stepwells Stay Cool', duration: '02:10', query: 'stepwell cooling system explained short', reason: 'Architecture micro-learning', src: 'https://www.youtube.com/embed?listType=search&list=stepwell%20cooling%20system%20explained%20short' },
-    { title: 'Wootz Steel Pattern Secrets', duration: '03:05', query: 'wootz steel pattern short documentary', reason: 'Material science teaser', src: 'https://www.youtube.com/embed?listType=search&list=wootz%20steel%20pattern%20short%20documentary' },
-    { title: 'Jantar Mantar Instrument Demo', duration: '02:42', query: 'jantar mantar instrument short', reason: 'Visual astronomy learning', src: 'https://www.youtube.com/embed?listType=search&list=jantar%20mantar%20instrument%20short' },
-    { title: 'Sushruta Surgical Legacy', duration: '02:24', query: 'sushruta surgery history short', reason: 'Medicine highlight', src: 'https://www.youtube.com/embed?listType=search&list=sushruta%20surgery%20history%20short' },
-    { title: 'Lothal Dock in Motion', duration: '01:55', query: 'lothal dockyard short animation', reason: 'Engineering explain-in-a-minute', src: 'https://www.youtube.com/embed?listType=search&list=lothal%20dockyard%20short%20animation' },
-  ];
   const { videos: latestVideos, loading, error } = useYouTubeChannelVideos({
-    fallbackVideos: shortCards.map((card) => ({ title: card.title, src: card.src })),
+    fallbackVideos: fallbackShortVideos,
     maxResults: 9,
+    videoKind: 'short',
   });
   const syncedShortCards = useMemo(
     () =>
       latestVideos.map((video) => ({
         title: video.title,
         src: video.src,
-        duration: 'Latest',
+        duration: formatDurationLabel(video.durationSeconds) ?? video.duration ?? 'Short',
         query: 'channel latest',
-        reason: 'Auto-synced short/clip from channel',
+        reason: 'Auto-synced YouTube Short from channel',
       })),
     [latestVideos]
   );

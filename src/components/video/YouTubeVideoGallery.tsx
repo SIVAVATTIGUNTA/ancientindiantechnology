@@ -8,6 +8,13 @@ import { cn } from '@/lib/utils';
 export type YouTubeGalleryVideo = {
   title: string;
   src: string;
+  description?: string;
+  publishedAt?: string;
+  duration?: string;
+  durationSeconds?: number;
+  videoId?: string;
+  thumbnail?: string;
+  videoType?: 'short' | 'fullLength';
 };
 
 type YouTubeVideoGalleryProps = {

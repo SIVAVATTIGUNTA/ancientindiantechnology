@@ -39,7 +39,7 @@ export function ResourceHero({ eyebrow, title, description, searchPlaceholder, h
         </div>
         <div className='absolute inset-0 bg-gradient-to-r from-[#2b1b17]/90 via-[#2b1b17]/64 to-[#2b1b17]/42' />
         <div className='absolute inset-0 max-w-7xl mx-auto px-6 md:px-12 pb-10 md:pb-12 flex items-end'>
-          <div className='max-w-4xl'>{content}</div>
+          <div className='max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-700'>{content}</div>
         </div>
       </section>
     );
@@ -48,7 +48,7 @@ export function ResourceHero({ eyebrow, title, description, searchPlaceholder, h
   return (
     <section className='border-b border-[#8d4f36]/15 bg-[#fcfaf6]'>
       <div className='max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-14'>
-        {content}
+        <div className='animate-in fade-in slide-in-from-bottom-4 duration-700'>{content}</div>
       </div>
     </section>
   );

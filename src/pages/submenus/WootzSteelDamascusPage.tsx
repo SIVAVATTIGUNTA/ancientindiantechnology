@@ -90,7 +90,7 @@ export function WootzSteelDamascusPage() {
         </div>
         <div className='absolute inset-0 bg-gradient-to-r from-[#1d120f]/85 via-[#2b1b17]/55 to-[#2b1b17]/78' />
         <div className='absolute inset-0 max-w-7xl mx-auto px-6 md:px-12 pb-10 md:pb-14 flex items-end'>
-          <div className='max-w-4xl'>
+          <div className='max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-700'>
             <p className='inline-flex bg-[#d4b26a]/25 px-4 py-1.5 text-xs uppercase tracking-[0.16em] font-body text-[#f4ead8]'>
               Metallurgy
             </p>
@@ -113,7 +113,7 @@ export function WootzSteelDamascusPage() {
       </section>
 
       <section className='max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16'>
-        <article className='border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8'>
+        <article data-ait-reveal className='border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8'>
           <h2 className='text-2xl md:text-3xl font-sans font-semibold'>Introduction</h2>
           <p className='mt-4 text-[#3a231a]/88 leading-relaxed'>
             Wootz steel was among the earliest known forms of high-carbon steel developed in ancient India, with roots reaching
@@ -130,27 +130,28 @@ export function WootzSteelDamascusPage() {
         </article>
 
         <section className='mt-8'>
-          <h2 className='text-2xl md:text-3xl font-sans font-semibold'>Key Highlights</h2>
+          <h2 data-ait-reveal className='text-2xl md:text-3xl font-sans font-semibold'>
+            Key Highlights
+          </h2>
           <div className='mt-5 grid md:grid-cols-3 gap-4'>
-            {highlightCards.map((card) => {
+            {highlightCards.map((card, index) => {
               const Icon = card.icon;
               return (
-                <article
-                  key={card.title}
-                  className='border border-[#8d4f36]/20 bg-[#f8f0e3] p-5 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(43,27,23,0.12)] transition-all'
-                >
-                  <div className='h-10 w-10 flex items-center justify-center bg-[#d4b26a]/25 text-[#2b1b17]'>
-                    <Icon className='h-5 w-5' />
-                  </div>
-                  <h3 className='mt-4 font-sans font-semibold text-lg'>{card.title}</h3>
-                  <p className='mt-2 text-sm text-[#3a231a]/80 leading-relaxed'>{card.body}</p>
-                </article>
+                <div key={card.title} data-ait-reveal data-ait-delay={index * 70}>
+                  <article className='border border-[#8d4f36]/20 bg-[#f8f0e3] p-5 hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(43,27,23,0.12)] transition-all'>
+                    <div className='h-10 w-10 flex items-center justify-center bg-[#d4b26a]/25 text-[#2b1b17]'>
+                      <Icon className='h-5 w-5' />
+                    </div>
+                    <h3 className='mt-4 font-sans font-semibold text-lg'>{card.title}</h3>
+                    <p className='mt-2 text-sm text-[#3a231a]/80 leading-relaxed'>{card.body}</p>
+                  </article>
+                </div>
               );
             })}
           </div>
         </section>
 
-        <section className='mt-10 grid lg:grid-cols-2 gap-6 items-stretch'>
+        <section data-ait-reveal data-ait-delay='60' className='mt-10 grid lg:grid-cols-2 gap-6 items-stretch'>
           <article className='border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7 hover:shadow-[0_10px_24px_rgba(43,27,23,0.12)] transition-shadow'>
             <h2 className='text-2xl font-sans font-semibold'>How Wootz Steel Was Made</h2>
             <p className='mt-4 text-[#3a231a]/85 leading-relaxed'>
@@ -207,7 +208,7 @@ export function WootzSteelDamascusPage() {
           </div>
         </section>
 
-        <section className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7' id='science'>
+        <section data-ait-reveal data-ait-delay='60' className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7' id='science'>
           <h2 className='text-2xl font-sans font-semibold'>The Science Behind the Strength</h2>
           <p className='mt-4 text-[#3a231a]/85 leading-relaxed'>
             Wootz steel&apos;s high carbon range (often around 1-2%) contributed to hard edges and strong cutting performance.
@@ -222,7 +223,7 @@ export function WootzSteelDamascusPage() {
           </div>
         </section>
 
-        <section className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7'>
+        <section data-ait-reveal data-ait-delay='60' className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7'>
           <p className='text-xs uppercase tracking-[0.14em] text-[#8d4f36]'>Top Video</p>
           <h3 className='text-xl font-sans font-semibold'>Video: How Damascus Steel Was Made</h3>
           <div className='mt-4 aspect-video bg-black border border-[#8d4f36]/20 overflow-hidden'>
@@ -238,7 +239,7 @@ export function WootzSteelDamascusPage() {
           </div>
         </section>
 
-        <section className='mt-8 grid lg:grid-cols-2 gap-6 items-stretch'>
+        <section data-ait-reveal data-ait-delay='60' className='mt-8 grid lg:grid-cols-2 gap-6 items-stretch'>
           <div className='min-h-[420px] md:min-h-[520px] border border-[#8d4f36]/20 bg-[#f7efdf] p-3 flex items-center justify-center'>
             <img src='/wootz-pattern-map.svg' alt='Pattern logic behind Wootz and Damascus blade surfaces' className='h-full w-full object-contain object-center bg-white p-3' />
           </div>
@@ -278,7 +279,7 @@ export function WootzSteelDamascusPage() {
           </article>
         </section>
 
-        <section className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7'>
+        <section data-ait-reveal data-ait-delay='60' className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7'>
           <p className='text-xs uppercase tracking-[0.14em] text-[#8d4f36]'>Mid Video</p>
           <h3 className='text-xl font-sans font-semibold'>Video: Secrets of Ancient Indian Steel</h3>
           <div className='mt-4 aspect-video bg-black border border-[#8d4f36]/20 overflow-hidden'>
@@ -294,7 +295,7 @@ export function WootzSteelDamascusPage() {
           </div>
         </section>
 
-        <section className='mt-8 border-l-4 border-[#8d4f36] bg-[#2b1b17] text-[#f4ead8] p-6 md:p-7'>
+        <section data-ait-reveal='left' className='mt-8 border-l-4 border-[#8d4f36] bg-[#2b1b17] text-[#f4ead8] p-6 md:p-7'>
           <p className='text-xl md:text-2xl leading-relaxed font-sans'>
             &ldquo;Nothing could surpass the edge of Indian steel.&rdquo;
           </p>
@@ -302,10 +303,17 @@ export function WootzSteelDamascusPage() {
         </section>
 
         <section className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7'>
-          <h2 className='text-2xl font-sans font-semibold'>Timeline: Origin to Rediscovery</h2>
+          <h2 data-ait-reveal className='text-2xl font-sans font-semibold'>
+            Timeline: Origin to Rediscovery
+          </h2>
           <div className='mt-5 space-y-4'>
-            {timeline.map((step) => (
-              <article key={step.period} className='grid md:grid-cols-[160px_1fr] gap-4 border border-[#8d4f36]/15 bg-white/40 p-4'>
+            {timeline.map((step, index) => (
+              <article
+                key={step.period}
+                data-ait-reveal
+                data-ait-delay={index * 60}
+                className='grid md:grid-cols-[160px_1fr] gap-4 border border-[#8d4f36]/15 bg-white/40 p-4'
+              >
                 <p className='text-xs font-semibold tracking-[0.12em] uppercase text-[#8d4f36]'>{step.period}</p>
                 <div>
                   <h3 className='font-sans font-semibold'>{step.title}</h3>
@@ -316,7 +324,7 @@ export function WootzSteelDamascusPage() {
           </div>
         </section>
 
-        <section className='mt-8' id='legacy'>
+        <section data-ait-reveal data-ait-delay='60' className='mt-8' id='legacy'>
           <div className='flex items-center justify-between gap-3'>
             <h2 className='text-2xl font-sans font-semibold'>Gallery: Ingot Process, Pattern, and Blade Finish</h2>
             <div className='flex items-center gap-2'>
@@ -343,7 +351,7 @@ export function WootzSteelDamascusPage() {
           </div>
         </section>
 
-        <section className='mt-8 grid md:grid-cols-2 gap-6'>
+        <section data-ait-reveal data-ait-delay='60' className='mt-8 grid md:grid-cols-2 gap-6'>
           <article className='border border-[#8d4f36]/20 bg-[#f8f0e3] p-6'>
             <h2 className='text-2xl font-sans font-semibold'>Why the Technology Was Lost</h2>
             <p className='mt-4 text-[#3a231a]/84 leading-relaxed'>
@@ -362,7 +370,7 @@ export function WootzSteelDamascusPage() {
           </article>
         </section>
 
-        <section className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7'>
+        <section data-ait-reveal data-ait-delay='60' className='mt-8 border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7'>
           <p className='text-xs uppercase tracking-[0.14em] text-[#8d4f36]'>End Video</p>
           <h3 className='text-xl font-sans font-semibold'>Video: Recreating Damascus Steel Today</h3>
           <div className='mt-4 aspect-video bg-black border border-[#8d4f36]/20 overflow-hidden'>
@@ -378,7 +386,7 @@ export function WootzSteelDamascusPage() {
           </div>
         </section>
 
-        <section className='mt-8 border border-[#8d4f36]/20 bg-[#2b1b17] text-[#f4ead8] p-6 md:p-8'>
+        <section data-ait-reveal='scale' className='mt-8 border border-[#8d4f36]/20 bg-[#2b1b17] text-[#f4ead8] p-6 md:p-8'>
           <h2 className='text-2xl md:text-3xl font-sans font-semibold'>Conclusion</h2>
           <p className='mt-3 text-[#f4ead8]/86 leading-relaxed'>
             Wootz steel demonstrates that ancient India developed a highly sophisticated metallurgical tradition combining chemistry,

@@ -94,8 +94,11 @@ export function SubmenuHeaderNav() {
 
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileMenuOpen(false)} />
-          <div className="absolute top-0 right-0 w-[92%] max-w-[420px] h-full bg-[#2b1b17] border-l border-[#d4b26a]/30 flex flex-col shadow-[-14px_0_40px_rgba(0,0,0,0.45)]">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <div className="absolute top-0 right-0 w-[92%] max-w-[420px] h-full bg-[#2b1b17] border-l border-[#d4b26a]/30 flex flex-col shadow-[-14px_0_40px_rgba(0,0,0,0.45)] animate-in slide-in-from-right duration-300">
             <div className="flex items-center justify-between px-6 py-5 border-b border-[#d4b26a]/30 shrink-0">
               <div className="h-12 w-12 rounded-full border border-[#d4b26a]/60 p-1">
                 <img src="/logo_ait.jpeg" alt="AIT logo" className="h-full w-full rounded-full object-cover object-center" />

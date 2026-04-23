@@ -20,7 +20,7 @@ export function DelhiIronPillarPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#2b1b17]/84 via-[#2b1b17]/58 to-[#2b1b17]/76" />
         <div className="absolute inset-0 max-w-7xl mx-auto px-6 md:px-12 pb-10 flex items-end">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-700">
             <p className="inline-flex bg-[#d4b26a]/30 px-4 py-1.5 text-xs uppercase tracking-[0.16em] font-body text-[#f4ead8]">Metallurgy</p>
             <h1 className="mt-5 text-4xl md:text-6xl font-sans font-bold tracking-tight text-[#f4ead8]">The Delhi Iron Pillar</h1>
             <p className="mt-3 max-w-3xl text-[#f4ead8]/90 text-base md:text-lg">
@@ -31,7 +31,7 @@ export function DelhiIronPillarPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-8">
-        <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
+        <article data-ait-reveal className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-sans font-semibold">Why the Pillar Matters</h2>
           <p className="mt-4 leading-relaxed text-[#3a231a]/85">
             The Delhi Iron Pillar is not important merely because it is old. It matters because it shows large-scale forge welding,
@@ -44,7 +44,7 @@ export function DelhiIronPillarPage() {
           </p>
         </article>
 
-        <section className="grid md:grid-cols-2 gap-5">
+        <section data-ait-reveal data-ait-delay="40" className="grid md:grid-cols-2 gap-5">
           <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
             <h3 className="text-xl font-semibold font-sans">Construction at Monument Scale</h3>
             <p className="mt-3 text-sm text-[#3a231a]/84 leading-relaxed">
@@ -61,7 +61,7 @@ export function DelhiIronPillarPage() {
           </article>
         </section>
 
-        <section className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6 items-stretch">
+        <section data-ait-reveal data-ait-delay="60" className="grid lg:grid-cols-[1.05fr_0.95fr] gap-6 items-stretch">
           <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-7">
             <h2 className="text-2xl font-sans font-semibold">How the Monument Was Built</h2>
             <div className="mt-4 grid gap-3 text-sm text-[#3a231a]/84">
@@ -99,7 +99,7 @@ export function DelhiIronPillarPage() {
           </figure>
         </section>
 
-        <section className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
+        <section data-ait-reveal data-ait-delay="60" className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
           <p className="text-xs uppercase tracking-[0.14em] text-[#8d4f36]">Top Video</p>
           <h3 className="mt-2 text-xl font-semibold font-sans">Mystery of the Rust-Free Iron Pillar of Delhi</h3>
           <div className="mt-3 aspect-video overflow-hidden bg-black border border-[#8d4f36]/20">
@@ -115,7 +115,7 @@ export function DelhiIronPillarPage() {
           </div>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-6">
+        <section data-ait-reveal data-ait-delay="40" className="grid md:grid-cols-2 gap-6">
           <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
             <h3 className="text-xl font-semibold font-sans">What the Surface Tells Us</h3>
             <ul className="mt-4 space-y-2 text-sm text-[#3a231a]/84">
@@ -133,7 +133,7 @@ export function DelhiIronPillarPage() {
           </article>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-5">
+        <section data-ait-reveal data-ait-delay="60" className="grid md:grid-cols-2 gap-5">
           <figure className="border border-[#8d4f36]/20 bg-white p-3">
             <img src="/iron-pillar.jpg" alt="Close view of the Delhi Iron Pillar surface and shaft" className="h-80 md:h-[22rem] w-full object-cover object-center" />
             <figcaption className="p-3 text-sm text-[#3a231a]/80">
@@ -152,7 +152,7 @@ export function DelhiIronPillarPage() {
           </figure>
         </section>
 
-        <section className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
+        <section data-ait-reveal data-ait-delay="60" className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
           <p className="text-xs uppercase tracking-[0.14em] text-[#8d4f36]">End Video</p>
           <h3 className="mt-2 text-lg font-semibold font-sans">Scientific Analysis of the Delhi Iron Pillar</h3>
           <div className="mt-3 aspect-video overflow-hidden bg-black border border-[#8d4f36]/20">
@@ -168,7 +168,7 @@ export function DelhiIronPillarPage() {
           </div>
         </section>
 
-        <section className="bg-[#2b1b17] text-[#f4ead8] p-6 border border-[#8d4f36]/20">
+        <section data-ait-reveal="scale" data-ait-delay="60" className="bg-[#2b1b17] text-[#f4ead8] p-6 border border-[#8d4f36]/20">
           <h3 className="text-xl font-semibold font-sans">Conclusion</h3>
           <p className="mt-3 text-sm md:text-base text-[#f4ead8]/85">
             The Delhi Iron Pillar stands at the intersection of monumentality and materials science. Its fame comes not from an

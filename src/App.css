@@ -115,3 +115,44 @@ a {
 .swiper-wrapper {
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }
+
+/* Scroll-reveal helpers (data-driven, lightweight) */
+[data-ait-reveal] {
+  --ait-reveal-delay: 0ms;
+  opacity: 0;
+  translate: 0 14px;
+  scale: 1;
+  transition:
+    opacity 720ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    translate 720ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    scale 720ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--ait-reveal-delay);
+  will-change: opacity, transform;
+}
+
+[data-ait-reveal="left"] {
+  translate: -16px 0;
+}
+
+[data-ait-reveal="right"] {
+  translate: 16px 0;
+}
+
+[data-ait-reveal="scale"] {
+  scale: 0.985;
+}
+
+[data-ait-reveal][data-ait-revealed="true"] {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-ait-reveal] {
+    opacity: 1 !important;
+    translate: 0 0 !important;
+    scale: 1 !important;
+    transition: none !important;
+  }
+}

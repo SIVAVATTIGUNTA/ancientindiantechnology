@@ -16,7 +16,7 @@ export function ZincDistillationPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#2b1b17]/82 via-[#2b1b17]/55 to-[#2b1b17]/75" />
         <div className="absolute inset-0 max-w-7xl mx-auto px-6 md:px-12 pb-10 flex items-end">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-700">
             <p className="inline-flex bg-[#d4b26a]/30 px-4 py-1.5 text-xs uppercase tracking-[0.16em] font-body text-[#f4ead8]">Metallurgy</p>
             <h1 className="mt-5 text-4xl md:text-6xl font-sans font-bold tracking-tight text-[#f4ead8]">Zinc Distillation at Zawar</h1>
             <p className="mt-3 text-[#f4ead8]/90">A rare industrial solution to one of pre-modern metallurgy&apos;s most difficult vapor problems.</p>
@@ -25,7 +25,7 @@ export function ZincDistillationPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-12 space-y-8">
-        <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
+        <article data-ait-reveal className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6 md:p-8">
           <h2 className="text-2xl md:text-3xl font-sans font-semibold">Why Zinc Was a Hard Metal to Make</h2>
           <p className="mt-4 text-[#3a231a]/85 leading-relaxed">
             Zinc challenged ancient smelters because it vaporizes before it can be collected the way copper or iron can. Producing
@@ -38,7 +38,7 @@ export function ZincDistillationPage() {
           </p>
         </article>
 
-        <section className="grid md:grid-cols-2 gap-5">
+        <section data-ait-reveal data-ait-delay="40" className="grid md:grid-cols-2 gap-5">
           <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
             <h3 className="text-xl font-semibold font-sans">Industrial Logic</h3>
             <p className="mt-3 text-sm text-[#3a231a]/84 leading-relaxed">
@@ -55,7 +55,7 @@ export function ZincDistillationPage() {
           </article>
         </section>
 
-        <section className="grid lg:grid-cols-[1fr_1fr] gap-6 items-stretch">
+        <section data-ait-reveal data-ait-delay="60" className="grid lg:grid-cols-[1fr_1fr] gap-6 items-stretch">
           <figure className="border border-[#8d4f36]/20 bg-[#f7efdf] p-3 flex flex-col">
             <img
               src="/zinc-retort-distillation.svg"
@@ -92,7 +92,7 @@ export function ZincDistillationPage() {
           </article>
         </section>
 
-        <section className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
+        <section data-ait-reveal data-ait-delay="60" className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
           <p className="text-xs uppercase tracking-[0.14em] text-[#8d4f36]">Top Video</p>
           <h3 className="mt-2 text-xl font-semibold font-sans">World&apos;s First Zinc Distillation - India&apos;s Forgotten Technology</h3>
           <div className="mt-3 aspect-video bg-black overflow-hidden border border-[#8d4f36]/20">
@@ -108,7 +108,7 @@ export function ZincDistillationPage() {
           </div>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-6">
+        <section data-ait-reveal data-ait-delay="40" className="grid md:grid-cols-2 gap-6">
           <article className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
             <h3 className="text-xl font-semibold font-sans">Scale and Coordination</h3>
             <p className="mt-3 text-sm text-[#3a231a]/84 leading-relaxed">
@@ -125,7 +125,7 @@ export function ZincDistillationPage() {
           </article>
         </section>
 
-        <section className="grid md:grid-cols-2 gap-5">
+        <section data-ait-reveal data-ait-delay="60" className="grid md:grid-cols-2 gap-5">
           <figure className="border border-[#8d4f36]/20 bg-white p-3">
             <img src="/zinc-distillation.jpg" alt="Landscape associated with the Zawar zinc production zone" className="h-80 md:h-[22rem] w-full object-cover object-center" />
             <figcaption className="p-3 text-sm text-[#3a231a]/80">
@@ -140,7 +140,7 @@ export function ZincDistillationPage() {
           </figure>
         </section>
 
-        <section className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
+        <section data-ait-reveal data-ait-delay="60" className="border border-[#8d4f36]/20 bg-[#f8f0e3] p-6">
           <p className="text-xs uppercase tracking-[0.14em] text-[#8d4f36]">End Video</p>
           <h3 className="mt-2 text-lg font-semibold font-sans">How Zinc Is Extracted - Ancient vs Modern</h3>
           <div className="mt-3 aspect-video bg-black overflow-hidden border border-[#8d4f36]/20">
@@ -156,7 +156,7 @@ export function ZincDistillationPage() {
           </div>
         </section>
 
-        <section className="bg-[#2b1b17] text-[#f4ead8] p-6 border border-[#8d4f36]/20">
+        <section data-ait-reveal="scale" data-ait-delay="60" className="bg-[#2b1b17] text-[#f4ead8] p-6 border border-[#8d4f36]/20">
           <h3 className="text-xl font-semibold font-sans">Industrial Legacy</h3>
           <p className="mt-3 text-sm md:text-base text-[#f4ead8]/85">
             Zinc distillation at Zawar is one of the strongest cases where archaeology, process engineering, and material history
