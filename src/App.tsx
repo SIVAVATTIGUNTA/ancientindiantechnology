@@ -83,6 +83,8 @@ const TermsOfUsePage = lazy(() => import('./pages/submenus/TermsOfUsePage').then
 const AccessibilityPage = lazy(() => import('./pages/submenus/AccessibilityPage').then((m) => ({ default: m.AccessibilityPage })));
 const SitemapPage = lazy(() => import('./pages/submenus/SitemapPage').then((m) => ({ default: m.SitemapPage })));
 const ContactPage = lazy(() => import('./pages/ContactPage').then((m) => ({ default: m.ContactPage })));
+const BlogListingPage = lazy(() => import('./pages/blogs/BlogListingPage').then((m) => ({ default: m.BlogListingPage })));
+const BlogPostPage = lazy(() => import('./pages/blogs/BlogPostPage').then((m) => ({ default: m.BlogPostPage })));
 
 function App() {
   // Initialize Lenis smooth scroll
@@ -186,6 +188,8 @@ function App() {
     <Suspense fallback={<main className="min-h-screen bg-[#f4ead8] text-[#2b1b17] p-10">Loading...</main>}>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/blogs" element={<BlogListingPage />} />
+        <Route path="/blogs/:slug" element={<BlogPostPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/topic/metallurgy" element={<TopicPageLayout slug="metallurgy" />} />
         <Route path="/topic/astronomy" element={<TopicPageLayout slug="astronomy" />} />

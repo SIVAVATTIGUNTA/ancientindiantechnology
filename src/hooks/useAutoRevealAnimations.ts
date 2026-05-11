@@ -34,16 +34,29 @@ export function useAutoRevealAnimations({
   const location = useLocation();
 
   useEffect(() => {
-    const elements = Array.from(document.querySelectorAll<HTMLElement>(selector));
+    const applyDelay = (element: HTMLElement) => {
+      const delay = parseDelayMs(element.getAttribute('data-ait-delay'));
+      if (delay && !element.style.getPropertyValue('--ait-reveal-delay')) {
+        element.style.setProperty('--ait-reveal-delay', delay);
+      }
+    };
+
+    const revealAll = () => {
+      Array.from(document.querySelectorAll<HTMLElement>(selector)).forEach((element) => {
+        applyDelay(element);
+        element.setAttribute('data-ait-revealed', 'true');
+      });
+    };
 
     // If the user prefers reduced motion (or IO is unavailable), show everything immediately.
     if (prefersReducedMotion() || typeof window.IntersectionObserver === 'undefined') {
-      elements.forEach((element) => {
-        element.setAttribute('data-ait-revealed', 'true');
-      });
-      return;
+      revealAll();
+      const fallbackMutationObserver = new MutationObserver(revealAll);
+      fallbackMutationObserver.observe(document.body, { childList: true, subtree: true });
+      return () => fallbackMutationObserver.disconnect();
     }
 
+    const observed = new WeakSet<HTMLElement>();
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -56,18 +69,34 @@ export function useAutoRevealAnimations({
       { rootMargin, threshold }
     );
 
-    elements.forEach((element) => {
-      if (element.getAttribute('data-ait-revealed') === 'true') return;
+    const observeElements = () => {
+      const elements = Array.from(document.querySelectorAll<HTMLElement>(selector));
+      elements.forEach((element) => {
+        if (element.getAttribute('data-ait-revealed') === 'true') return;
+        if (observed.has(element)) return;
 
-      const delay = parseDelayMs(element.getAttribute('data-ait-delay'));
-      if (delay && !element.style.getPropertyValue('--ait-reveal-delay')) {
-        element.style.setProperty('--ait-reveal-delay', delay);
-      }
+        applyDelay(element);
+        observed.add(element);
+        observer.observe(element);
+      });
+    };
 
-      observer.observe(element);
-    });
+    let frame = 0;
+    const scheduleObserve = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(observeElements);
+    };
 
-    return () => observer.disconnect();
-  }, [location.pathname, rootMargin, selector, threshold]);
+    observeElements();
+
+    // Dynamic pages (blog filters/search/pagination) can add new reveal elements without a path change.
+    const mutationObserver = new MutationObserver(scheduleObserve);
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      mutationObserver.disconnect();
+      observer.disconnect();
+    };
+  }, [location.pathname, location.search, rootMargin, selector, threshold]);
 }
-

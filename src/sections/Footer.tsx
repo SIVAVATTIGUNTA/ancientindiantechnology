@@ -41,6 +41,7 @@ export function Footer() {
 
   const quickLinks = [
     { label: 'Contact', to: '/contact' },
+    { label: 'Blogs', to: '/blogs' },
     { label: 'About This Project', to: '/topic/about-this-project' },
     { label: 'Research Papers', to: '/topic/research-papers' },
     { label: 'Books & Bibliography', to: '/topic/books-and-bibliography' },

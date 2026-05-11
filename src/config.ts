@@ -139,6 +139,10 @@ export const heroConfig: HeroConfig = {
       ],
     },
     {
+      label: "Blogs",
+      href: "/blogs",
+    },
+    {
       label: "Contact",
       subtitle: "संपर्क",
       href: "/contact",
